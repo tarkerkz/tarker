@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>- TOO TARKER</title>
+  <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+     body {
+       background: #ffffff;
+    }
+
+.product-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.product-block {
+  width: 300px;
+  height: 450px; /* фиксированная высота для единообразия */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-decoration: none;
+  background-color: #fefeff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #e7e7e7;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.product-block:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-block img {
+  width: 85%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-block p {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #000000;
+  height: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-block h3 {
+  margin-top: auto;
+  padding: 12px;
+  background-color: #0942b5;
+  color: white;
+  font-size: 14px;
+  border-radius: 8px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+    .footer-flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px; /* расстояние между карточками */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+
+/* Адаптивность */
+@media (max-width: 900px) {
+  .product-block {
+    flex: 0 0 calc(50% - 10px); /* 2 в ряд */
+  }
+}
+
+@media (max-width: 600px) {
+  .product-block {
+    flex: 0 0 100%; /* 1 в ряд */
+  }
+}
+.section-title {
+  text-align: left;
+  font-weight: bold;
+  font-size: 35px;
+  color: #0056b3;
+  margin: 30px 20px 20px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #0056b3;
+}
+
+.product-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 35px;
+  margin-bottom: 40px;
+}
+
+.product-row.small-gap {
+  gap: 35px; /* или даже 5px, если нужно плотнее */
+}
+
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+<header>
+  <div class="container header-flex">
+    <div class="logo">
+      <img src="img/logo.png" alt="TARKER" />
+    </div>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="about.html">О нас</a>
+      <div class="dropdown">
+        <a href="#" class="nav-link">Контакты</a>
+        <div class="dropdown-content">
+          <a href="contact.html">Контактные данные</a>
+          <a href="contact-form.html">Форма обратной связи</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#" class="nav-link">Документы</a>
+        <div class="dropdown-content">
+          <a href="product.html#quality">Контроль качества</a>
+          <a href="brochures.html">Каталоги/брошюры</a>
+          <a href="certificates.html">Сертификаты</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#" class="nav-link">Продукция</a>
+        <div class="dropdown-content">
+          <a href="product.html">Деформационные швы</a>
+          <a href="contact-form.html">Преднапряжение мостов</a>
+          <a href="equipment.html">Собственное оборудование</a>
+          <a href="dorozhnye.polotna.html">Дорожные полотна</a>
+          <a href="product.html">Продукты для помещений</a>
+          <a href="prisadka.html">Присадки</a>
+          <a href="emulsions.html">Эмульсии</a>
+          <a href="product.html">Дополнительная продукция</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<hr style="margin: 0; border: none; border-top: 1px solid #ccc;" />
+
+<p class="section-title">Ремонтные работы/ обслуживание поверхности</p>
+
+<main>
+  <!-- Первая строка: 4 блока -->
+  <div class="product-row small-gap">
+    <a href="remont.em1.html" class="product-block">
+      <img src="img/emu1.jpg" alt="BIGUMA®- Emulsion BE60 REP">
+      <p>Битумная эмульсия для способа «присыпка и обсыпка»</p>
+      <h3>BIGUMA®- Emulsion BE60 REP</h3>
+    </a>
+
+    <a href="remont.em2.html" class="product-block">
+      <img src="img/emu2.jpg" alt="BIGUMA®- Emulsion BE70 REP">
+      <p>Битумная эмульсия для способа «присыпка и обсыпка»</p>
+      <h3>BIGUMA®- Emulsion BE70 REP</h3>
+    </a>
+
+    <a href="remont.em3.html" class="product-block">
+      <img src="img/emu4.jpg" alt="BIGUMA®- Emulsion PMB 60 REP">
+      <p>Битумная эмульсия для способа «присыпка и обсыпка»</p>
+      <h3>BIGUMA®- Emulsion PMB 60 REP</h3>
+    </a>
+
+    <a href="remont.em4.html" class="product-block">
+      <img src="img/emu4.jpg" alt="BIGUMA®- Emulsion PMB 70 REP">
+      <p>Битумная эмульсия для способа «присыпка и обсыпка»</p>
+      <h3>BIGUMA®- Emulsion PMB 70 REP</h3>
+    </a>
+  </div>
+
+  <!-- Вторая строка: 3 блока -->
+  <div class="product-row">
+    <a href="remont.em5.html" class="product-block">
+      <img src="img/emu5.jpg" alt="BIGUMA®- Emulsion BE70">
+      <p>Битумная эмульсия для ремонтных работ «Поверхностная обработка»</p>
+      <h3>BIGUMA®- Emulsion BE70</h3>
+    </a>
+
+    <a href="remont.em6.html" class="product-block">
+      <img src="img/emu6.jpg" alt="BIGUMA®- Emulsion PMB70">
+      <p>Битумная эмульсия для ремонтных работ «Поверхностная обработка»</p>
+      <h3>BIGUMA®- Emulsion PMB70</h3>
+    </a>
+
+    <a href="remont.em7.html" class="product-block">
+      <img src="img/emu6.jpg" alt="BIGUMA®- Emulsion PMB 70+">
+      <p>Битумная эмульсия для ремонтных работ «Поверхностная обработка»</p>
+      <h3>BIGUMA®- Emulsion PMB 70+</h3>
+    </a>
+  </div>
+
+  <!-- Третья строка: 2 блока -->
+  <div class="product-row">
+    <a href="remont.em8.html" class="product-block">
+      <img src="img/emu8.jpg" alt="BIGUMA®- Emulsion BE 60 N">
+      <p>Битумная эмульсия для герметизации</p>
+      <h3>BIGUMA®- Emulsion BE 60 N</h3>
+    </a>
+
+    <a href="remont.em9.html" class="product-block">
+      <img src="img/emu9.jpg" alt="BIGUMA®- Emulsion PMB65 PT">
+      <p>Битумная эмульсия для герметизации</p>
+      <h3>BIGUMA®- Emulsion PMB65 PT</h3>
+    </a>
+  </div>
+</main>
+
+
+<footer>
+  <p>&copy; 2025 ТОО ТАРКЕР. Все права защищены.</p>
+</footer>
+
+</body>
+</html>

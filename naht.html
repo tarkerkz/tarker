@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>BIGUMA®- Naht - TOO TARKER</title>
+  <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      color: #000000;
+      font-size: 15px;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .product-image img {
+      width: 85%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .product-info {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .product-info h1 {
+      color: #153293;
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .product-info h3 {
+      font-weight: normal;
+      font-size: 15px;
+      margin-top: 0;
+      color: #000000;
+      border-top: 1px solid #ddd;
+      padding-top: 10px;
+    }
+
+    .product-icons {
+      margin: 20px 0;
+      display: flex;
+      gap: 15px;
+    }
+
+    .icon-button {
+      background-color: #ffffff;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+    }
+
+    .tabs {
+      max-width: 1000px;
+      margin: 20px auto;
+      border-top: 1px solid #ddd;
+    }
+
+    .tab-links {
+      display: flex;
+      gap: 30px;
+      padding: 10px 0;
+      font-weight: bold;
+      color: #153293;
+    }
+
+    .tab-content {
+      padding: 20px;
+      border: 1px solid #eee;
+      border-radius: 5px;
+      background: #fafafa;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        flex-direction: column;
+        align-items: center;
+      }
+      .tab-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    .link-list {
+  list-style-type: disc;         /* точка слева */
+  padding-left: 20px;            /* отступ для маркера */
+  margin: 0;
+}
+
+.link-list li {
+  margin-bottom: 10px;
+}
+
+.link-list a {
+  color: rgb(51, 13, 190);
+  text-decoration: none;
+  font-weight: 200;
+  font-size: 5x;
+}
+
+.link-list a:hover {
+  text-decoration: underline;
+}
+
+.product-gallery {
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+}
+
+.main-image img {
+  width: 60%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnails {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+}
+
+.thumbnails img {
+  width: 80px;
+  height: auto;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.3s;
+}
+
+.thumbnails img:hover {
+  border-color: #153293;
+}
+
+  </style>
+  <script>
+  function changeImage(element) {
+    document.getElementById('mainImg').src = element.src;
+  }
+</script>
+
+</head>
+<body>
+  <div class="wrapper">
+<header>
+  <div class="container header-flex">
+    <div class="logo">
+      <img src="img/logo.png" alt="TARKER" />
+    </div>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="about.html">О нас</a>
+      <div class="dropdown">
+        <a href="#" class="nav-link">Контакты</a>
+        <div class="dropdown-content">
+          <a href="contact.html">Контактные данные</a>
+          <a href="contact-form.html">Форма обратной связи</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#" class="nav-link">Документы</a>
+        <div class="dropdown-content">
+          <a href="product.html#quality">Контроль качества</a>
+          <a href="brochures.html">Каталоги/брошюры</a>
+          <a href="certificates.html">Сертификаты</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#" class="nav-link">Продукция</a>
+        <div class="dropdown-content">
+          <a href="product.html">Деформационные швы</a>
+          <a href="contact-form.html">Преднапряжение мостов</a>
+          <a href="equipment.html">Собственное оборудование</a>
+          <a href="dorozhnye.polotna.html">Дорожные полотна</a>
+          <a href="product.html">Продукты для помещений</a>
+          <a href="prisadka.html">Присадки</a>
+          <a href="emulsions.html">Эмульсии</a>
+          <a href="product.html">Дополнительная продукция</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    <div class="product-gallery">
+  <div class="main-image">
+    <img id="mainImg" src="img/naht.jpg" alt="BIGUMA®- Naht">
+  </div>
+  <div class="thumbnails">
+    <img src="img/naht.jpg" alt="BIGUMA 1" onclick="changeImage(this)">
+    <img src="img/naht_2.jpg" alt="BIGUMA 2" onclick="changeImage(this)">
+    <img src="img/naht_3.jpg" alt="BIGUMA 3" onclick="changeImage(this)">
+      </div>
+</div>
+
+    <div class="product-info">
+      <h1>BIGUMA®- Naht</h1>
+      <h3>Клей для стыков горячего применения на базе полимерно-модифицированного битума</h3>
+      <p>Вы желаете получить свободное предложение или техническую информацию? Обращайтесь к нам!</p>
+
+      <div class="product-icons">
+  <a href="contact.html" class="icon-button" title="Связаться по телефону">📞</a>
+  <a href="contact-form.html" class="icon-button" title="Скачать документ">📄</a>
+</div>
+
+    </div>
+  </main>
+
+ <section class="tabs">
+  <!-- Радио кнопки -->
+  <input type="radio" name="tab" id="tab1" checked>
+  <input type="radio" name="tab" id="tab2">
+  <input type="radio" name="tab" id="tab3">
+  <input type="radio" name="tab" id="tab4">
+  <input type="radio" name="tab" id="tab5">
+
+  <!-- Кнопки-вкладки -->
+  <div class="tab-links">
+    <label for="tab1">Описание</label>
+    <label for="tab2">Преимущества</label>
+    <label for="tab3">Упаковка</label>
+    <label for="tab4">Системные продукты</label>
+    <label for="tab5">Загрузить</label>
+  </div>
+
+  <!-- Содержимое вкладок -->
+  <div class="tab-content" id="content1">
+    BIGUMA®- Naht – это предусмотренный с добавками полимерно-модифицированный горячий битум, который служит для создания надёжных соединений при  укладке асфальтовой смеси «горячее на холодное». Дополнительно данный клей для стыков подходит для создания поперечных швов при перерывах в рабочем процессе.
+<br><br>
+    BIGUMA®- Naht предусмотрен без применения праймера и обладает отличной адгезионной прочностью, что делает швы  устойчивыми к старению.
+  </div>
+  <div class="tab-content" id="content2">
+    <p>Преимущества:<br>– поставляется готовым к применению<br>– Применяется без праймера<br>– высокая адгезия<br>– очень хорошие эксплуатационные характеристики при высоких и низких температурах<br>– не содержит растворители, поэтому безопасен для окружающей среды<br>– высокая рабочая продуктивность<br>– высокая стойкость стыков к износу<br>– стойкая к растворителям, солям, разбавленным кислотам и др</p>
+  </div>
+
+  <div class="tab-content" id="content3">
+    <p>Упаковка:<br>– Картонная коробка: 12 кг, 30 кг<br>– Жестяная бочка: 35 кг</p>
+  </div>
+
+  <div class="tab-content" id="content4">
+  <ul class="link-list">
+        <li><a href="bigumasws.html">BIGUMA®– SWS</a></li>
+  </ul>
+</div>
+
+
+
+
+  <div class="tab-content" id="content5">
+    <a href="docs/naht.pdf" target="_blank" class="btn-dark">&#9679 Техническая памятка</a>
+</section>
+
+</body>
+</html>
+
+<footer>
+  <p>&copy; 2025 ТОО ТАРКЕР. Все права защищены.</p>
+</footer>
+
+</body>
+</html>

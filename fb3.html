@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>PROXAN®- FB 3- TOO TARKER</title>
+  <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      color: #000000;
+      font-size: 15px;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .product-image img {
+      width: 85%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .product-info {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .product-info h1 {
+      color: #153293;
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .product-info h3 {
+      font-weight: normal;
+      font-size: 15px;
+      margin-top: 0;
+      color: #000000;
+      border-top: 1px solid #ddd;
+      padding-top: 10px;
+    }
+
+    .product-icons {
+      margin: 20px 0;
+      display: flex;
+      gap: 15px;
+    }
+
+    .icon-button {
+      background-color: #ffffff;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+    }
+
+    .tabs {
+      max-width: 1000px;
+      margin: 20px auto;
+      border-top: 1px solid #ddd;
+    }
+
+    .tab-links {
+      display: flex;
+      gap: 30px;
+      padding: 10px 0;
+      font-weight: bold;
+      color: #153293;
+    }
+
+    .tab-content {
+      padding: 20px;
+      border: 1px solid #eee;
+      border-radius: 5px;
+      background: #fafafa;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        flex-direction: column;
+        align-items: center;
+      }
+      .tab-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    .link-list {
+  list-style-type: disc;         /* точка слева */
+  padding-left: 20px;            /* отступ для маркера */
+  margin: 0;
+}
+
+.link-list li {
+  margin-bottom: 10px;
+}
+
+.link-list a {
+  color: rgb(51, 13, 190);
+  text-decoration: none;
+  font-weight: 200;
+  font-size: 5x;
+}
+
+.link-list a:hover {
+  text-decoration: underline;
+}
+
+.product-gallery {
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+}
+
+.main-image img {
+  width: 60%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnails {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+}
+
+.thumbnails img {
+  width: 80px;
+  height: auto;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.3s;
+}
+
+.thumbnails img:hover {
+  border-color: #153293;
+}
+
+  </style>
+  <script>
+  function changeImage(element) {
+    document.getElementById('mainImg').src = element.src;
+  }
+</script>
+
+</head>
+<body>
+  <div class="wrapper">
+<header>
+  <div class="container header-flex">
+    <div class="logo">
+      <img src="img/logo.png" alt="TARKER" />
+    </div>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="about.html">О нас</a>
+      <div class="dropdown">
+        <a href="#" class="nav-link">Контакты</a>
+        <div class="dropdown-content">
+          <a href="contact.html">Контактные данные</a>
+          <a href="contact-form.html">Форма обратной связи</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#" class="nav-link">Документы</a>
+        <div class="dropdown-content">
+          <a href="product.html#quality">Контроль качества</a>
+          <a href="brochures.html">Каталоги/брошюры</a>
+          <a href="certificates.html">Сертификаты</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#" class="nav-link">Продукция</a>
+        <div class="dropdown-content">
+          <a href="product.html">Деформационные швы</a>
+          <a href="contact-form.html">Преднапряжение мостов</a>
+          <a href="equipment.html">Собственное оборудование</a>
+          <a href="dorozhnye.polotna.html">Дорожные полотна</a>
+          <a href="product.html">Продукты для помещений</a>
+          <a href="prisadka.html">Присадки</a>
+          <a href="emulsions.html">Эмульсии</a>
+          <a href="product.html">Дополнительная продукция</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+  <main>
+     <div class="product-gallery">
+  <div class="main-image">
+    <img id="mainImg" src="img/fb3_2.jpg" alt="PROXAN®- FB 3">
+  </div>
+  <div class="thumbnails">
+    <img src="img/fb3.jpg" alt="BIGUMA 1" onclick="changeImage(this)">
+    <img src="img/fb3_2.jpg" alt="BIGUMA 2" onclick="changeImage(this)">
+         </div>
+</div>
+
+    <div class="product-info">
+      <h1>PROXAN®- FB 3</h1>
+      <h3>Герметичная лента на полисульфидной основе для помещений, предназначениях для хранения, заливки и обработки грузов</h3>
+      <p>Вы желаете получить свободное предложение или техническую информацию? Обращайтесь к нам!</p>
+
+      <div class="product-icons">
+  <a href="contact.html" class="icon-button" title="Связаться по телефону">📞</a>
+  <a href="contact-form.html" class="icon-button" title="Скачать документ">📄</a>
+</div>
+
+    </div>
+  </main>
+
+ <section class="tabs">
+  <!-- Радио кнопки -->
+  <input type="radio" name="tab" id="tab1" checked>
+  <input type="radio" name="tab" id="tab2">
+  <input type="radio" name="tab" id="tab3">
+  <input type="radio" name="tab" id="tab4">
+  <input type="radio" name="tab" id="tab5">
+
+  <!-- Кнопки-вкладки -->
+  <div class="tab-links">
+    <label for="tab1">Описание</label>
+    <label for="tab2">Преимущества</label>
+    <label for="tab3">Упаковка</label>
+    <label for="tab4">Системные продукты</label>
+    <label for="tab5">Загрузить</label>
+  </div>
+
+  <!-- Содержимое вкладок -->
+  <div class="tab-content" id="content1">
+  PROXAN®- FB 3 – это промышленно подготовлена герметичная лента на полисульфидной основе. Благодаря своему особенному составу она стойкая к большому количеству химикалий, стабильна к УФ -излучению и эластична для температурных диапазонов от -40 °C до +100 °C. С данной герметичной лентой PROXAN®- FB 3 возможна герметизация очень широких швов на участках, по которым нет движения. Поэтому особенно хорошо подходит для герметизации швов с очень высоким движением и для санации расширенных швов на участках помещений, предназначениях для хранения, охлаждения и обработки грузов.
+<br><br>
+    Допуск: немецкий институт строительной техники (DIBt) для системы герметизации швов в помещениях, предназначениях для хранения, заливки и обработки грузов. 
+</div>
+  <div class="tab-content" id="content2">
+    <p>Преимущества:<br>– для долговечной герметизации и санации швов
+<br>– допустима для очень широких зазоров швов
+<br>– высокая стойкость к химикалиям, стабильность к УФ излучениям
+<br>– эластичная для температурного диапазона от -40 °C до +100 °C</p>
+  </div>
+
+  <div class="tab-content" id="content3">
+    <p><img src="img/packing_4.jpg" alt="Описание картинки" style="max-width:100%; height:auto;"></p>
+  </div>
+
+
+  <div class="tab-content" id="content4">
+  <ul class="link-list">
+        <li><a href="cp-g.html">PROXAN®- CP-G</a></li>
+        <li><a href="CP-P.html">PROXAN®- CP-P</a></li>
+        <li><a href="CP-S.html">PROXAN®- CP-S</a></li>
+        <li><a href="cp-a.html">PROXAN®- CP-A</a></li>
+  </ul>
+</div>
+
+
+
+
+  <div class="tab-content" id="content5">
+    <a href="docs/fb3.pdf" target="_blank" class="btn-dark">&#9679 Техническая памятка</a>
+</section>
+
+</body>
+</html>
+
+<footer>
+  <p>&copy; 2025 ТОО ТАРКЕР. Все права защищены.</p>
+</footer>
+
+</body>
+</html>

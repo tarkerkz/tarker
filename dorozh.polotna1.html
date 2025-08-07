@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>- TOO TARKER</title>
+  <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+     body {
+       background: #ffffff;
+    }
+ main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;               /* уменьшает расстояние между карточками */
+  justify-content: center;
+  padding: 10px;
+  flex: 1;                 /* сохраняем поведение flex-элемента */
+}
+
+
+
+.product-block {
+  width: calc(33.333% - 20px);
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  padding: 16px;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+  border-radius: 24px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-block:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.product-block img {
+  max-width: 60%;
+  height: auto;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-block:hover img {
+  transform: scale(1.03);
+}
+
+.product-block h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #023568;
+  font-weight: 600;
+}
+
+
+
+    .footer-flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.section-title {
+  text-align: left;
+  font-weight: bold;
+  font-size: 35px;
+  color: #0056b3;
+  margin: 30px 20px 20px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #0056b3;
+}
+
+</style>
+</head>
+<body>
+  <div class="wrapper">
+<header>
+  <div class="container header-flex">
+    <div class="logo">
+      <img src="img/logo.png" alt="TARKER" />
+      </div>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="about.html">О нас</a>
+      <div class="dropdown">
+        <a href="#" class="nav-link">Контакты</a>
+        <div class="dropdown-content">
+          <a href="contact.html">Контактные данные</a>
+          <a href="contact-form.html">Форма обратной связи</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#" class="nav-link">Документы</a>
+        <div class="dropdown-content">
+          <a href="product.html#quality">Контроль качества</a>
+          <a href="brochures.html">Каталоги/брошюры</a>
+          <a href="certificates.html">Сертификаты</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#" class="nav-link">Продукция</a>
+        <div class="dropdown-content">
+          <a href="product.html">Деформационные швы</a>
+          <a href="contact-form.html">Преднапряжение мостов</a>
+          <a href="equipment.html">Собственное оборудование</a>
+          <a href="dorozhnye.polotna.html">Дорожные полотна</a>
+          <a href="product.html">Продукты для помещений</a>
+          <a href="prisadka.html">Присадки</a>
+          <a href="emulsions.html">Эмульсии</a>
+          <a href="product.html">Дополнительная продукция</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<hr style="margin: 0; border: none; border-top: 1px solid #ccc;" />
+
+<p class="section-title">Асфальтобетон</p>
+
+
+<main>
+  <a href="drzh1-1.html" class="product-block">
+    <img src="img/drzh1-1.jpg" alt="Мастики для заливки швов">
+    <h3>Мастики для заливки швов</h3>
+  </a>
+
+  <a href="drzh1-2.html" class="product-block">
+    <img src="img/drzh1-2.jpg" alt="Клеи для швов/герметизация краев">
+    <h3>Клеи для швов/герметизация краев</h3>
+  </a>
+
+  <a href="drzh1-3.html" class="product-block">
+    <img src="img/drzh1-3.jpg" alt="Ленты">
+    <h3>Ленты</h3>
+  </a>
+
+  <a href="drzh1-4.html" class="product-block">
+    <img src="img/drzh1-4.jpg" alt="Мастики для санации">
+    <h3>Мастики для санации</h3>
+  </a>
+
+  <a href="drzh1-5.html" class="product-block">
+    <img src="img/drzh1-5.jpg" alt="Санация трещин">
+    <h3>Санация трещин</h3>
+  </a>
+
+  <a href="drzh1-6.html" class="product-block">
+    <img src="img/drzh1-6.jpg" alt="Шлам и мастики для заливки пор">
+    <h3>Шлам и мастики для заливки пор</h3>
+  </a>
+
+  <a href="drzh1-7.html" class="product-block">
+    <img src="img/drzh1-7.jpg" alt="Холодный асфальт и мастики для ремонта">
+    <h3>Холодный асфальт и мастики для ремонта</h3>
+  </a>
+
+  <a href="drzh1-8.html" class="product-block">
+    <img src="img/drzh1-8.jpg" alt="Продукты для Trenching">
+    <h3>Продукты для Trenching</h3>
+  </a>
+
+  <a href="drzh1-9.html" class="product-block">
+    <img src="img/drzh1-9.jpg" alt="Маркировки">
+    <h3>Маркировки</h3>
+  </a>
+</main>
+
+
+<footer>
+  <p>&copy; 2025 ТОО ТАРКЕР. Все права защищены.</p>
+</footer>
+
+</body>
+</html>

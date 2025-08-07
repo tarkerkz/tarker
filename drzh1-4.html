@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Мастики для санации/ Демаркировочные мастики- TOO TARKER</title>
+  <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+     body {
+       background: #ffffff;
+    }
+    main {
+  display: flex;
+  flex-wrap: wrap;         /* ✅ разрешает перенос на новую строку */
+  justify-content: flex-start; /* или center */
+  gap: 20px;               /* расстояние между карточками */
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+
+.product-block {
+  width: calc(33.333% - 14px);  /* три карточки в ряд с учётом gap */
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  }
+.main-left .product-block {
+  width: 100%; /* или, например, 60% */
+  max-width: 400px;
+}
+
+
+.product-block img {
+  width: 56%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-block h3 {
+  font-size: 12px;             /* увеличить шрифт */
+  font-weight: bold;           /* сделать жирным */
+  color: #ffffff;              /* синий текст */
+  border: 2px solid #0056b3;   /* синяя рамка */
+  border-radius: 6px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #0202ac;   /* светлый фон для контраста (по желанию) */
+}
+
+    .footer-flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.section-title {
+  text-align: left;
+  font-weight: bold;
+  font-size: 35px;
+  color: #0056b3;
+  margin: 30px 20px 20px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #0056b3;
+}
+
+.main-left {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* ← прижимаем к левому краю */
+  gap: 20px;
+  padding: 10px 20px;
+  max-width: 500px;
+  margin: auto;
+}
+
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+<header>
+  <div class="container header-flex">
+    <div class="logo">
+      <img src="img/logo.png" alt="TARKER" />
+      </div>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="about.html">О нас</a>
+      <div class="dropdown">
+        <a href="#" class="nav-link">Контакты</a>
+        <div class="dropdown-content">
+          <a href="contact.html">Контактные данные</a>
+          <a href="contact-form.html">Форма обратной связи</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#" class="nav-link">Документы</a>
+        <div class="dropdown-content">
+          <a href="product.html#quality">Контроль качества</a>
+          <a href="brochures.html">Каталоги/брошюры</a>
+          <a href="certificates.html">Сертификаты</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#" class="nav-link">Продукция</a>
+        <div class="dropdown-content">
+          <a href="product.html">Деформационные швы</a>
+          <a href="contact-form.html">Преднапряжение мостов</a>
+          <a href="equipment.html">Собственное оборудование</a>
+          <a href="dorozhnye.polotna.html">Дорожные полотна</a>
+          <a href="product.html">Продукты для помещений</a>
+          <a href="prisadka.html">Присадки</a>
+          <a href="emulsions.html">Эмульсии</a>
+          <a href="product.html">Дополнительная продукция</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<hr style="margin: 0; border: none; border-top: 1px solid #ccc;" />
+
+
+<p class="section-title">Мастики для санации/ Демаркировочные мастики</p>
+
+<main>
+  <a href="ds01.html" class="product-block">
+    <img src="img/ds01.jpg" alt="BIGUMA®- DS 01">
+    <p>Битумсодержащие мастики для санации для глубины нанесения от 2 до 5 мм</p>
+    <h3>BIGUMA®- DS 01</h3>
+  </a>
+
+  <a href="ds10.html" class="product-block">
+    <img src="img/ds10.jpg" alt="BIGUMA®- DS 10">
+    <p>Битумсодержащие мастики для санации для глубины нанесения от 5 до 15 мм</p>
+    <h3>BIGUMA®- DS 10</h3>
+  </a>
+
+  <a href="ds30.html" class="product-block">
+    <img src="img/ds30.jpg" alt="BIGUMA®- DS 30">
+    <p>Битумсодержащие мастики для санации для глубины нанесения от 15 до 30 мм</p>
+    <h3>BIGUMA®- DS 30</h3>
+  </a>
+
+  <a href="ds01E.html" class="product-block">
+    <img src="img/ds01e.jpg" alt="BIGUMA®- DS 01 E">
+    <p>Битумсодержащая специальная выравнивающая мастика для глубины нанесения от 1 до 5 мм</p>
+    <h3>BIGUMA®- DS 01 E</h3>
+  </a>
+
+  <a href="GRANDOMA.html" class="product-block">
+    <img src="img/grandoma.jpg" alt="BIGUMA®- GRANO MA">
+    <p>Асфальтобетон литой гранулированный</p>
+    <h3>BIGUMA®- GRANO MA</h3>
+  </a>
+
+  <a href="guss.html" class="product-block">
+    <img src="img/guss.jpg" alt="BIGUMA®- Gussasphalt Reparaturmassen">
+    <p>Ремонтные массы «Литой асфальт» для дорожного и гражданского строительства</p>
+    <h3>BIGUMA®- Gussasphalt Reparaturmassen</h3>
+  </a>
+  </main>
+
+   <p class="section-title">Подходящий праймер</p>
+
+    <main class="main-left">
+  <!-- Вторая группа карточек -->
+  <a href="colzumixds.html" class="product-block">
+    <img src="img/colzumixds.jpg" alt="COLZUMIX®- DS">
+    <p>Содержащий растворитель битумный праймер</p>
+    <h3>COLZUMIX®- DS</h3>
+  </a>
+</main>
+
+
+
+<footer>
+  <p>&copy; 2025 ТОО ТАРКЕР. Все права защищены.</p>
+</footer>
+
+</body>
+</html>
