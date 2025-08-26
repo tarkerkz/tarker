@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>- TOO TARKER</title>
+  <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+<style>
+     body {
+       background: #ffffff;
+    }
+    main {
+  display: flex;
+  flex-wrap: wrap;         /* ✅ разрешает перенос на новую строку */
+  justify-content: flex-start; /* или center */
+  gap: 20px;               /* расстояние между карточками */
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+
+.product-block {
+  width: calc(33.333% - 14px);  /* три карточки в ряд с учётом gap */
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+
+.product-block img {
+  width: 60%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-block h3 {
+  font-size: 12px;             /* увеличить шрифт */
+  font-weight: bold;           /* сделать жирным */
+  color: #ffffff;              /* синий текст */
+  border: 2px solid #0056b3;   /* синяя рамка */
+  border-radius: 6px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #0202ac;   /* светлый фон для контраста (по желанию) */
+}
+
+    .footer-flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.section-title {
+  text-align: left;
+  font-weight: bold;
+  font-size: 35px;
+  color: #0056b3;
+  margin: 30px 20px 20px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #0056b3;
+}
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+<header>
+  <div class="container header-flex">
+    <div class="logo">
+      <img src="img/logo.png" alt="TARKER" />
+    </div>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="about.html">О нас</a>
+      <div class="dropdown">
+        <a href="#" class="nav-link">Контакты</a>
+        <div class="dropdown-content">
+          <a href="contact.html">Контактные данные</a>
+          <a href="contact-form.html">Форма обратной связи</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#" class="nav-link">Документы</a>
+        <div class="dropdown-content">
+          <a href="product.html#quality">Контроль качества</a>
+          <a href="brochures.html">Каталоги/брошюры</a>
+          <a href="certificates.html">Сертификаты</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#" class="nav-link">Продукция</a>
+        <div class="dropdown-content">
+          <a href="product.html">Деформационные швы</a>
+          <a href="contact-form.html">Преднапряжение мостов</a>
+          <a href="equipment.html">Собственное оборудование</a>
+          <a href="dorozhnye.polotna.html">Дорожные полотна</a>
+          <a href="product.html">Продукты для помещений</a>
+          <a href="prisadka.html">Присадки</a>
+          <a href="emulsions.html">Эмульсии</a>
+          <a href="product.html">Дополнительная продукция</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<hr style="margin: 0; border: none; border-top: 1px solid #ccc;" />
+
+<p class="section-title">Санация трещин</p>
+
+<main>
+ <a href="PMB67-DSH-V.html" class="product-block">
+    <img src="img/rs.jpg" alt="BIGUMA®- RS">
+    <p>Полимерно-модифицированная битумсодержащая мастика для трещин с высокой стойкостью к износу</p>
+    <h3>BIGUMA®- RS</h3>
+  </a>
+
+  <a href="pmb65.html" class="product-block">
+    <img src="img/reactiv.jpg" alt="BIGUMA®- Reaktiv">
+    <p>Реактивная, двухкомпонентная мастика для заливки трещин и швов без праймера</p>
+    <h3>BIGUMA®- Reaktiv</h3>
+  </a>
+
+  <a href="PMB67-DSH-V.html" class="product-block">
+    <img src="img/c-cs.jpg" alt="BIGUMA®- C-CS">
+    <p>Битумно-полимерная мастика холодного применения для заделки трещин</p>
+    <h3>BIGUMA®- C-CS</h3>
+  </a>
+</main>
+
+
+<footer>
+  <p>&copy; 2025 ТОО ТАРКЕР. Все права защищены.</p>
+</footer>
+
+</body>
+</html>

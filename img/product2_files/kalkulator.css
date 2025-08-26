@@ -1,0 +1,94 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#beschreibung, #kreis {
+float: left;
+}
+#beschreibung {
+    font-size: 24px;
+    padding-left: 10px;
+    color: #666;
+}
+#kreis {
+    font-family: arial;
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #ef7b00;
+    width: 32px;
+    height: 32px;
+    border: 0px solid black;
+    text-align: center;
+    /* border-radius: 32px; */
+}
+
+.auswahlfeld {
+    color: #ef7b00;
+    border-color: #ccc !important;
+    min-width: 220px !important;
+    font-size: 16px !important;
+}
+.auswahlfeld_masse {
+    color: #ef7b00;
+    border-color: #ccc !important;
+    min-width: 55px !important;
+    font-size: 16px !important;
+}
+
+.textfeld_masse {
+    width: 220px !important;
+    color: #000 !important;
+    background: #fff !important;
+    border-color: #ccc !important;
+    font-size: 16px !important;
+}
+
+.textfeld_spezial {
+    visibility: hidden;
+    display: none;
+}
+
+.button {
+    width: 220px !important;
+    height: 30px !important;
+    background:#ef7b00 !important;
+    color:#fff !important;
+    font-size:20px !important;
+    border:2px !important;
+    border-color: #ef7b00 !important;
+    border-radius: 2px !important;
+}
+
+.hinweiss {
+    font-size: 14px;
+    font-style:italic;
+}
+.ergebnis {
+    /* background: rgba(239, 123, 0, 0.3); */
+    border: 1px solid rgba(239, 123, 0, 1);;
+    padding: 10px;
+    width: 50%;
+    min-width: 280px;
+}
+.trenner {
+    height: 0px;
+}
+.error {
+    color: red;
+    padding: 0px;
+    margin-bottom: 10px;
+    line-height: 20px;
+}
+
+/* Verstecktes Feld in Kontaktform */
+.hide-for-rob {
+    display:none;
+}
+
+/* Testmodus ein / aus */
+.testmodus {
+    border-style: dotted;
+    padding:5px;
+    margin-bottom:20px;
+    display: none;
+}
