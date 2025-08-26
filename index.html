@@ -1,178 +1,354 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Главная-TOO TARKER</title>
-  <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="img/favicon.png" type="image/png">
-  <script defer src="script.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Строительная компания — Главная</title>
+  <meta name="description" content="Строительная компания. Дорожное строительство, ремонт, благоустройство, асфальтирование. Казахстан." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1115;          /* тёмный фон */
+      --panel:#151821;       /* панели/карточки */
+      --text:#e8eaef;        /* основной текст */
+      --muted:#a9afbf;       /* вторичный текст */
+      --brand:#ff7a00;       /* акцент: оранжевый */
+      --brand-2:#ff9c3d;     /* светлый акцент */
+      --ok:#18c964;          /* зелёный */
+      --danger:#ff4d4d;      /* красный */
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.25);
+      --max:1160px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+      background:linear-gradient(180deg,#0c0e13 0%, #0f1115 30%, #0f1115 100%);
+      color:var(--text);
+    }
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+
+    /* container */
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
+
+    /* header */
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:saturate(1.2) blur(8px);
+      background:rgba(10,12,16,.6);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav{display:flex; align-items:center; gap:24px; height:68px}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:700}
+    .brand-logo{width:36px;height:36px; border-radius:12px; background:linear-gradient(135deg,var(--brand),var(--brand-2)); display:grid; place-items:center; box-shadow:var(--shadow)}
+    .brand-logo svg{width:22px;height:22px}
+    .nav-spacer{flex:1}
+    .nav a{opacity:.9}
+    .nav a:hover{color:var(--brand)}
+    .cta{background:var(--brand); color:#000; padding:10px 14px; border-radius:12px; font-weight:700; box-shadow:0 8px 20px rgba(255,122,0,.35)}
+
+    /* hero */
+    .hero{position:relative; padding:82px 0 56px}
+    .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:28px}
+    .badge{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; background:rgba(255,122,0,.1); color:var(--brand)}
+    .h1{font-size:46px; line-height:1.08; margin:14px 0 14px}
+    .lead{color:var(--muted); font-size:18px}
+    .hero-cards{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:22px}
+    .card{background:var(--panel); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
+    .kpis{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:20px}
+    .kpi{background:linear-gradient(180deg,rgba(255,122,0,.12),rgba(255,122,0,0)); border:1px solid rgba(255,255,255,.06); border-radius:16px; padding:16px}
+    .kpi b{font-size:26px}
+
+    .hero-img{position:relative; border-radius:22px; overflow:hidden; border:1px solid rgba(255,255,255,.08); box-shadow:var(--shadow)}
+    .hero-img::after{content:""; position:absolute; inset:0; background:radial-gradient(60% 60% at 70% 30%, rgba(255,122,0,.15), transparent)}
+
+    /* section */
+    section{padding:56px 0}
+    .sec-head{display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:22px}
+    .h2{font-size:32px; margin:0}
+    .muted{color:var(--muted)}
+
+    /* services grid */
+    .grid{display:grid; gap:16px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .service{position:relative; overflow:hidden}
+    .service .tag{position:absolute; top:12px; left:12px; background:rgba(0,0,0,.6); padding:6px 10px; border-radius:999px; font-size:12px}
+    .service img{height:180px; width:100%; object-fit:cover; border-top-left-radius:var(--radius); border-top-right-radius:var(--radius)}
+    .service .card-body{padding:16px}
+
+    /* projects */
+    .project{display:grid; grid-template-columns:1.2fr .8fr; gap:18px; align-items:center}
+    .project+.project{margin-top:20px}
+    .pill{display:inline-block; font-size:12px; border:1px solid rgba(255,255,255,.12); padding:6px 10px; border-radius:999px; color:var(--muted)}
+
+    /* certificates */
+    .certs{display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
+    .cert{background:var(--panel); border:1px solid rgba(255,255,255,.06); border-radius:12px; padding:10px; display:grid; place-items:center}
+    .cert img{height:140px; object-fit:contain}
+
+    /* about */
+    .about{display:grid; grid-template-columns:1fr 1fr; gap:28px}
+
+    /* contact */
+    .contact{display:grid; grid-template-columns:1fr 1fr; gap:22px}
+    .field{display:grid; gap:6px}
+    input, textarea{background:#0e1016; color:var(--text); border:1px solid rgba(255,255,255,.09); border-radius:12px; padding:12px 14px; font:inherit}
+    textarea{min-height:120px; resize:vertical}
+    .btn{display:inline-flex; gap:10px; align-items:center; background:var(--brand); color:#000; border:none; border-radius:12px; padding:12px 16px; font-weight:700; cursor:pointer}
+    .btn:active{transform:translateY(1px)}
+
+    /* footer */
+    footer{padding:28px 0 38px; border-top:1px solid rgba(255,255,255,.06); color:var(--muted)}
+
+    /* responsive */
+    @media (max-width: 1024px){
+      .hero-grid{grid-template-columns:1fr}
+      .project{grid-template-columns:1fr}
+      .about{grid-template-columns:1fr}
+      .grid.cols-3{grid-template-columns:1fr 1fr}
+      .certs{grid-template-columns:1fr 1fr}
+      .kpis{grid-template-columns:1fr 1fr 1fr}
+    }
+    @media (max-width: 640px){
+      .nav{height:62px}
+      .h1{font-size:34px}
+      .h2{font-size:26px}
+      .hero{padding-top:64px}
+      .grid.cols-3{grid-template-columns:1fr}
+      .certs{grid-template-columns:1fr}
+      .kpis{grid-template-columns:1fr 1fr}
+    }
+  </style>
 </head>
 <body>
+  <!-- HEADER -->
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top">
+        <span class="brand-logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 16L12 4l8 12h-6l-2 4-2-4H4z" fill="#000"/>
+          </svg>
+        </span>
+        <span>TEST Construction</span>
+      </a>
+      <div class="nav-spacer"></div>
+      <nav class="hide-mobile">
+        <a href="#services">Услуги</a>
+        <span>·</span>
+        <a href="#projects">Объекты</a>
+        <span>·</span>
+        <a href="#certs">Сертификаты</a>
+        <span>·</span>
+        <a href="#about">О компании</a>
+        <span>·</span>
+        <a href="#contact" class="cta">Связаться</a>
+      </nav>
+    </div>
+  </header>
 
-<!-- Шапка -->
-<header>
-  <div class="container header-flex">
-    <div class="logo">
-      <img src="logo.png" alt="TARKER" />
-      </div>
-    
-    <nav>
-      <a href="index.html">Главная</a>
-      <a href="about.html">О нас</a>
+  <!-- HERO -->
+  <main id="top" class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="badge">Дорожное строительство · Асфальтирование</span>
+        <h1 class="h1">Комплексные решения<br/>для дорог и инфраструктуры</h1>
+        <p class="lead">Проектирование, поставка материалов, устройство оснований и покрытий, ремонт и обслуживание. Работаем по РК, соблюдаем нормы и стандарты.</p>
 
-      <div class="dropdown">
-        <a href="#" class="nav-link">Контакты</a>
-        <div class="dropdown-content">
-          <a href="contact.html">Контактные данные и схема подъезда</a>
-          <a href="contact-form.html">Форма обратной связи</a>
+        <div class="hero-cards">
+          <div class="card">
+            <b>Асфальтобетон и мастики</b>
+            <p class="muted">Праймеры, мастики, добавки в битум. Поставки и укладка.</p>
+          </div>
+          <div class="card">
+            <b>Техника и персонал</b>
+            <p class="muted">Собственный парк и бригады. Сроки и гарантия качества.</p>
+          </div>
+        </div>
+
+        <div class="kpis">
+          <div class="kpi"><b>10+ лет</b><div class="muted">опыта</div></div>
+          <div class="kpi"><b>120+ км</b><div class="muted">покрытий</div></div>
+          <div class="kpi"><b>24/7</b><div class="muted">поддержка</div></div>
         </div>
       </div>
 
-      <div class="dropdown">
-        <a href="#" class="nav-link">Документы</a>
-        <div class="dropdown-content">
-          <a href="product.html#quality">Контроль качества</a>
-          <a href="brochures.html">Каталоги/брошюры</a>
-          <a href="certificates.html">Сертификаты</a>
-        </div>
+      <div class="hero-img">
+        <img src="https://images.unsplash.com/photo-1508896080822-374723f1d5fc?q=80&w=1600&auto=format&fit=crop" alt="Асфальтоукладчик на объекте"/>
+      </div>
+    </div>
+  </main>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="h2">Услуги</h2>
+        <p class="muted">Полный цикл: от подготовки основания до сдачи объекта.</p>
       </div>
 
-      <div class="dropdown">
-        <a href="#" class="nav-link">Продукция</a>
-        <div class="dropdown-content">
-          <a href="product.html">Деформационные швы</a>
-          <a href="contact-form.html">Преднапряжение монолитных мостов</a>
-          <a href="equipment.html">Собственное оборудование</a>
-          <a href="dorozhnye.polotna.html">Дорожные полотна</a>
-          <a href="product.html">Продукты для помещений</a>
-          <a href="prisadka.html">Присадки</a>
-          <a href="product.html">Эмульсии</a>
-          <a href="product.html">Дополнительная продукция</a>
+      <div class="grid cols-3">
+        <article class="card service">
+          <span class="tag">Асфальтирование</span>
+          <img src="https://images.unsplash.com/photo-1564554322693-8691f0fefcf3?q=80&w=1600&auto=format&fit=crop" alt="Асфальтирование дорог" />
+          <div class="card-body">
+            <h3>Укладка асфальтобетона</h3>
+            <p class="muted">Верхний и нижний слои, карта ремонта, ямочный ремонт, обочины.</p>
+          </div>
+        </article>
+
+        <article class="card service">
+          <span class="tag">Материалы</span>
+          <img src="https://images.unsplash.com/photo-1591259509400-7c9959c6407b?q=80&w=1600&auto=format&fit=crop" alt="Битумные материалы" />
+          <div class="card-body">
+            <h3>Битумные мастики и праймеры</h3>
+            <p class="muted">Поставки, подбор рецептуры, консультации по применению.</p>
+          </div>
+        </article>
+
+        <article class="card service">
+          <span class="tag">Инфраструктура</span>
+          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1600&auto=format&fit=crop" alt="Дорожная инфраструктура" />
+          <div class="card-body">
+            <h3>Благоустройство и разметка</h3>
+            <p class="muted">Бордюры, тротуары, ливнёвка, разметка согласно нормам РК.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="h2">Реализованные объекты</h2>
+        <a class="pill" href="#">Смотреть все</a>
+      </div>
+
+      <article class="card project">
+        <div class="hero-img"><img src="https://images.unsplash.com/photo-1602532568920-9d3cebd28a18?q=80&w=1600&auto=format&fit=crop" alt="Автодорога — объект 1"></div>
+        <div>
+          <h3>Участок автодороги А-2</h3>
+          <p class="muted">Комплекс работ: фрезерование, выравнивающий слой, верхний слой ЩМА, обочины. Срок — 45 дней.</p>
+          <ul class="muted">
+            <li>Площадь: ~ 56 000 м²</li>
+            <li>ЩМА-15, БНД 70/100</li>
+            <li>Гарантия: 24 мес</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card project">
+        <div class="hero-img"><img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1600&auto=format&fit=crop" alt="Промплощадка — объект 2"></div>
+        <div>
+          <h3>Промышленная площадка</h3>
+          <p class="muted">Подготовка основания, геотекстиль, ЩПС, асфальтобетон смесь тип Б. Организация ливневого водоотвода.</p>
+          <ul class="muted">
+            <li>Площадь: 9 200 м²</li>
+            <li>Нагрузка: до 12 т/ось</li>
+            <li>Срок: 21 день</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CERTIFICATES -->
+  <section id="certs">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="h2">Сертификаты и допуски</h2>
+        <p class="muted">Сертификаты соответствия, протоколы испытаний, ТУ.</p>
+      </div>
+      <div class="certs">
+        <div class="cert"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=900&auto=format&fit=crop" alt="Сертификат 1"></div>
+        <div class="cert"><img src="https://images.unsplash.com/photo-1582719478185-2fc4b6c2b3c9?q=80&w=900&auto=format&fit=crop" alt="Сертификат 2"></div>
+        <div class="cert"><img src="https://images.unsplash.com/photo-1582719478172-2c097e6fd437?q=80&w=900&auto=format&fit=crop" alt="Сертификат 3"></div>
+        <div class="cert"><img src="https://images.unsplash.com/photo-1582719478245-4c6e97c7c7bb?q=80&w=900&auto=format&fit=crop" alt="Сертификат 4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap about">
+      <div>
+        <h2 class="h2">О компании</h2>
+        <p class="muted">Мы специализируемся на устройстве асфальтобетонных покрытий, ремонте дорог и благоустройстве территорий. Работаем по всей Республике Казахстан, соблюдаем стандарты и техники безопасности. В проектировании и применении материалов используем немецкие технологии и добавки.</p>
+        <ul class="muted">
+          <li>Собственный парк техники</li>
+          <li>Контроль качества на каждом этапе</li>
+          <li>Прозрачные сметы и сроки</li>
+        </ul>
+      </div>
+      <div class="card">
+        <b>Реквизиты и контакты</b>
+        <p class="muted">ТОО «Ваша компания»<br/>БИН 000000000000<br/>Алматы, 12 мкр., дом 22/2, офис 5</p>
+        <p class="muted">Тел.: +7 700 000 00 00<br/>Email: info@company.kz</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap contact">
+      <form class="card" onsubmit="event.preventDefault(); sendForm();">
+        <h2 class="h2">Связаться с нами</h2>
+        <div class="field">
+          <label>Ваше имя</label>
+          <input type="text" id="name" placeholder="Имя" required>
+        </div>
+        <div class="field">
+          <label>Телефон</label>
+          <input type="tel" id="phone" placeholder="+7 ___ ___ __ __" required>
+        </div>
+        <div class="field">
+          <label>Сообщение</label>
+          <textarea id="msg" placeholder="Коротко опишите задачу"></textarea>
+        </div>
+        <button class="btn" type="submit" id="sendBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z" fill="#000"/></svg>
+          Отправить заявку
+        </button>
+        <p id="formStatus" class="muted" style="margin-top:10px"></p>
+      </form>
+
+      <div class="card">
+        <b>Карта и график</b>
+        <p class="muted">Пн–Пт 9:00–18:00, Сб 10:00–15:00</p>
+        <div style="aspect-ratio:16/9; background:#0e1016; border-radius:12px; border:1px solid rgba(255,255,255,.08); display:grid; place-items:center">
+          <span class="muted">Вставьте сюда iframe карты (2ГИС, Google Maps)</span>
         </div>
       </div>
-    </nav>
-    
-  </div>
-</header>
-
-
-<!-- Баннер -->
-<section class="hero-welcome">
-  <div class="hero-overlay">
-    <div class="hero-text-box">
-    <h2><strong>Добро пожаловать в компанию TARKER</strong></h2>
-    <p>
-         Наша специализация — создание и запуск полигонов по производству сборных железобетонных изделий (ЖБИ) непосредственно вблизи строящихся объектов.
-      Такой подход позволяет существенно снизить издержки, сократить логистические затраты и повысить эффективность строительных процессов.
-      Мы предлагаем комплексные решения для организации производства строительных конструкций с учетом специфики каждого проекта. В основе нашей работы — использование современных строительных материалов, инновационных технологий, а также систем менеджмента качества и эффективного управления ресурсами.
-    </p>
-    <a href="about.html" class="btn-yellow">Подробнее</a>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Преимущества -->
-
-
-<!-- Направления деятельности -->
-<section class="activities">
-  <div class="activities-banner"></div>
-  <h2>Направления нашей деятельности</h2>
-
-  <div class="activity-cards">
-    <div class="activity-card">Разработка проектов производства работ</div>
-    <div class="activity-card">Работы по пред и пос напряжению монолитных конструкций</div>
-    <div class="activity-card">Усиление сооружений и зданий композитными материалами</div>
-    <div class="activity-card">Инжиринговые услуги по техническому сопровождению строящегося объекта</div>
-    <div class="activity-card">Строительно-монтажные работы по возведению зданий и сооружений</div>
-    <div class="activity-card">Транспортная логистика по доставке и хранению материалов и готовой продукции</div>
-  </div>
-
-  
-    <a href="about.html" class="btn-primary">Подробнее</a>
-  </div>
-</section>
-
-
-
-<!-- Межблочная картинка с текстом -->
-<section class="mid-banner">
-  <div class="mid-overlay">
-    <div class="mid-text-box">
-      <h2>Комплексный подход в строительстве</h2>
-      <p>
-        Мы обеспечиваем полный цикл реализации — от проектирования до поставки
-        и монтажа. Современные технологии, строгий контроль качества и оптимизация логистики —
-        вот основа нашей эффективности.
-      </p>
-      <a href="about.html" class="btn-yellow">Узнать больше</a>
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; gap:12px">
+      <div>© <span id="year"></span> TEST Construction. Все права защищены.</div>
+      <div class="muted">Сделано с ❤️ и качеством.</div>
     </div>
-  </div>
-</section>
+  </footer>
 
+  <script>
+    // текущий год
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-
-<!-- Наши гарантии -->
-<section class="guarantees">
-  <h2>Наши гарантии</h2>
-  <div class="guarantee-cards">
-
-    <div class="guarantee-card">
-      <div class="icon">🎓</div>
-      <h3>Профессионализм</h3>
-      <p>Высокий уровень подготовки специалистов и инженерных решений на всех этапах реализации проектов.</p>
-    </div>
-
-    <div class="guarantee-card">
-      <div class="icon">🤝</div>
-      <h3>Индивидуальный подход</h3>
-      <p>Каждый проект учитывает уникальные условия строительства и пожелания заказчика.</p>
-    </div>
-
-    <div class="guarantee-card">
-      <div class="icon">⏱️</div>
-      <h3>Оптимизация сроков</h3>
-      <p>Рациональное планирование и быстрая организация процессов позволяют сократить сроки реализации.</p>
-    </div>
-
-    <div class="guarantee-card">
-      <div class="icon">📄</div>
-      <h3>Обязательства</h3>
-      <p>Гарантируем полное и своевременное исполнение всех договорных обязательств.</p>
-    </div>
-
-  </div>
-</section>
-
-
-
-<!-- Подвал -->
-<footer>
-  <div class="container footer-flex">
-    <p>&copy; 2025 ТОО ТАРКЕР. Все права защищены.</p>
-  </div>
-</footer>
-
-<!-- Кнопка вызова окна -->
-<button class="open-modal-btn">Получить консультацию</button>
-
-<!-- Всплывающее окно -->
-<div class="modal" id="modal">
-  <div class="modal-content">
-    <span class="close-btn">&times;</span>
-    <h2>Оставьте заявку</h2>
-    <form action="https://formspree.io/f/mgvykbvb" method="POST">
-      <input type="text" name="Имя" placeholder="Ваше имя" required><br>
-      <input type="tel" name="Телефон" placeholder="Телефон" required><br>
-      <textarea name="Сообщение" placeholder="Ваш вопрос" rows="4" required></textarea><br>
-      <button type="submit" class="btn">Отправить заявку</button>
-    </form>
-    <p id="success-message" style="display:none; color: green; margin-top: 10px;">
-      Спасибо! Заявка отправлена.
-    </p>
-  </div>
-</div>
-
+    // имитация отправки формы — замените на реальную логику (Formspree, Telegram Bot API, сервер)
+    function sendForm(){
+      const btn = document.getElementById('sendBtn');
+      const status = document.getElementById('formStatus');
+      btn.disabled = true; status.textContent = 'Отправка...';
+      setTimeout(()=>{
+        btn.disabled = false; status.textContent = 'Спасибо! Заявка отправлена. Мы свяжемся с вами.';
+      }, 900);
+    }
+  </script>
 </body>
 </html>
