@@ -9,8 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#afaaaa;       /* общий фон сайта */
+
+      :root{
+      --bg:#b7b6b6;       /* общий фон сайта */
   --panel:#ffffff;    /* карточки, шапка, футер */
   --text:#222222;
   --muted:#191717;
@@ -42,7 +43,10 @@ body{
       background:#ffffff;                  /* фон вверху белый */
       border-bottom:1px solid rgba(0,0,0,.08);
       box-shadow:0 2px 8px rgba(0,0,0,.05);
-    }
+      border-bottom: 1px solid #8b8a8a; /* тонкая серая линия */
+  padding-bottom: 10px;          /* небольшой отступ снизу */
+}
+    
     .nav{display:flex; align-items:center; gap:24px; height:68px}
     .brand{display:flex; align-items:center; gap:12px; font-weight:700}
     .brand-logo{width:36px;height:36px; border-radius:12px; background:linear-gradient(135deg,var(--brand),var(--brand-2)); display:grid; place-items:center; box-shadow:var(--shadow)}
@@ -100,11 +104,15 @@ body{
 /* Карточки проектов */
 .card.project {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* картинка слева, текст справа */
+  grid-template-columns: 300px 1fr;
   gap: 20px;
+  background: #fff;
+  border: 3px solid #9d9c9c; /* ← черные бортики потолще */
+  border-radius: 12px;
   padding: 20px;
-  margin-bottom: 20px;
-  align-items: center;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card.project .hero-img img {
@@ -166,6 +174,17 @@ footer {
   color:#ffffff;       /* <-- цвет текста */
 }
 
+/* Общие бортики для нужных блоков */
+.card.service,
+#about,
+#contact,
+.card {
+  border: 1px solid #bdbdbd;  /* тонкий серый бортик */
+  border-radius: var(--radius);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05); /* лёгкая тень, чтобы выглядело аккуратнее */
+  background: #fff;
+  padding: 20px;
+}
 
 
   </style>

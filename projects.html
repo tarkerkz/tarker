@@ -7,11 +7,17 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="img/favicon.png" type="image/png">
   <style>
+
+    header {
+  border-bottom: 1px solid #ccc; /* тонкая серая линия */
+  padding-bottom: 10px;          /* небольшой отступ снизу */
+}
+
     /* ===== PROJECTS ===== */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #9e9b9b;
+      background: #ffffff;
       color: #222;
     }
 
@@ -41,7 +47,7 @@
     .pill {
       padding: 10px 20px;
       background: orange;
-      color: #fff;
+      color: #ffffff;
       border-radius: 30px;
       text-decoration: none;
       font-weight: 500;
@@ -53,16 +59,18 @@
     }
 
     .card.project {
-      display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: 20px;
-      background: #fff;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 20px;
+  background: #fff;
+  border: 3px solid #9d9c9c; /* ← черные бортики потолще */
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
 
     .card.project:hover {
       transform: translateY(-5px);
