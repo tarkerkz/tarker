@@ -8,14 +8,56 @@
   <link rel="icon" href="img/favicon.png" type="image/png">
   <style>
     body {
-       background: linear-gradient(to bottom, #8b8989, #ffffff); /* синий фон */
+       background: linear-gradient(to bottom, #ffffff, #ffffff); /* синий фон */
       margin: 0;
       font-family: Arial, sans-serif;
     }
+    
+    .header-strip {
+      height: 12px;
+      background-color: #022233;
+    }
+
+    .partner-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.partner-card {
+  text-align: center;
+  width: 200px;
+}
+
+.partner-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.partner-card a:hover {
+  transform: scale(1.05);
+}
+
+.partner-card {
+  text-align: center;
+  width: 300px;   /* увеличил с 200px до 300px */
+}
+
+.partner-card img {
+  width: 100%;
+  height: auto;   /* сохраняем пропорции */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  margin-bottom: 10px;
+}
+
+
 
     footer {
       width: 100%;
-      background-color: #072b5c; /* чуть темнее синий */
+      background-color:  #022233; /* чуть темнее синий */
       color: white;
       padding: 15px 0;
     }
@@ -48,7 +90,7 @@
   <div class="dropdown">
     <a href="#" class="nav-link">Документы</a>
     <div class="dropdown-content">
-      <a href="product.html#quality">Контроль качества</a>
+      <a href="quality.html">Контроль качества</a>
       <a href="brochures.html">Каталоги/брошюры</a>
       <a href="certificates.html">Сертификаты</a>
     </div>
@@ -66,10 +108,11 @@
       <a href="emulsions.html">Эмульсии</a>
       <a href="product.html">Дополнительная продукция</a>
     </div>
-      <a href="projects.html">Реализованные проекты</a>
     </nav>
   </div>
 </header>
+
+<div class="header-strip"></div>
 
 <section class="container">
   <div class="brochure-header">
@@ -85,67 +128,36 @@
   <a href="brsh/Каталог_TARKER.pdf" target="_blank" class="btn-dark">Скачать PDF</a>
 </div> 
 
-<section class="container">
+<div class="container">
   <div class="brochure-header">
   <h1>Каталоги наших партнеров</h1>
-  
+
+  <div class="partner-links">
+  <div class="partner-card">
+    <a href="dga.html">
+      <img src="img/dgabrsh.png" alt="Каталоги DGA">
+      <h3>Каталоги DGA</h3>
+    </a>
+  </div>
+
+  <div class="partner-card">
+    <a href="grun.html">
+      <img src="img/grunbrsh.png" alt="Каталоги GRUN">
+      <h3>Каталоги GRUN</h3>
+    </a>
+  </div>
+
+  <div class="partner-card">
+    <a href="ovm.html">
+      <img src="img/ovmbrsh.png" alt="Каталоги OVM">
+      <h3>Каталоги OVM</h3>
+    </a>
+  </div>
 </div>
 
-  <div class="brochure-grid">
-    <div class="brochure-card">
-      <img src="img/br1.jpg" alt="Каталог 2">
-      <h3> BIGUMA® Fertigschlämme</h3>
-      <a href="brsh/BIGUMA® Fertigschlämme.pdf" target="_blank" class="btn-dark">Скачать PDF</a>
-    </div>
 
-    <div class="brochure-card">
-      <img src="img/br2.jpg" alt="Каталог 2">
-      <h3>Gussasaphalt-Литой асфальт</h3>
-      <a href="brsh/Gussasaphalt-Литой асфальт.pdf" target="_blank" class="btn-dark">Скачать PDF</a>
-    </div>
 
-    <div class="brochure-card">
-      <img src="img/br3.jpg" alt="Каталог 3">
-      <h3>Герметизация поверхности</h3>
-      <a href="brsh/Герметизация поверхности.pdf" target="_blank" class="btn-dark">Скачать PDF</a>
-    </div>
-  
-     <div class="brochure-card">
-      <img src="img/br4.jpg" alt="Каталог 2">
-      <h3>Маркировка дорог</h3>
-      <a href="brsh/Маркировка дорог.pdf" target="_blank" class="btn-dark">Скачать PDF</a>
-    </div>
 
-     <div class="brochure-card">
-      <img src="img/br5.jpg" alt="Каталог 2">
-      <h3>Санация</h3>
-      <a href="brsh/Санация.pdf" target="_blank" class="btn-dark">Скачать PDF</a>
-    </div>
-
-     <div class="brochure-card">
-      <img src="img/br6.jpg" alt="Каталог 2">
-      <h3>BIGUMA Hakenband</h3>
-      <a href="brsh/BIGUMA Hakenband.pdf" target="_blank" class="btn-dark">Скачать PDF</a>
-    </div>
-
-     <div class="brochure-card">
-      <img src="img/br7.jpg" alt="Каталог 2">
-      <h3>BIGUMA® Connect</h3>
-      <a href="brsh/BIGUMA® Connect.pdf" target="_blank" class="btn-dark">Скачать PDF</a>
-    </div>
-
-     <div class="brochure-card">
-      <img src="img/br8.jpg" alt="Каталог 2">
-      <h3>BIGUMA® Asphalt</h3>
-      <a href="brsh/BIGUMA® Asphalt.pdf" target="_blank" class="btn-dark">Скачать PDF</a>
-    </div>
-
-     <div class="brochure-card">
-      <img src="img/br9.jpg" alt="Каталог 2">
-      <h3>BIGUMA® Gusstex</h3>
-      <a href="brsh/BIGUMA® Gusstex.pdf" target="_blank" class="btn-dark">Скачать PDF</a>
-    </div>
-</div>
 
 </section>
 

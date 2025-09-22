@@ -14,11 +14,20 @@
       color: #161515;
     }
 
+    
     .container {
       max-width: 1000px;
       margin: 0 auto;
       padding: 40px 20px;
     }
+
+    .header-strip {
+  height: 12px;
+  background-color: #022233;
+  width: 100%;
+  display: block;
+}
+
 
     h1 {
       font-size: 32px;
@@ -93,7 +102,7 @@
     }
 
     button {
-      background-color: #ffffff;
+      background-color: #9f9b9b;
       color: #151515;
       font-weight: bold;
       border: none;
@@ -125,12 +134,14 @@
 </head>
 <body>
 
+
+
 <!-- Шапка -->
 <header>
   <div class="container header-flex">
     <div class="logo">
       <img src="img/logo.png" alt="TARKER" />
-      </div>
+    </div>
     <nav>
       <a href="index.html">Главная</a>
       <a href="about.html">О нас</a>
@@ -144,7 +155,7 @@
       <div class="dropdown">
         <a href="#" class="nav-link">Документы</a>
         <div class="dropdown-content">
-          <a href="product.html#quality">Контроль качества</a>
+          <a href="quality.html">Контроль качества</a>
           <a href="brochures.html">Каталоги/брошюры</a>
           <a href="certificates.html">Сертификаты</a>
         </div>
@@ -162,10 +173,12 @@
           <a href="product.html">Дополнительная продукция</a>
         </div>
       </div>
-      <a href="projects.html">Реализованные проекты</a>
     </nav>
   </div>
 </header>
+
+<!-- Верхняя полоска -->
+<div class="header-strip"></div>
 
 <!-- Форма -->
 <div class="container">
