@@ -21,16 +21,22 @@
     }
 
     header {
-      background-color: #121212;
-      padding: 20px 0;
+      background-color: #ffffff;
+      padding: 10px 0;
       border-bottom: 1px solid #333;
     }
 
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Шапка */
     .header-flex {
       display: flex;
-      justify-content: flex-start;
       align-items: center;
-      flex-wrap: wrap;
+      justify-content: space-between;
     }
 
     .logo {
@@ -50,7 +56,7 @@
     }
 
     nav a, .nav-link {
-      color: #f5f5f5;
+      color: #000000;
       text-decoration: none;
       padding: 6px 12px;
     }
@@ -152,45 +158,45 @@
 <body>
 
 <header>
-  <div class="container header-flex">
-    <div class="logo">
-      <img src="img/logo.png" alt="TARKER" />
+    <div class="container header-flex">
+      <div class="logo">
+        <img src="img/logo.png" alt="TARKER" />
       </div>
-    <nav>
-      <a href="index.html">Главная</a>
-      <a href="about.html">О нас</a>
-      <div class="dropdown">
-        <a href="#" class="nav-link">Контакты</a>
-        <div class="dropdown-content">
-          <a href="contact.html">Контактные данные и схема подъезда</a>
-          <a href="contact-form.html">Форма обратной связи</a>
+      <nav>
+        <a href="index.html">Главная</a>
+        <a href="about.html">О нас</a>
+        <div class="dropdown">
+          <a href="#">Контакты</a>
+          <div class="dropdown-content">
+            <a href="contact.html">Контактные данные</a>
+            <a href="contact-form.html">Форма обратной связи</a>
+          </div>
         </div>
-      </div>
-      <div class="dropdown">
-        <a href="#" class="nav-link">Документы</a>
-        <div class="dropdown-content">
-          <a href="quality.html">Контроль качества</a>
-          <a href="brochures.html">Каталоги/брошюры</a>
-          <a href="certificates.html">Сертификаты</a>
+        <div class="dropdown">
+          <a href="#">Документы</a>
+          <div class="dropdown-content">
+            <a href="quality.html">Контроль качества</a>
+            <a href="brochures.html">Каталоги/брошюры</a>
+            <a href="certificates.html">Сертификаты</a>
+          </div>
         </div>
-      </div>
-    
-      <div class="dropdown">
-    <a href="#" class="nav-link">Продукция</a>
-    <div class="dropdown-content">
-      <a href="product.html">Деформационные швы</a>
-      <a href="contact-form.html">Преднапряжение монолитных мостов</a>
-      <a href="equipment.html">Собственное оборудование</a>
-      <a href="dorozhnye.polotna.html">Дорожные полотна</a>
-      <a href="product.html">Продукты для помещений</a>
-      <a href="prisadka.html">Присадки</a>
-      <a href="emulsions.html">Эмульсии</a>
-      <a href="product.html">Дополнительная продукция</a>
+        <div class="dropdown">
+          <a href="#">Продукция</a>
+          <div class="dropdown-content">
+            <a href="product.html">Деформационные швы</a>
+            <a href="contact-form.html">Преднапряжение мостов</a>
+            <a href="equipment.html">Собственное оборудование</a>
+            <a href="dorozhnye.polotna.html">Дорожные полотна</a>
+            <a href="pomewenie.html">Продукты для помещений</a>
+            <a href="prisadka.html">Присадки</a>
+            <a href="emulsions.html">Эмульсии</a>
+            <a href="product.html">Дополнительная продукция</a>
+          </div>
+        </div>
+        <a href="projects.html">Реализованные проекты</a>
+      </nav>
     </div>
-    </nav>
-
-  </div>
-</header>
+  </header>
 
 <div class="container">
   <h1>Наша продукция</h1>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>- TOO TARKER</title>
+  <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+     body {
+       background: #ffffff;
+    }
+    main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* прижимает карточки к левому краю */
+  gap: 20px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0; /* убираем auto-центрирование */
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+ .header-flex {
+  display: flex;
+  align-items: center;          /* выравниваем по вертикали */
+  justify-content: space-between; /* логотип слева, меню справа */
+  padding: 0 20px;              /* одинаковые отступы от краёв */
+}
+
+.product-block {
+  width: calc(33.333% - 14px);  /* три карточки в ряд с учётом gap */
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+
+.product-block img {
+  width: 60%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-block h3 {
+  font-size: 12px;             /* увеличить шрифт */
+  font-weight: bold;           /* сделать жирным */
+  color: #ffffff;              /* синий текст */
+  border: 2px solid #0056b3;   /* синяя рамка */
+  border-radius: 6px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #0202ac;   /* светлый фон для контраста (по желанию) */
+}
+
+    .footer-flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+.sub-title {
+  margin-left: 20px; 
+  font-size: 25px; 
+  font-weight: bold;
+}
+
+.section-title {
+  text-align: left;
+  font-weight: bold;
+  font-size: 35px;
+  color: #000000;
+  margin: 30px 20px 20px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #989a9d;
+}
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+<header>
+  <div class="container header-flex">
+    <div class="logo">
+      <img src="img/logo.png" alt="TARKER" />
+    </div>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="about.html">О нас</a>
+      <div class="dropdown">
+        <a href="#" class="nav-link">Контакты</a>
+        <div class="dropdown-content">
+          <a href="contact.html">Контактные данные</a>
+          <a href="contact-form.html">Форма обратной связи</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#" class="nav-link">Документы</a>
+        <div class="dropdown-content">
+          <a href="quality.html">Контроль качества</a>
+          <a href="brochures.html">Каталоги/брошюры</a>
+          <a href="certificates.html">Сертификаты</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#" class="nav-link">Продукция</a>
+        <div class="dropdown-content">
+          <a href="product.html">Деформационные швы</a>
+          <a href="contact-form.html">Преднапряжение мостов</a>
+          <a href="equipment.html">Собственное оборудование</a>
+          <a href="dorozhnye.polotna.html">Дорожные полотна</a>
+          <a href="pomewenie.html">Продукты для помещений</a>
+          <a href="prisadka.html">Присадки</a>
+          <a href="emulsions.html">Эмульсии</a>
+          <a href="product.html">Дополнительная продукция</a>
+        </div>
+      </div>
+      <a href="projects.html">Реализованные проекты</a>
+    </nav>
+  </div>
+</header>
+
+<hr style="margin: 0; border: none; border-top: 1px solid #ccc;" />
+
+
+<p class="section-title">Мастики для заливки швов</p>
+
+<h3 class="sub-title">Горячего нанесения</h3>
+
+
+<main>
+  <a href="vpd.html" class="product-block">
+    <img src="img/vpd.jpg" alt="BIGUMA®- VPD">
+    <p>Полимерно-модифицированная, битумсодержащая мастика для помещений, предназначенных для хранения, заливки и перегрузки</p>
+    <h3>BIGUMA®- VPD</h3>
+  </a>
+
+  
+  </main>
+
+  <h3 class="sub-title">Подходящий праймер</h3> 
+
+    <main>
+  <!-- Вторая группа карточек -->
+  <a href="haftgrund.html" class="product-block">
+    <img src="img/haftgrund.jpg" alt="COLZUMIX®- Haftgrund">
+    <p>Cодержащий синтетик праймер для всех битум содержащих мастик типа BIGUMA®</p>
+    <h3>COLZUMIX®- Haftgrund</h3>
+  </a>
+  </main>
+
+<h3 class="sub-title">Холодного нанесения</h3> 
+
+    <main>
+  <!-- Вторая группа карточек -->
+  <a href="KV3G.html" class="product-block">
+    <img src="img/KV3G_1.jpg" alt="PROXAN®- KV 3 G/ KV 3 ST">
+    <p>Двухкомпонентный герметик на полисульфидной основе с допуском строительного надзору</p>
+    <h3>PROXAN®- KV 3 G/ KV 3 ST</h3>
+  </a>
+
+</main>
+
+ <h3 class="sub-title">Подходящий праймер</h3> 
+
+    <main>
+  <!-- Вторая группа карточек -->
+  <a href="cp-a.html" class="product-block">
+    <img src="img/proxcp-a.jpg" alt="PROXAN®- CP-A">
+    <p>Двухкомпонентный промотор адгезии для полисульфидных уплотнительных материалов/ мастик для заливки швов на специальных основах</p>
+    <h3>PROXAN®- CP-A</h3>
+  </a>
+
+  <a href="cp-g.html" class="product-block">
+    <img src="img/proxcp-g.jpg" alt="PROXAN®- CP-G">
+    <p>Жидкотекучей промотор адгезии для поли сульфидных уплотнительных веществ, применяемых на не абсорбируемых поверхностях</p>
+    <h3>PROXAN®- CP-G</h3>
+  </a>
+
+  <a href="CP-P.html" class="product-block">
+    <img src="img/proxcp-p.jpg" alt="PROXAN®- CP-P">
+    <p>Двухкомпонентный промотор адгезии для полисульфидных уплотнительных веществ на абсорбируемых поверхностях</p>
+    <h3>PROXAN®- CP-P</h3>
+  </a>
+
+  <a href="CP-S.html" class="product-block">
+    <img src="img/proxcp-s.jpg" alt="PROXAN®- CP-S">
+    <p>Двухкомпонентный, распыляемый промотор адгезии для поли сульфидных уплотнительных веществ на абсорбируемых поверхностях</p>
+    <h3>PROXAN®- CP-S</h3>
+  </a>
+
+  </main>
+
+<footer>
+  <p>&copy; 2025 ТОО ТАРКЕР. Все права защищены.</p>
+</footer>
+
+</body>
+</html>
