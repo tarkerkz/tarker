@@ -1,156 +1,595 @@
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Главная-TOO TARKER</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Главная — TOO TARKER</title>
   <link rel="icon" href="img/favicon.png" type="image/png">
-  <script defer src="script.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <style>
-
-      :root{
-      --bg:#ffffff;       /* общий фон сайта */
-  --panel:#ffffff;    /* карточки, шапка, футер */
-  --text:#222222;
-  --muted:#191717;
-  --brand:#000000;
-  --brand-2:#ff9c3d;
-  --ok:#18c964;
-  --danger:#030303;
-  --radius:18px;
-  --shadow:0 6px 20px rgba(0,0,0,.08);
-  --max:1160px;
-}
-
-body{
-  margin:0;
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
-  background:var(--bg);  /* серый фон для всего тела сайта */
-  color:var(--text);
-}
-
- 
-
-    a{color:inherit; text-decoration:none}
-    img{max-width:100%; display:block}
-
-     .container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-}
-
-    /* header */
-    header{
-      position:sticky; top:0; z-index:50;
-      background:#ffffff;                  /* фон вверху белый */
-      border-bottom:1px solid rgba(0,0,0,.08);
-      box-shadow:0 2px 8px rgba(0,0,0,.05);
-      border-bottom: 1px solid #8b8a8a; /* тонкая серая линия */
-  padding-bottom: 10px;          /* небольшой отступ снизу */
-}
-    .header-flex {
-  display: flex;
-  align-items: center;          /* выравниваем по вертикали */
-  justify-content: space-between; /* логотип слева, меню справа */
-  padding: 0 20px;              /* одинаковые отступы от краёв */
-}
-
-    .nav{display:flex; align-items:center; gap:24px; height:68px}
-    .brand{display:flex; align-items:center; gap:12px; font-weight:700}
-    .brand-logo{width:36px;height:36px; border-radius:12px; background:linear-gradient(135deg,var(--brand),var(--brand-2)); display:grid; place-items:center; box-shadow:var(--shadow)}
-    .brand-logo svg{width:22px;height:22px}
-    .nav-spacer{flex:1}
-    .nav a{opacity:.9}
-    .nav a:hover{color:var(--brand)}
-    .cta{background:var(--brand); color:#000; padding:10px 14px; border-radius:12px; font-weight:700; box-shadow:0 8px 20px rgba(255,122,0,.25)}
-
-    /* hero */
-    .hero{position:relative; padding:82px 0 56px}
-    .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:28px}
-    .badge{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; background:rgba(255,122,0,.1); color:var(--brand)}
-    .h1{font-size:46px; line-height:1.08; margin:14px 0 14px}
-    .lead{color:var(--muted); font-size:18px}
-    .hero-cards{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:22px}
-    .card{background:var(--panel); border:1px solid rgba(0,0,0,.06); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
-
-    /* KPI */
-    .kpis{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:20px}
-    .kpi{background:linear-gradient(180deg,rgba(255,122,0,.08),rgba(255,122,0,0)); border:1px solid rgba(0,0,0,.06); border-radius:16px; padding:16px}
-    .kpi b{font-size:26px}
-
-    /* секции */
-    section{padding:56px 0}
-    .sec-head{display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:22px}
-    .h2{font-size:32px; margin:0}
-    .muted{color:var(--muted)}
-
-    /* footer */
-    footer{
-      padding:28px 0 38px;
-      border-top:1px solid rgba(0,0,0,.08);
-      color:var(--muted);
-      text-align:center;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      background:#022233;
+    /* Сброс и базовая структура */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      height: 100%;
+      font-family: "Inter", system-ui, sans-serif;
+      color: #fff;
+      position: relative;
+      overflow-x: hidden;
     }
 
-    .service img {
-  height: 300px;      /* уменьшили с 180px */
+    /* === Фон GIF на всю страницу === */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("img/panorama_slow.gif") no-repeat center center fixed;
+      background-size: cover;
+      z-index: -2;
+    }
+
+    /* Полупрозрачное затемнение поверх фона */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: -1;
+    }
+
+    /* Заголовки и текст */
+    h1, h2, h3, p { color: #fff; }
+
+ /* Header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.6); /* светло-прозрачный фон */
+  backdrop-filter: blur(10px); /* лёгкое размытие */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 5px 150px; /* отступы по бокам — задают расстояние между краями и элементами */
+}
+
+/* Контейнер */
+.header-flex {
+  display: flex;
+  align-items: center; /* выравнивание по вертикали */
+  justify-content: space-between; /* логотип влево, меню вправо */
   width: 100%;
-  object-fit: cover;
-  border-top-left-radius: var(--radius);
-  border-top-right-radius: var(--radius);
-}
-.grid.cols-3 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 колонки */
-  gap: 16px;
+  max-width: 1400px;
+  margin: 0 auto; /* центрирует по ширине */
 }
 
-/* Карточки проектов */
-.card.project {
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 20px;
-  background: #fff;
-  border: 3px solid #9d9c9c; /* ← черные бортики потолще */
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+/* Логотип */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
 }
 
-.card.project .hero-img img {
-  width: 100%;
-  height: 280px;       /* фиксируем высоту */
-  object-fit: cover;   /* чтобы картинка не искажалась */
-  border-radius: var(--radius);
+.logo img {
+  height: 55px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  filter: none; /* оставляем оригинальные цвета */
+  transition: transform 0.3s ease;
 }
 
-.more-btn {
-  text-align: center;
-  margin-top: 20px;
+.logo img:hover {
+  transform: scale(1.05);
 }
 
-.more-btn .pill {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #ff6600;   /* ваш оранжевый */
-  color: #fff;
-  border-radius: 25px;
+/* Навигация */
+nav a {
+  color: #222;
   text-decoration: none;
-  font-weight: 500;
+  margin-left: 25px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ff6600;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  .header-flex {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 140px 20px 80px;
+    }
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 72px);
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    .hero p {
+      font-size: 20px;
+      opacity: 0.9;
+    }
+
+    /* Кнопки */
+    .btn-primary, .btn-outline {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: 0.3s;
+      font-weight: 600;
+    }
+    .btn-primary {
+      background: #ff6600;
+      color: #fff;
+    }
+    .btn-primary:hover { background: #e05500; }
+    .btn-outline {
+      border: 2px solid #ff6600;
+      color: #ff6600;
+    }
+    .btn-outline:hover {
+      background: #ff6600;
+      color: #fff;
+    }
+
+    /* Секции */
+    section {
+      padding: 60px 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .sec-head {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    /* Карточки */
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 16px;
+      color: #fff;
+      transition: transform .3s ease, background .3s ease;
+      backdrop-filter: blur(4px);
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.15);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-bottom: 12px;
+    }
+
+     
+  /* ===== SERVICES SECTION ===== */
+#services {
+  background: rgba(255, 255, 255, 0.05); /* почти прозрачный фон, виден GIF */
+  backdrop-filter: blur(6px); /* мягкое размытие для читаемости */
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Заголовок секции */
+#services .sec-head h2 {
+  font-size: 2.4rem;
+  color: #fff;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#services .sec-head .muted {
+  color: rgba(255,255,255,0.8);
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+}
+
+/* Сетка карточек */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Карточка */
+.services-grid .card {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(8px);
+}
+
+.services-grid .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Изображение */
+.services-grid .card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  opacity: 0.9;
+}
+
+.services-grid .card:hover img {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* Заголовок и описание */
+.services-grid .card h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin: 20px 15px 10px;
+  font-weight: 700;
+}
+
+.services-grid .card p {
+  color: rgba(255,255,255,0.85);
+  font-size: 1rem;
+  padding: 0 20px 25px;
+}
+
+/* Акцентная полоса под заголовком */
+.services-grid .card h3::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #ff6600;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* ===== Адаптация ===== */
+@media (max-width: 768px) {
+  #services {
+    padding: 60px 10px;
+  }
+
+  #services .sec-head h2 {
+    font-size: 2rem;
+  }
+
+  .services-grid .card img {
+    height: 180px;
+  }
+}
+
+
+
+/* ===== PROJECTS SECTION ===== */
+#projects {
+  background: rgba(255, 255, 255, 0.05); /* прозрачный слой, сквозь который видно фон */
+  backdrop-filter: blur(6px);
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Заголовок секции */
+#projects .sec-head h2 {
+  font-size: 2.4rem;
+  color: #fff;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#projects .sec-head .muted {
+  color: rgba(255,255,255,0.8);
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+}
+
+/* Сетка проектов */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Карточка проекта */
+.project-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+  transition: all 0.4s ease;
+  backdrop-filter: blur(8px);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Изображение проекта */
+.project-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  opacity: 0.9;
+  transition: transform 0.5s ease, opacity 0.4s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* Текстовая часть */
+.project-info {
+  padding: 20px;
+  color: #fff;
+  text-align: left;
+}
+
+.project-info h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.project-info p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.5;
+}
+
+/* Акцентная полоса под заголовком */
+.project-info h3::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #ff6600;
+  margin-top: 8px;
+  border-radius: 2px;
+}
+
+
+/* ===== Адаптация ===== */
+@media (max-width: 768px) {
+  #projects {
+    padding: 60px 10px;
+  }
+
+  #projects .sec-head h2 {
+    font-size: 2rem;
+  }
+
+  .project-card img {
+    height: 200px;
+  }
+
+  .project-info h3 {
+    font-size: 1.1rem;
+  }
+}
+
+
+/* === CERTIFICATES === */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+#certificates .card img {
+  height: 260px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+#certificates h3 {
+  font-size: 1.1em;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+#certificates p {
+  color: #ccc;
+  font-size: 0.95em;
+}
+
+/* HERO SECTION */
+.hero-section {
+  background: linear-gradient(135deg, #111 40%, #222 100%);
+  color: #fff;
+  padding: 100px 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 60px;
+  max-width: 1400px;
+  width: 100%;
+}
+
+.hero-text {
+  flex: 1 1 500px;
+  animation: fadeIn 1s ease forwards;
+}
+
+.hero-badge {
+  background: #ff6a00;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  margin: 25px 0 15px;
+  line-height: 1.3;
+}
+
+.hero-text .accent {
+  color: #ff6a00;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  color: #ddd;
+  margin-bottom: 30px;
+  max-width: 600px;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.hero-stats div {
+  text-align: center;
+}
+
+.hero-stats b {
+  font-size: 1.8rem;
+  color: #ff6a00;
+  display: block;
+}
+
+.hero-stats span {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+.hero-buttons1 {
+  display: center;
+  gap: 20px;
+}
+.btn-primary {
+  background: #ff6a00;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background: #e25d00;
+}
+
+.btn-outline {
+  border: 2px solid #ff6a00;
+  color: #ff6a00;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
   transition: 0.3s;
 }
 
-.more-btn .pill:hover {
-  background: #e05500;   /* чуть темнее при наведении */
+.btn-outline:hover {
+  background: #ff6a00;
+  color: #fff;
+}
+
+.hero-image {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 550px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 106, 0, 0.2);
+  transition: transform 0.5s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.03);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    flex: 1 1 100%;
+  }
+
+  .hero-stats {
+    justify-content: center;
+  }
 }
 
 /* Блок сертификатов */
@@ -174,237 +613,213 @@ body{
   transform: scale(1.05); /* легкое увеличение при наведении */
 }
 
-footer {
-  padding:28px 0 38px;
-  border-top:1px solid rgba(0,0,0,.08);
-  text-align:center;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:#022233;  /* фон */
-  color:#ffffff;       /* <-- цвет текста */
+.projects-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
 }
 
-/* Общие бортики для нужных блоков */
-.card.service,
-#about,
-#contact,
-.card {
-  border: 1px solid #bdbdbd;  /* тонкий серый бортик */
-  border-radius: var(--radius);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05); /* лёгкая тень, чтобы выглядело аккуратнее */
-  background: #fff;
-  padding: 20px;
+.projects-btn .btn-primary {
+  background: #ff6600;
+  color: #fff;
+  padding: 14px 40px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.projects-btn .btn-primary:hover {
+  background: #e25d00;
+  transform: scale(1.05);
 }
 
 
   </style>
 </head>
 
-</head>
 <body>
-
-<!-- Шапка -->
-<header>
-  <div class="container header-flex">
-    <div class="logo">
-      <img src="img/logo.png" alt="TARKER" />
+  <header>
+    <div class="container header-flex">
+      <div class="logo">
+        <img src="img/favicon.png" alt="TARKER" />
       </div>
-    
-    <nav>
-      <a href="index.html">Главная</a>
-      <a href="about.html">О нас</a>
+      <nav>
+        <a href="index.html">Главная</a>
+        <a href="about.html">О нас</a>
+        <a href="contact.html">Контакты</a>
 
-      <div class="dropdown">
-        <a href="#" class="nav-link">Контакты</a>
-        <div class="dropdown-content">
-          <a href="contact.html">Контактные данные и схема подъезда</a>
-          <a href="contact-form.html">Форма обратной связи</a>
+        <div class="dropdown">
+          <a href="#">Документы</a>
+          
+<div class="dropdown-content">
+            <a href="quality.html">Контроль качества</a>
+            <a href="brochures.html">Каталоги/брошюры</a>
+          </div>
         </div>
-      </div>
 
-      <div class="dropdown">
-        <a href="#" class="nav-link">Документы</a>
-        <div class="dropdown-content">
-          <a href="quality.html">Контроль качества</a>
-          <a href="brochures.html">Каталоги/брошюры</a>
-          <a href="certificates.html">Сертификаты</a>
-        </div>
-      </div>
-
-      <div class="dropdown">
-        <a href="#" class="nav-link">Продукция</a>
-        <div class="dropdown-content">
-          <a href="product.html">Деформационные швы</a>
-          <a href="contact-form.html">Преднапряжение монолитных мостов</a>
-          <a href="equipment.html">Собственное оборудование</a>
+        <div class="dropdown">
+          <a href="#">Продукция</a>
+          <div class="dropdown-content">
+            <a href="deformacionnye shvy.html">Деформационные швы</a>
+          <a href="prednapryazhenie.html">Преднапряжение монолитных мостов</a>
+          <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
+          <a href="airport.html">Взлетно-посадочные полосы</a>
+          <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
           <a href="dorozhnye.polotna.html">Дорожные полотна</a>
           <a href="pomewenie.html">Продукты для помещений</a>
           <a href="prisadka.html">Присадки</a>
           <a href="emulsions.html">Эмульсии</a>
-          <a href="product.html">Дополнительная продукция</a>
-        </div>
-      </div>
-      <a href="projects.html">Реализованные проекты</a>
-    </nav>
-    
-  </div>
-</header>
-
-
- <!-- HERO -->
-  <main id="top" class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <span class="badge"> Строительство/ремонт мостов и путепроводов</span>
-        <h1 class="h1">Комплексные решения<br/>Высококлассные инженера</h1>
-        <p class="lead">Проектирование, поставка материалов, устройство оснований и покрытий, ремонт и обслуживание. Работаем по РК, соблюдаем нормы и стандарты.</p>
-
-        <div class="hero-cards">
-          <div class="card">
-            <b>Асфальтобетон и мастики</b>
-            <p class="muted">Праймеры, мастики, добавки в битум. Поставки и укладка.</p>
-          </div>
-          <div class="card">
-            <b>Техника и персонал</b>
-            <p class="muted">Собственный парк и бригады. Сроки и гарантия качества.</p>
           </div>
         </div>
 
-        <div class="kpis">
-          <div class="kpi"><b>10+ лет</b><div class="muted">опыта</div></div>
-          <div class="kpi"><b>120+ км</b><div class="muted">покрытий</div></div>
-          <div class="kpi"><b>24/7</b><div class="muted">поддержка</div></div>
-        </div>
-      </div>
-
-      <div class="hero-img">
-        <img src="img/178.jpg" alt="Строительство монолитных мостов"/>
-      </div>
+        <a href="projects.html">Реализованные проекты</a>
+      </nav>
     </div>
-  </main>
+  </header>
 
-  <!-- SERVICES -->
-  <section id="services">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2 class="h2">Услуги</h2>
-        <p class="muted">Полный цикл: от подготовки основания до сдачи объекта.</p>
-      </div>
+  <section class="hero">
+    <h1>TOO “TARKER”</h1>
+    <p>Сложные задачи—наша специализация.<br>Инженерное мышлениев каждой детали.</p>
 
-      <div class="grid cols-3">
-        <article class="card service">
-          <span class="tag">Проектирование</span>
-          <img src="img/PPR.jpg" alt="Разработка проектов производства работ" />
-          <div class="card-body">
-            <h3>Разработка проектов производства работ</h3>
-            <p class="muted">Разработка проектов разных видов сложностей</p>
-          </div>
-        </article>
-
-        <article class="card service">
-          <span class="tag">Монолитные мосты</span>
-          <img src="img/Натяжение.jpg" alt="Натяжение" />
-          <div class="card-body">
-            <h3>Работы по пред и пос напряжению монолитных конструкций</h3>
-            <p class="muted">Натяжение стальных канатов и последующая их инъекция</p>
-          </div>
-        </article>
-
-        <article class="card service">
-          <span class="tag">Безопасность</span>
-          <img src="img/Композит.png" alt="Дорожная инфраструктура" />
-          <div class="card-body">
-            <h3>Усиление сооружений и зданий композитными материалами</h3>
-            <p class="muted">Увеличение срока годности сооружений</p>
-          </div>
-        </article>
-      
-      <article class="card service">
-          <span class="tag">Помощь</span>
-          <img src="img/eng.png" alt="Натяжение" />
-          <div class="card-body">
-            <h3>Инжиринговые услуги по техническому сопровождению строящегося объекта</h3>
-            <p class="muted">Советы и помощь от высоквалифированных инженеров</p>
-          </div>
-        </article>
-
-        <article class="card service">
-          <span class="tag">Строительство</span>
-          <img src="img/22.png" alt="Дорожная инфраструктура" />
-          <div class="card-body">
-            <h3>Строительно-монтажные работы по возведению зданий и сооружений</h3>
-            <p class="muted">Мостостроение</p>
-          </div>
-        </article>
-        
-        <article class="card service">
-          <span class="tag">Импорт</span>
-          <img src="img/логистика.png" alt="Дорожная инфраструктура" />
-          <div class="card-body">
-            <h3>Немецкие материалы,техника и оборудование </h3>
-            <p class="muted">Поставка материалов</p>
-          </div>
-        </article>
-      </div>
-          </div>
+    <div class="hero-buttons1">
+      <a href="projects.html" class="btn-primary">Наши проекты</a>
+      <a href="contact.html" class="btn-outline">Связаться</a>
+    </div>
   </section>
 
- <!-- PROJECTS -->
-<section id="projects">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2 class="h2">Реализованные объекты</h2>
-      <a class="pill" href="projects.html">Смотреть все</a>
+  <!-- HERO -->
+<main id="top" class="hero-section">
+  <div class="hero-inner">
+    <div class="hero-text fade-in">
+      <span class="hero-badge">Строительство и ремонт мостов</span>
+      <h1>Комплексные инженерные решения<br><span class="accent">НАШИ НАПРАВЛЕНИЯ</span></h1>
+      <p>- Проектирование
+        <br>- Строительство мостовых сооружений.
+<br>- Возведение монолитных, предварительно-напряженных пролетных строений, полный цикл.
+
+<br>- Собственное производство, поставка, монтаж деформационных швов.
+
+<br>- Усиление несущих конструкций композитными материалами.
+
+<br>- Организация полигонов, выпуск железобетонных конструкций.
+
+<br>- Строительно-монтажные работы</p>
+
+      <div class="hero-stats">
+        <div><b>10+</b><span>лет опыта</span></div>
+        <div><b>120+</b><span>км покрытий</span></div>
+        <div><b>24/7</b><span>поддержка</span></div>
+      </div>
+
+      <div class="hero-buttons">
+        <a href="projects.html" class="btn-primary">Наши проекты</a>
+        <a href="contact.html" class="btn-outline">Связаться с нами</a>
+      </div>
     </div>
 
-    <article class="card project">
-      <div class="hero-img">
-        <img src="img/Подъем пролета.JPG" alt="Подъем пролета">
-      </div>
-      <div>
-        <h3>Подъемка пролетных строений и замена опорных частей</h3>
-        <ul class="muted">
-          <li>Объект: "Западная Европа- Западный Китай, участок Алматы-Хоргос"</li>
-          <li>Заказчик: Филиал СП АО "Догуш Гульсан"</li>
-        </ul>
-      </div>
-    </article>
+    <div class="hero-image fade-in" style="animation-delay:0.4s">
+      <img src="img/178.jpg" alt="Строительство мостов TARKER">
+    </div>
+  </div>
+</main>
 
-    <article class="card project">
-      <div class="hero-img">
-        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1600&auto=format&fit=crop" alt="Промплощадка — объект 2">
-      </div>
-      <div>
-        <h3>Изготовление и установка деформационных швов DJ-100 производства ТОО "TARKER" по типу "MAURER"</h3>
-        <ul class="muted">
-          <li>Объект: "Западная Европа- Западный Китай, участок Алматы-Хоргос"</li>
-          <li>Заказчик: Филиал СП АО "Догуш Гульсан"</li>
-        </ul>
-      </div>
-    </article>
+  <!-- Здесь твои секции SERVICES / PROJECTS / CERTS -->
+  <!-- SERVICES -->
+<section id="services">
+  <div class="sec-head">
+    <h2>Наши услуги</h2>
+    <p class="muted">Полный цикл: от проектирования до сдачи объекта</p>
+  </div>
 
-    <article class="card project">
-      <div class="hero-img">
-        <img src="img/Подъем пролета.JPG" alt="Подъем пролета">
-      </div>
-      <div>
-        <h3>Работы по строительству автодорожного путепровода</h3>
-        <ul class="muted">
-          <li>Объект: "Работы по строительству автодорожного путепровода над железнодорожными путями автомобильной дороги республиканского значения 'Ленинский-Аксу-Курчатов'"</li>
-        </ul>
-      </div>
-    </article>
+  <div class="services-grid">
+    <div class="card">
+      <img src="img/PPR.jpg" alt="Разработка проектов производства работ">
+      <h3>Разработка проектов производства работ</h3>
+      <p>Разработка проектов разных уровней сложности</p>
+    </div>
 
-    <!-- Кнопка в конце -->
-    <div class="more-btn">
-      <a href="projects.html" class="pill">Еще</a>
+    <div class="card">
+      <img src="img/Натяжение.jpg" alt="Натяжение конструкций">
+      <h3>Пред. и пос. напряжение монолитных конструкций</h3>
+      <p>Натяжение стальных канатов и последующая инъекция</p>
+    </div>
+
+    <div class="card">
+      <img src="img/Композит.png" alt="Композитные материалы">
+      <h3>Усиление сооружений композитными материалами</h3>
+      <p>Продление срока службы зданий и мостов</p>
+    </div>
+
+    <div class="card">
+      <img src="img/eng.png" alt="Инжиниринг">
+      <h3>Инжиниринговые услуги</h3>
+      <p>Техническое сопровождение и помощь инженеров</p>
+    </div>
+
+    <div class="card">
+      <img src="img/22.png" alt="Строительство">
+      <h3>Строительно-монтажные работы</h3>
+      <p>Возведение зданий, сооружений и мостов</p>
+    </div>
+
+    <div class="card">
+      <img src="img/логистика.png" alt="Импорт материалов">
+      <h3>Импорт немецких материалов и оборудования</h3>
+      <p>Поставка техники и расходных материалов</p>
     </div>
   </div>
 </section>
 
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="sec-head">
+    <h2>Наши проекты</h2>
+    <p class="muted">Реализованные объекты по всей территории Казахстана</p>
+  </div>
 
-  <!-- CERTIFICATES -->
+  <div class="projects-grid">
+    <div class="project-card">
+      <img src="img/Подъем пролета.JPG" alt="Мост через реку">
+      <div class="project-info">
+        <h3>Объект: «ЗАПАДНАЯ ЕВРОПА-ЗАПАДНЫЙ КИТАЙ, УЧАСТОК АЛМАТЫ-ХОРГОС»</h3>
+        <p>Подъемка пролетных строений и замена опорных частей</p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="img/Тауелсиздик.jpg" alt="Дорожное строительство">
+      <div class="project-info">
+        <h3>АВТОМОБИЛЬНЫЙ МОСТ ПО ПРОСПЕКТУ ТӘУЕЛСІЗДІК ЧЕРЕЗ РЕКУ ЕСИЛЬ В СТОЛИЦЕ КАЗАХСТАНА —ГОРОДЕ АСТАНА.</h3>
+        <p>Выполнены работы по пред и пос напряжению.
+          Длина моста –910 м.
+Служит связующим звеном между правым и левымберегами города.</p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="img/Алтын Орда.png" alt="Усиление мостов">
+      <div class="project-info">
+        <h3>Строительство мостового сооружения в г.Алматы, объект Алтын-Орда</h3>
+        <p>Особенность: проект предусматривает 10-полосную дорогу для транзитного, общественного и местного транспорта, а также строительство разворотной эстакады «подкова», моста через реку, и надземных пешеходных мостов.</p>
+      </div>
+    </div>
+
+   </div> <!-- конец projects-grid -->
+
+  <div class="projects-btn">
+    <a href="projects.html" class="btn-primary">Подробнее</a>
+  </div>
+</section>
+
+
+  </div>
+</section>
+
+    
+    
+
+<!-- CERTIFICATES -->
   <section id="certs">
     <div class="wrap">
       <div class="sec-head">
@@ -417,70 +832,17 @@ footer {
         <div class="cert"><img src="img/лиц3.jpg" alt="Сертификат 2"></div>
         <div class="cert"><img src="img/лиц4.jpg" alt="Сертификат 2"></div>
         <div class="cert"><img src="img/лиц5.jpg" alt="Сертификат 2"></div>
+        <div class="cert"><img src="img/cert7.jpg" alt="Сертификат 2"></div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="wrap about">
-      <div>
-        <h2 class="h2">О компании</h2>
-        <p class="muted">Мы занимается созданием производственных полигонов для выпуска ЖБИ рядом со стройплощадками, что уменьшает расходы и ускоряет строительные процессы.Также занимаемся ремонтом деформационных швов, разаработкой ППР, строительством монолитных мостов с пред и пос натяжением. Работаем по всей Республике Казахстан, соблюдаем стандарты и техники безопасности. В проектировании и применении материалов используем немецкие технологии и добавки.</p>
-        <ul class="muted">
-          <li>Собственный парк техники</li>
-          <li>Контроль качества на каждом этапе</li>
-          <li>Прозрачные сметы и сроки</li>
-        </ul>
-      </div>
-      <div class="card">
-        <b>Реквизиты и контакты</b>
-        <p class="muted">ТОО «TARKER»<br/>БИН 130840018027<br/>Алматы, 12 мкр., дом 22/2, офис 5</p>
-        <p class="muted">Тел.: +7 705 720 30 44<br/>e-mail: tarkerkz@mail.ru</p>
-      </div>
-    </div>
-  </section>
-
-  
-      <div class="card">
-        <b>Карта и график</b>
-        <p class="muted">Пн–Пт 9:00–18:00</p>
-        <iframe 
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2924.8992114448924!2d76.865!3d43.2214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3883694b349e3c7d%3A0x94ce990b00c09c19!2z0JfQsNC90LDRh9C10L3RgdC60LDRjyDQk9GA0LXQvdC40LzQuNGA0YHQutCw0Y8!5e0!3m2!1sru!2skz!4v1719938472000!5m2!1sru!2skz" 
-  width="100%" 
-  height="400" 
-  style="border:0;" 
-  allowfullscreen="" 
-  loading="lazy" 
-  referrerpolicy="no-referrer-when-downgrade">
-</iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
   <footer>
-  <div class="wrap">
-    © <span id="year"></span> ТОО ТАРКЕР. Все права защищены.
-  </div>
-</footer>
-
-
-  <script>
-    // текущий год
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // имитация отправки формы — замените на реальную логику (Formspree, Telegram Bot API, сервер)
-    function sendForm(){
-      const btn = document.getElementById('sendBtn');
-      const status = document.getElementById('formStatus');
-      btn.disabled = true; status.textContent = 'Отправка...';
-      setTimeout(()=>{
-        btn.disabled = false; status.textContent = 'Спасибо! Заявка отправлена. Мы свяжемся с вами.';
-      }, 900);
-    }
-  </script>
-
+    <img src="img/logo.png" alt="TARKER">
+    <p>г. Алматы, 12 мкр., дом 22/2, офис 5</p>
+    <p>Email: tarkerkz@mail.ru</p>
+    <p>&copy; 2025 ТОО "TARKER". Все права защищены.</p>
+  </footer>
+  
 </body>
 </html>

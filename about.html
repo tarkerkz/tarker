@@ -5,38 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>О компании - ТОО TARKER</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      color: #333;
-      background: #fff;
+   /* Сброс и базовая структура */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      height: 100%;
+      font-family: "Inter", system-ui, sans-serif;
+      color: #fff;
+      position: relative;
+      overflow-x: hidden;
     }
 
+    /* === Фон GIF на всю страницу === */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("img/panorama_slow.gif") no-repeat center center fixed;
+      background-size: cover;
+      z-index: -2;
+    }
+
+    /* Полупрозрачное затемнение поверх фона */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: -1;
+    }
+    @keyframes moveBg {
+      from { background-position: 0 0; }
+      to { background-position: 100% 0; }
+    }
+
+   
+
+     /* === Шапка === */
     .header-strip {
       height: 5px;
       background-color: #022233;
     }
 
     header {
-      background: #fff;
+      background: rgba(255,255,255,0.9);
       padding: 15px 0;
       border-bottom: 1px solid #eee;
+      backdrop-filter: blur(5px);
+      position: relative;
+      z-index: 2;
     }
 
-    .container {
+    .header-container {
       width: 90%;
       max-width: 1200px;
       margin: auto;
-    }
-
-    /* Шапка */
-    .header-flex {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-
     .logo img {
       height: 50px;
     }
@@ -72,27 +104,39 @@
       min-width: 200px;
       background: #fff;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      z-index: 100;
+      z-index: 999;
     }
 
     .dropdown-content a {
       display: block;
       padding: 10px 15px;
-      color: #022233;
-      font-weight: normal;
+      color: #000;
+      font-size: 13px;
+      text-decoration: none;
     }
 
     .dropdown-content a:hover {
       background: #f2f2f2;
+      color: #f07c00;
     }
 
     .dropdown:hover .dropdown-content {
       display: block;
     }
 
-    /* Заголовки и контент */
+    /* === Контент === */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 40px auto;
+      background: transparent;
+      backdrop-filter: none;   /* убран эффект размытия */
+  border-radius: 0;        /* убраны закругления */
+  padding: 20px;
+}
+
     h1 {
-      color: #022233;
+      color: #6ab0d6;
       font-size: 32px;
       margin-bottom: 20px;
     }
@@ -106,25 +150,27 @@
     }
 
     .about-section img {
-  width: 480px; /* фиксированная ширина */
-  height: 300px; /* сохраняем пропорции */
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
+      width: 480px;
+      height: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
 
     .about-content {
       flex: 1 1 45%;
     }
 
     .about-content p {
-      font-size: 16px;
+      font-size: 20px;
       line-height: 1.6;
       margin-bottom: 15px;
       text-align: justify;
-    }
+    
+    font-family: 'Poppins', sans-serif; /* пример современного шрифта */
+  font-weight: 800; /* толщина текста: 400 — норм, 500 — средний, 600/700 — жирный */
+  color: #f5f5f5; /* при необходимости можно задать цвет */
+}
 
-    /* Цифры */
     .about-numbers {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -133,16 +179,11 @@
     }
 
     .number-card {
-      background: #f7f9fc;
+      background: rgba(255,255,255,0.85);
       border-radius: 10px;
       padding: 25px;
       text-align: center;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .number-card:hover {
-      transform: translateY(-5px);
     }
 
     .number-card h3 {
@@ -157,69 +198,69 @@
       color: #555;
     }
 
-    /* Футер */
     footer {
-      width: 100%;
-      background-color: #022233;
-      color: white;
-      padding: 20px 0;
+      background: #022233;
+      color: #fff;
       text-align: center;
-      margin-top: 40px;
+      padding: 30px 10px;
+      margin-top: auto;
     }
 
-    /* Адаптив */
+    footer p {
+      margin: 5px 0;
+      font-size: 14px;
+      opacity: 0.85;
+    }
+
+    footer img {
+      height: 40px;
+      margin-bottom: 8px;
+    }
+
+    /* === АДАПТИВНОСТЬ === */
     @media (max-width: 768px) {
-      .header-flex {
-        flex-direction: column;
-        align-items: flex-start;
+      .card.project {
+        grid-template-columns: 1fr;
       }
-
-      nav {
-        flex-wrap: wrap;
-      }
-
-      .about-section {
-        flex-direction: column;
-      }
+      .hero h1 { font-size: 28px; }
     }
   </style>
 </head>
 <body>
-  
+
+  <!-- Фон-графика -->
+  <div class="bg-gif"></div>
+
   <header>
-    <div class="container header-flex">
+    <div class="header-container">
       <div class="logo">
         <img src="img/logo.png" alt="TARKER" />
       </div>
       <nav>
         <a href="index.html">Главная</a>
         <a href="about.html">О нас</a>
-        <div class="dropdown">
-          <a href="#">Контакты</a>
-          <div class="dropdown-content">
-            <a href="contact.html">Контактные данные</a>
-            <a href="contact-form.html">Форма обратной связи</a>
-          </div>
-        </div>
+        <a href="contact.html">Контакты</a>
+                     
         <div class="dropdown">
           <a href="#">Документы</a>
-          <div class="dropdown-content">
+          
+<div class="dropdown-content">
             <a href="quality.html">Контроль качества</a>
             <a href="brochures.html">Каталоги/брошюры</a>
-            <a href="certificates.html">Сертификаты</a>
           </div>
         </div>
         <div class="dropdown">
           <a href="#">Продукция</a>
           <div class="dropdown-content">
-            <a href="product.html">Деформационные швы</a>
-            <a href="contact-form.html">Преднапряжение мостов</a>
-            <a href="equipment.html">Собственное оборудование</a>
-            <a href="dorozhnye.polotna.html">Дорожные полотна</a>
-            <a href="pomewenie.html">Продукты для помещений</a>
-            <a href="prisadka.html">Присадки</a>
-            <a href="emulsions.html">Эмульсии</a>
-            <a href="product.html">Дополнительная продукция</a>
+            <a href="deformacionnye shvy.html">Деформационные швы</a>
+          <a href="prednapryazhenie.html">Преднапряжение монолитных мостов</a>
+          <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
+          <a href="airport.html">Взлетно-посадочные полосы</a>
+          <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
+          <a href="dorozhnye.polotna.html">Дорожные полотна</a>
+          <a href="pomewenie.html">Продукты для помещений</a>
+          <a href="prisadka.html">Присадки</a>
+          <a href="emulsions.html">Эмульсии</a>
           </div>
         </div>
         <a href="projects.html">Реализованные проекты</a>
@@ -230,46 +271,46 @@
   <div class="header-strip"></div>
 
   <section class="container">
-  <div class="about-section">
-    <div class="about-content">
-      <h1>О компании</h1>
-      <p>
-        ТОО «ТАРКЕР» — современная и динамично развивающаяся компания, специализирующаяся на внедрении инновационных решений 
-        и поставке качественных материалов для дорожного строительства и инфраструктуры. Мы используем немецкие технологии 
-        и стандарты качества, чтобы гарантировать надёжность и долговечность реализованных проектов.
-      </p>
-      <p>
-        Наша компания является надежным партнёром в Казахстане и за его пределами. Мы сотрудничаем с ведущими организациями 
-        в сфере строительства дорог, мостов и аэродромов, внедряя современные материалы и оборудование.
-      </p>
+    <div class="about-section">
+      <div class="about-content">
+        <h1>О компании</h1>
+        <p>
+          ТОО «ТАРКЕР» — современная и динамично развивающаяся компания, специализирующаяся на внедрении инновационных решений 
+          и поставке качественных материалов для дорожного строительства и инфраструктуры.
+        </p>
+        <p>
+          Наша компания является надежным партнёром в Казахстане и за его пределами. Мы сотрудничаем с ведущими организациями 
+          в сфере строительства дорог, мостов и аэродромов.
+        </p>
+      </div>
+      <img src="img/favicon.png" alt="О компании TARKER">
     </div>
 
-    <img src="img/favicon.png" alt="О компании TARKER">
-  </div>
-
-  <div class="about-numbers">
-    <div class="number-card">
-      <h3>8+ лет</h3>
-      <p>опыта в строительстве</p>
+    <div class="about-numbers">
+      <div class="number-card">
+        <h3>8+ лет</h3>
+        <p>опыта в строительстве</p>
+      </div>
+      <div class="number-card">
+        <h3>500+</h3>
+        <p>реализованных проектов</p>
+      </div>
+      <div class="number-card">
+        <h3>30+</h3>
+        <p>профессиональных специалистов</p>
+      </div>
+      <div class="number-card">
+        <h3>100%</h3>
+        <p>соответствие EN и ГОСТ</p>
+      </div>
     </div>
-    <div class="number-card">
-      <h3>500+</h3>
-      <p>реализованных проектов</p>
-    </div>
-    <div class="number-card">
-      <h3>30+</h3>
-      <p>профессиональных специалистов</p>
-    </div>
-    <div class="number-card">
-      <h3>100%</h3>
-      <p>соответствие EN и ГОСТ</p>
-    </div>
-  </div>
-</section>
-
+  </section>
 
   <footer>
-    <p>&copy; 2025 ТОО ТАРКЕР. Все права защищены.</p>
+    <img src="img/logo.png" alt="TARKER">
+    <p>г. Алматы, 12 мкр., дом 22/2, офис 5</p>
+    <p>Email: tarkerkz@mail.ru</p>
+    <p>&copy; 2025 ТОО "TARKER". Все права защищены.</p>
   </footer>
 </body>
 </html>

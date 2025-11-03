@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Главная — TOO TARKER</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="img/favicon.png" type="image/png">
+  <style>
+    /* Сброс */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial}
+
+    /* Структура страницы */
+    .hero{
+      position:relative;
+      width:100%;
+      height:100vh;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+    }
+
+    /* Фон (GIF или видео) */
+    .media-wrap{
+      position:absolute;
+      inset:0;
+      z-index:0;
+      overflow:hidden;
+    }
+    .media-wrap img{
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-50%);
+      min-width:100%;
+      min-height:100%;
+      object-fit:cover;
+      z-index:0;
+    }
+
+    /* Затемнение */
+    .overlay{
+      position:absolute;
+      inset:0;
+      z-index:1;
+      background:linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.45));
+    }
+
+    /* Контент */
+    .content{
+      position:relative;
+      z-index:2;
+      text-align:center;
+      padding:2rem;
+      max-width:1200px;
+      width:100%;
+    }
+
+    .logo-wrap{
+      display:inline-block;
+      background:rgba(255,255,255,0.06);
+      padding:18px 28px;
+      border-radius:12px;
+      backdrop-filter:blur(4px);
+    }
+
+    h1{
+      font-size:clamp(28px,6vw,72px);
+      letter-spacing:1px;
+      margin-bottom:8px;
+      font-weight:700;
+    }
+
+    p.lead{
+      font-size:clamp(14px,1.5vw,20px);
+      opacity:0.9;
+    }
+
+    /* Анимация появления */
+    .fade-in{
+      animation:fadeUp .8s ease forwards;
+      opacity:0;
+      transform:translateY(10px);
+    }
+    @keyframes fadeUp{
+      to{opacity:1;transform:translateY(0);}
+    }
+
+    /* Эффект печати */
+    .typed{display:inline-block;white-space:nowrap;overflow:hidden}
+    .cursor{
+      display:inline-block;
+      vertical-align:bottom;
+      width:2px;
+      height:1.05em;
+      background:currentColor;
+      margin-left:6px;
+      animation:blink 1s steps(2,end) infinite;
+    }
+    @keyframes blink{50%{opacity:0}}
+
+    /* Мобильная корректность */
+    @media (max-width:520px){
+      .logo-wrap{padding:12px 16px}
+    }
+
+     /* header */
+    header{
+      position:sticky; top:0; z-index:50;
+      background:#ffffff;                  /* фон вверху белый */
+      border-bottom:1px solid rgba(0,0,0,.08);
+      box-shadow:0 2px 8px rgba(0,0,0,.05);
+      border-bottom: 1px solid #8b8a8a; /* тонкая серая линия */
+  padding-bottom: 10px;          /* небольшой отступ снизу */
+}
+    .header-flex {
+  display: flex;
+  align-items: center;          /* выравниваем по вертикали */
+  justify-content: space-between; /* логотип слева, меню справа */
+  padding: 0 20px;              /* одинаковые отступы от краёв */
+}
+
+    .nav{display:flex; align-items:center; gap:24px; height:68px}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:700}
+    .brand-logo{width:36px;height:36px; border-radius:12px; background:linear-gradient(135deg,var(--brand),var(--brand-2)); display:grid; place-items:center; box-shadow:var(--shadow)}
+    .brand-logo svg{width:22px;height:22px}
+    .nav-spacer{flex:1}
+    .nav a{opacity:.9}
+    .nav a:hover{color:var(--brand)}
+    .cta{background:var(--brand); color:#000; padding:10px 14px; border-radius:12px; font-weight:700; box-shadow:0 8px 20px rgba(255,122,0,.25)}
+
+    /* hero */
+    .hero{position:relative; padding:82px 0 56px}
+    .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:28px}
+    .badge{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; background:rgba(255,122,0,.1); color:var(--brand)}
+    .h1{font-size:46px; line-height:1.08; margin:14px 0 14px}
+    .lead{color:var(--muted); font-size:18px}
+    .hero-cards{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:22px}
+    .card{background:var(--panel); border:1px solid rgba(0,0,0,.06); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
+
+    /* KPI */
+    .kpis{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:20px}
+    .kpi{background:linear-gradient(180deg,rgba(255,122,0,.08),rgba(255,122,0,0)); border:1px solid rgba(0,0,0,.06); border-radius:16px; padding:16px}
+    .kpi b{font-size:26px}
+
+    /* секции */
+    section{padding:56px 0}
+    .sec-head{display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:22px}
+    .h2{font-size:32px; margin:0}
+    .muted{color:var(--muted)}
+
+    /* footer */
+    footer{
+      padding:28px 0 38px;
+      border-top:1px solid rgba(0,0,0,.08);
+      color:var(--muted);
+      text-align:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:#022233;
+    }
+
+    .service img {
+  height: 300px;      /* уменьшили с 180px */
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+}
+.grid.cols-3 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+  gap: 16px;
+}
+
+/* Карточки проектов */
+.card.project {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 20px;
+  background: #fff;
+  border: 3px solid #9d9c9c; /* ← черные бортики потолще */
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card.project .hero-img img {
+  width: 100%;
+  height: 280px;       /* фиксируем высоту */
+  object-fit: cover;   /* чтобы картинка не искажалась */
+  border-radius: var(--radius);
+}
+
+.more-btn {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.more-btn .pill {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #ff6600;   /* ваш оранжевый */
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.more-btn .pill:hover {
+  background: #e05500;   /* чуть темнее при наведении */
+}
+
+/* Блок сертификатов */
+.certs {
+  display: flex;
+  gap: 16px;            /* расстояние между картинками */
+  justify-content: center;
+  flex-wrap: wrap;      /* если экран маленький — картинки переносятся */
+  margin-top: 20px;
+}
+
+.certs .cert img {
+  height: 250px;        /* уменьшаем размер */
+  width: auto;          /* ширина пропорционально */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.certs .cert img:hover {
+  transform: scale(1.05); /* легкое увеличение при наведении */
+}
+
+footer {
+  padding:28px 0 38px;
+  border-top:1px solid rgba(0,0,0,.08);
+  text-align:center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#022233;  /* фон */
+  color:#ffffff;       /* <-- цвет текста */
+}
+
+/* Общие бортики для нужных блоков */
+.card.service,
+#about,
+#contact,
+.card {
+  border: 1px solid #bdbdbd;  /* тонкий серый бортик */
+  border-radius: var(--radius);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05); /* лёгкая тень, чтобы выглядело аккуратнее */
+  background: #fff;
+  padding: 20px;
+}
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container header-flex">
+      <div class="logo">
+        <img src="img/logo.png" alt="TARKER" />
+      </div>
+      <nav>
+        <a href="index.html">Главная</a>
+        <a href="about.html">О нас</a>
+        <a href="contact.html">Контакты</a>
+
+        <div class="dropdown">
+          <a href="#">Документы</a>
+          
+<div class="dropdown-content">
+            <a href="quality.html">Контроль качества</a>
+            <a href="brochures.html">Каталоги/брошюры</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <a href="#">Продукция</a>
+          <div class="dropdown-content">
+            <a href="deformacionnye shvy.html">Деформационные швы</a>
+          <a href="prednapryazhenie.html">Преднапряжение монолитных мостов</a>
+          <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
+          <a href="airport.html">Взлетно-посадочные полосы</a>
+          <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
+          <a href="dorozhnye.polotna.html">Дорожные полотна</a>
+          <a href="pomewenie.html">Продукты для помещений</a>
+          <a href="prisadka.html">Присадки</a>
+          <a href="emulsions.html">Эмульсии</a>
+          <a href="product.html">Дополнительная продукция</a>
+          </div>
+        </div>
+
+        <a href="projects.html">Реализованные проекты</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="media-wrap">
+      <img src="img/panorama_slow.gif" alt="фон-анимация" id="bgGif">
+    </div>
+
+    <div class="overlay"></div>
+
+    <div class="content">
+      <div class="logo-wrap fade-in" style="animation-delay:.3s">
+        <h1 id="company" aria-live="polite">
+          <span class="typed" id="typedText"></span><span class="cursor"></span>
+        </h1>
+        <p class="lead">Комплексные решения<br>Высококлассные инженеры</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const COMPANY_NAME = 'TOO "TARKER"';
+    (function typeText(){
+      const el = document.getElementById('typedText');
+      let i = 0;
+      const chars = COMPANY_NAME.split('');
+      const delayStart = 600;
+      const speed = 90;
+      setTimeout(function run(){
+        if(i < chars.length){
+          el.textContent += chars[i];
+          i++;
+          setTimeout(run, speed + (Math.random()*40 - 20));
+        }
+      }, delayStart);
+    })();
+  </script>
+
+  
+</body>
+</html>
+<!-- HERO -->
+ <main id="top" class="hero-section">
+  <div class="hero-inner">
+    <div class="hero-text fade-in">
+      <span class="hero-badge">Строительство и ремонт мостов</span>
+      <h1>Комплексные инженерные решения<br><span class="accent">немецкого качества</span></h1>
+      <p>Проектирование, поставка, монтаж и обслуживание инфраструктурных объектов по стандартам Республики Казахстан и Германии.</p>
+
+      <div class="hero-stats">
+        <div><b>10+</b><span>лет опыта</span></div>
+        <div><b>120+</b><span>км покрытий</span></div>
+        <div><b>24/7</b><span>поддержка</span></div>
+      </div>
+
+      <div class="hero-buttons">
+        <a href="projects.html" class="btn-primary">Наши проекты</a>
+        <a href="contact.html" class="btn-outline">Связаться с нами</a>
+      </div>
+    </div>
+
+    <div class="hero-image fade-in" style="animation-delay:0.4s">
+      <img src="img/178.jpg" alt="Строительство мостов TARKER">
+    </div>
+  </div>
+</main>
+
+ <!-- SERVICES -->
+<section id="services" class="services-section">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2">Наши услуги</h2>
+      <p class="muted">Полный цикл: от подготовки основания до сдачи объекта.</p>
+    </div>
+
+    <div class="services-grid">
+      <article class="card service">
+        <span class="tag">Проектирование</span>
+        <img src="img/PPR.jpg" alt="Разработка проектов производства работ">
+        <div class="card-body">
+          <h3>Разработка проектов производства работ</h3>
+          <p class="muted">Разработка проектов разных видов сложностей</p>
+        </div>
+      </article>
+
+      <article class="card service">
+        <span class="tag">Монолитные мосты</span>
+        <img src="img/Натяжение.jpg" alt="Натяжение">
+        <div class="card-body">
+          <h3>Работы по пред и пос напряжению монолитных конструкций</h3>
+          <p class="muted">Натяжение стальных канатов и последующая их инъекция</p>
+        </div>
+      </article>
+
+      <article class="card service">
+        <span class="tag">Безопасность</span>
+        <img src="img/Композит.png" alt="Дорожная инфраструктура">
+        <div class="card-body">
+          <h3>Усиление сооружений и зданий композитными материалами</h3>
+          <p class="muted">Увеличение срока годности сооружений</p>
+        </div>
+      </article>
+
+      <article class="card service">
+        <span class="tag">Помощь</span>
+        <img src="img/eng.png" alt="Инжиниринг">
+        <div class="card-body">
+          <h3>Инжиниринговые услуги по техническому сопровождению</h3>
+          <p class="muted">Советы и помощь от высококвалифицированных инженеров</p>
+        </div>
+      </article>
+
+      <article class="card service">
+        <span class="tag">Строительство</span>
+        <img src="img/22.png" alt="Строительно-монтажные работы">
+        <div class="card-body">
+          <h3>Строительно-монтажные работы по возведению зданий и сооружений</h3>
+          <p class="muted">Мостостроение</p>
+        </div>
+      </article>
+
+      <article class="card service">
+        <span class="tag">Импорт</span>
+        <img src="img/логистика.png" alt="Поставка материалов">
+        <div class="card-body">
+          <h3>Немецкие материалы, техника и оборудование</h3>
+          <p class="muted">Поставка материалов</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+ <!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2">Реализованные объекты</h2>
+      
+    </div>
+
+    <article class="card project">
+      <div class="hero-img">
+        <img src="img/Подъем пролета.JPG" alt="Подъем пролета">
+      </div>
+      <div>
+        <h3>Подъемка пролетных строений и замена опорных частей</h3>
+        <ul class="muted">
+          <li>Объект: "Западная Европа- Западный Китай, участок Алматы-Хоргос"</li>
+          <li>Заказчик: Филиал СП АО "Догуш Гульсан"</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="card project">
+      <div class="hero-img">
+        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1600&auto=format&fit=crop" alt="Промплощадка — объект 2">
+      </div>
+      <div>
+        <h3>Изготовление и установка деформационных швов DJ-100 производства ТОО "TARKER" по типу "MAURER"</h3>
+        <ul class="muted">
+          <li>Объект: "Западная Европа- Западный Китай, участок Алматы-Хоргос"</li>
+          <li>Заказчик: Филиал СП АО "Догуш Гульсан"</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="card project">
+      <div class="hero-img">
+        <img src="img/Подъем пролета.JPG" alt="Подъем пролета">
+      </div>
+      <div>
+        <h3>Работы по строительству автодорожного путепровода</h3>
+        <ul class="muted">
+          <li>Объект: "Работы по строительству автодорожного путепровода над железнодорожными путями автомобильной дороги республиканского значения 'Ленинский-Аксу-Курчатов'"</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- Кнопка в конце -->
+    <div class="more-btn">
+      <a href="projects.html" class="pill">Еще</a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- CERTIFICATES -->
+  <section id="certs">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="h2">Сертификаты и допуски</h2>
+        <p class="muted">Лицензии, официальное дистрибьютерство, сертификаты.</p>
+      </div>
+      <div class="certs">
+       <div class="cert"><img src="img/лиц1.jpg" alt="Сертификат 1"></div>
+        <div class="cert"><img src="img/лиц2.jpg" alt="Сертификат 2"></div>
+        <div class="cert"><img src="img/лиц3.jpg" alt="Сертификат 2"></div>
+        <div class="cert"><img src="img/лиц4.jpg" alt="Сертификат 2"></div>
+        <div class="cert"><img src="img/лиц5.jpg" alt="Сертификат 2"></div>
+      </div>
+    </div>
+  </section>
+
+
+
+  
+      <div class="card">
+        <b>Карта и график</b>
+        <p class="muted">Пн–Пт 9:00–18:00</p>
+        <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2924.8992114448924!2d76.865!3d43.2214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3883694b349e3c7d%3A0x94ce990b00c09c19!2z0JfQsNC90LDRh9C10L3RgdC60LDRjyDQk9GA0LXQvdC40LzQuNGA0YHQutCw0Y8!5e0!3m2!1sru!2skz!4v1719938472000!5m2!1sru!2skz" 
+  width="100%" 
+  height="400" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+<footer>
+    <img src="img/logo.png" alt="TARKER">
+    <p>г. Алматы, 12 мкр., дом 22/2, офис 5</p>
+    <p>Email: tarkerkz@mail.ru</p>
+    <p>&copy; 2025 ТОО "TARKER". Все права защищены.</p>
+  </footer>
+
+</body>
+</html>

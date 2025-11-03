@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Модульные деформационные швы — TARKER</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="img/favicon.png" type="image/png">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url("img/фон.png") no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    .header-strip {
+      height: 12px;
+      background-color: #022233;
+    }
+  
+    header {
+      background: #fff;
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    /* Шапка */
+    .header-flex {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+    .logo img {
+      height: 50px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #022233;
+      font-weight: bold;
+      padding: 8px 12px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #f07c00;
+    }
+
+    /* Dropdown */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 200px;
+      background: #fff; /* Белый фон */
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      z-index: 999;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px 15px;
+      color: #000; /* Черный текст */
+      background: #fff; /* Белый фон */
+      font-size: 13px; /* Можно регулировать размер */
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background: #f2f2f2;
+      color: #f07c00; /* Меняется цвет при наведении */
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Заголовки и контент */
+    h1 {
+      color: #022233;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    
+
+    .hero {
+      text-align: center;
+      padding: 50px 20px 20px;
+    }
+
+    .hero h1 {
+      color: #f07c00;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #000000;
+    }
+
+    .content {
+      width: 90%;
+      max-width: 1200px;
+      margin: 40px auto;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .content h2 {
+      color: #f07c00;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .features {
+      list-style: disc;
+      color: #000000;
+      margin-left: 40px;
+      margin-bottom: 30px;
+      font-size: 18px;
+    }
+
+    .image-block {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .image-block img {
+      width: 100%;
+      max-width: 550px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      background: #fff;
+    }
+
+    footer {
+      background: rgba(2, 34, 51, 0.8);
+      color: #bbb;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .image-block img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+<header>
+    <div class="container header-flex">
+      <div class="logo">
+        <img src="img/logo.png" alt="TARKER" />
+      </div>
+      <nav>
+        <a href="index.html">Главная</a>
+        <a href="about.html">О нас</a>
+        <a href="contact.html">Контакты</a>
+
+        <div class="dropdown">
+          <a href="#">Документы</a>
+          
+<div class="dropdown-content">
+            <a href="quality.html">Контроль качества</a>
+            <a href="brochures.html">Каталоги/брошюры</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <a href="#">Продукция</a>
+          <div class="dropdown-content">
+            <a href="deformacionnye shvy.html">Деформационные швы</a>
+          <a href="prednapryazhenie.html">Преднапряжение монолитных мостов</a>
+          <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
+          <a href="airport.html">Взлетно-посадочные полосы</a>
+          <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
+          <a href="dorozhnye.polotna.html">Дорожные полотна</a>
+          <a href="pomewenie.html">Продукты для помещений</a>
+          <a href="prisadka.html">Присадки</a>
+          <a href="emulsions.html">Эмульсии</a>
+          </div>
+        </div>
+
+        <a href="projects.html">Реализованные проекты</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>ДЕФОРМАЦИОННЫЕ ШВЫ С РЕЗИНОВЫМ КОМПЕНСАТОРОМ</h1>
+    <p>Современные решения для мостов и инженерных сооружений</p>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content">
+    <h2>Особенности конструкции</h2>
+    <ul class="features">
+      <li>Деформационный шов с резиновым компенсатором состоит из трех частей: горячекатаной профилированной
+стальной балки(профиля), резиновых уплотнителей и анкерных креплений.</li>
+      <li>Его преимуществами являются простота конструкции, легкость установки, долговечность и удобство.</li>
+      <li>Основными типами профиля являются: C-тип, F-тип, E-тип.</li>
+      <li>Другие формы балок или анкерных креплений могут быть изготовлены на заказ.</li>
+    </ul>
+
+    <div class="image-block">
+      <img src="img/shov11.jpg" alt="Модульные деформационные швы OVM">
+    <img src="img/shov12.jpg" alt="Модульные деформационные швы OVM">
+    </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <img src="img/logo.png" alt="TARKER">
+    <p>г. Алматы, 12 мкр., дом 22/2, офис 5</p>
+    <p>Email: tarkerkz@mail.ru</p>
+    <p>&copy; 2025 ТОО "TARKER". Все права защищены.</p>
+  </footer>
+</body>
+</html>

@@ -3,18 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>- TOO TARKER</title>
+   <title>BIGUMA®- Emulsion PMB 70+- TOO TARKER</title>
   <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="img/favicon.png" type="image/png">
   <link rel="stylesheet" href="style.css">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #ffffff;
-      color: #000000;
-      font-size: 15px;
-    }
+     body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+
+  /* картинка вместо цвета */
+  background: url("img/фон.png") no-repeat center center fixed;
+  background-size: cover; /* растягиваем картинку на весь экран */
+}
 
     main {
       max-width: 1200px;
@@ -108,46 +110,42 @@
 </head>
 <body>
   <div class="wrapper">
-<header>
-  <div class="container header-flex">
-    <div class="logo">
-      <img src="img/logo.png" alt="TARKER" />
-    </div>
-    <nav>
-      <a href="index.html">Главная</a>
-      <a href="about.html">О нас</a>
-      <div class="dropdown">
-        <a href="#" class="nav-link">Контакты</a>
-        <div class="dropdown-content">
-          <a href="contact.html">Контактные данные</a>
-          <a href="contact-form.html">Форма обратной связи</a>
-        </div>
+ <header>
+    <div class="header-container">
+      <div class="logo">
+        <img src="img/logo.png" alt="TARKER" />
       </div>
-      <div class="dropdown">
-        <a href="#" class="nav-link">Документы</a>
-        <div class="dropdown-content">
-          <a href="quality.html">Контроль качества</a>
-          <a href="brochures.html">Каталоги/брошюры</a>
-          <a href="certificates.html">Сертификаты</a>
+      <nav>
+        <a href="index.html">Главная</a>
+        <a href="about.html">О нас</a>
+        <a href="contact.html">Контакты</a>
+                     
+        <div class="dropdown">
+          <a href="#">Документы</a>
+          
+<div class="dropdown-content">
+            <a href="quality.html">Контроль качества</a>
+            <a href="brochures.html">Каталоги/брошюры</a>
+          </div>
         </div>
-      </div>
-      <div class="dropdown">
-        <a href="#" class="nav-link">Продукция</a>
-        <div class="dropdown-content">
-          <a href="product.html">Деформационные швы</a>
-          <a href="contact-form.html">Преднапряжение мостов</a>
-          <a href="equipment.html">Собственное оборудование</a>
+        <div class="dropdown">
+          <a href="#">Продукция</a>
+          <div class="dropdown-content">
+            <a href="deformacionnye shvy.html">Деформационные швы</a>
+          <a href="prednapryazhenie.html">Преднапряжение монолитных мостов</a>
+          <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
+          <a href="airport.html">Взлетно-посадочные полосы</a>
+          <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
           <a href="dorozhnye.polotna.html">Дорожные полотна</a>
           <a href="pomewenie.html">Продукты для помещений</a>
           <a href="prisadka.html">Присадки</a>
           <a href="emulsions.html">Эмульсии</a>
-          <a href="product.html">Дополнительная продукция</a>
+          </div>
         </div>
-      </div>
-      <a href="projects.html">Реализованные проекты</a>
-    </nav>
-  </div>
-</header>
+        <a href="projects.html">Реализованные проекты</a>
+      </nav>
+    </div>
+  </header>
 
   <main>
     <div class="product-image">
@@ -209,8 +207,11 @@
 </html>
 
 <footer>
-  <p>&copy; 2025 ТОО ТАРКЕР. Все права защищены.</p>
-</footer>
+    <img src="img/logo.png" alt="TARKER">
+    <p>г. Алматы, 12 мкр., дом 22/2, офис 5</p>
+    <p>Email: tarkerkz@mail.ru</p>
+    <p>&copy; 2025 ТОО "TARKER". Все права защищены.</p>
+  </footer>
 
 </body>
 </html>

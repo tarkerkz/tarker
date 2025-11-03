@@ -3,19 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>- TOO TARKER</title>
+   <title>Санация трещин- TOO TARKER</title>
   <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="img/favicon.png" type="image/png">
   <link rel="stylesheet" href="style.css">
   <style>
-   body {
-       background: #ffffff;
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: url("img/фон.png") no-repeat center center fixed;
+      background-size: cover;
     }
    main {
   display: flex;
   justify-content: flex-start;
   gap: 100px;
-  padding: 150px 20px;
+  padding: 10px 20px;
   max-width: 400px;
   margin-left: 0;
   flex-wrap: wrap;
@@ -25,23 +29,19 @@
 
 
 .product-block {
-
-  box-sizing: border-box;
-  text-align: center;
+  width: 100%;
+  text-align: center;      /* центрируем содержимое */
   text-decoration: none;
   color: inherit;
-  border: 1px solid #ffffff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  display: inline-block;
 }
 
-
 .product-block img {
-  width:60%;
-  height: 200px;
+  width: 80%;              /* размер картинки */
+  height: 300px;
   object-fit: cover;
+  display: block;
+  margin: 0 auto 10px;     /* центрируем и добавляем отступ снизу */
 }
 
 .product-block h3 {
@@ -84,49 +84,101 @@
   padding-bottom: 8px;
   border-bottom: 2px solid #989a9d;
 }
+header {
+  background: rgb(255, 255, 255); /* полупрозрачный тёмный фон */
+  padding: 10px 40px; /* внутренние отступы сверху/снизу и по бокам */
+  position: relative;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;     /* ✅ выравнивает логотип и меню по одной линии */
+  justify-content: flex-start;
+  gap: 40px;               /* расстояние между логотипом и навигацией */
+}
+
+.logo img {
+  height: 65px;            /* фиксированный размер логотипа */
+  display: block;
+}
+
+nav {
+  display: flex;
+  align-items: center;     /* выравнивает все пункты меню */
+  gap: 25px;               /* расстояние между пунктами */
+}
+
+nav a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #f07c00;          /* оранжевый при наведении */
+}
+
+/* Dropdown выравнивание */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%; /* ровно под пунктом меню */
+  left: 0;
+  background: #fff;
+  padding: 10px 0;
+  border-radius: 8px;
+  min-width: 200px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
   </style>
 </head>
 <body>
   <div class="wrapper">
 <header>
-  <div class="container header-flex">
-    <div class="logo">
-      <img src="img/logo.png" alt="TARKER" />
+    <div class="header-container">
+      <div class="logo">
+        <img src="img/logo.png" alt="TARKER" />
       </div>
-    <nav>
-      <a href="index.html">Главная</a>
-      <a href="about.html">О нас</a>
-      <div class="dropdown">
-        <a href="#" class="nav-link">Контакты</a>
-        <div class="dropdown-content">
-          <a href="contact.html">Контактные данные</a>
-          <a href="contact-form.html">Форма обратной связи</a>
+      <nav>
+        <a href="index.html">Главная</a>
+        <a href="about.html">О нас</a>
+        <a href="contact.html">Контакты</a>
+                     
+        <div class="dropdown">
+          <a href="#">Документы</a>
+          
+<div class="dropdown-content">
+            <a href="quality.html">Контроль качества</a>
+            <a href="brochures.html">Каталоги/брошюры</a>
+          </div>
         </div>
-      </div>
-      <div class="dropdown">
-        <a href="#" class="nav-link">Документы</a>
-        <div class="dropdown-content">
-          <a href="quality.html">Контроль качества</a>
-          <a href="brochures.html">Каталоги/брошюры</a>
-          <a href="certificates.html">Сертификаты</a>
-        </div>
-      </div>
-      <div class="dropdown">
-        <a href="#" class="nav-link">Продукция</a>
-        <div class="dropdown-content">
-          <a href="product.html">Деформационные швы</a>
-          <a href="contact-form.html">Преднапряжение мостов</a>
-          <a href="equipment.html">Собственное оборудование</a>
+        <div class="dropdown">
+          <a href="#">Продукция</a>
+          <div class="dropdown-content">
+            <a href="deformacionnye shvy.html">Деформационные швы</a>
+          <a href="prednapryazhenie.html">Преднапряжение монолитных мостов</a>
+          <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
+          <a href="airport.html">Взлетно-посадочные полосы</a>
+          <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
           <a href="dorozhnye.polotna.html">Дорожные полотна</a>
           <a href="pomewenie.html">Продукты для помещений</a>
           <a href="prisadka.html">Присадки</a>
           <a href="emulsions.html">Эмульсии</a>
           <a href="product.html">Дополнительная продукция</a>
+          </div>
         </div>
-      </div>
-    </nav>
-  </div>
-</header>
+        <a href="projects.html">Реализованные проекты</a>
+      </nav>
+    </div>
+  </header>
 
 <hr style="margin: 0; border: none; border-top: 1px solid #ccc;" />
 
@@ -134,7 +186,7 @@
 <p class="section-title">Санация трещин</p>
 
 <main>
-    <a href="rs.html" class="product-block">
+    <a href="BIGUMARS.html" class="product-block">
     <img src="img/rs.jpg" alt="BIGUMA®- RS">
     <p>Полимерно-модифицированная битумсодержащая мастика для трещин с высокой стойкостью к износу</p>
     <h3>BIGUMA®- RS</h3>
@@ -145,8 +197,11 @@
   
 
 <footer>
-  <p>&copy; 2025 ТОО ТАРКЕР. Все права защищены.</p>
-</footer>
+    <img src="img/logo.png" alt="TARKER">
+    <p>г. Алматы, 12 мкр., дом 22/2, офис 5</p>
+    <p>Email: tarkerkz@mail.ru</p>
+    <p>&copy; 2025 ТОО "TARKER". Все права защищены.</p>
+  </footer>
 
 </body>
 </html>

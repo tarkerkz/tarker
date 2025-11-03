@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог DGA - ТОО TARKER</title>
+  <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+     body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+
+  /* картинка вместо цвета */
+  background: url("img/ovmbrsh.png") no-repeat center center fixed;
+  background-size: cover; /* растягиваем картинку на весь экран */
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(234, 231, 231, 0.6); /* светло-прозрачный фон */
+  backdrop-filter: blur(10px); /* лёгкое размытие */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 20px 150px; /* отступы по бокам — задают расстояние между краями и элементами */
+}
+    .header-strip {
+      height: 12px;
+      background-color: #022233;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Шапка */
+    .header-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .section-title {
+  text-align: left;
+  font-weight: bold;
+  font-size: 35px;
+  color: #000000;
+  margin: 30px 20px 20px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #989a9d;
+}
+  </style>
+</head>
+<body>
+    
+<header>
+    <div class="container header-flex">
+      <div class="logo">
+        <img src="img/favicon.png" alt="TARKER" />
+      </div>
+      <nav>
+        <a href="index.html">Главная</a>
+        <a href="about.html">О нас</a>
+       <a href="contact.html">Контакты</a>
+        <div class="dropdown">
+          <a href="#">Документы</a>
+          
+<div class="dropdown-content">
+            <a href="quality.html">Контроль качества</a>
+            <a href="brochures.html">Каталоги/брошюры</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#">Продукция</a>
+          <div class="dropdown-content">
+            <a href="deformacionnye shvy.html">Деформационные швы</a>
+          <a href="prednapryazhenie.html">Преднапряжение монолитных мостов</a>
+          <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
+          <a href="airport.html">Взлетно-посадочные полосы</a>
+          <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
+          <a href="dorozhnye.polotna.html">Дорожные полотна</a>
+          <a href="pomewenie.html">Продукты для помещений</a>
+          <a href="prisadka.html">Присадки</a>
+          <a href="emulsions.html">Эмульсии</a>
+          <a href="product.html">Дополнительная продукция</a>
+          </div>
+        </div>
+        <a href="projects.html">Реализованные проекты</a>
+      </nav>
+    </div>
+  </header>
+
+
+<div class="header-strip"></div>
+
+<p class="section-title">Каталоги  LUIZHOU OVM MACHINERY CO.,LTD
+</p>
+
+<section class="container">
+  <div class="brochure-grid"> 
+    <div class="brochure-card">
+         <img src="img/OVM 1.jpg" alt="Каталог 2"> 
+         <h3>  Опорные части и деформационные швы OVM</h3> 
+         <a href="brsh/OVM1 RUS - Опорные части и деформационные швы OVM.pdf" target="_blank" class="btn-dark">Скачать PDF</a> </div>
+          <div class="brochure-card"> 
+            <img src="img/OVM 2.jpg" alt="Каталог 2"> 
+            <h3>Продукция для сейсмоизоляции зданий OVM</h3> 
+            <a href="brsh/OVM 2 RUS - Продукция для сейсмоизоляции зданий OVM.pdf" target="_blank"
+             class="btn-dark">Скачать PDF</a> </div> <div class="brochure-card">
+         <img src="img/OVM 3.jpg" alt="Каталог 3"> 
+         <h3>Системы преднапряжения OVM</h3> 
+         <a href="brsh/OVm 3RUS - Системы преднапряжения OVM.pdf" 
+         target="_blank"class="btn-dark">Скачать PDF</a>
+        </div> 
+        <div class="brochure-card"> 
+            <img src="img/ovmbrsh.png" alt="Каталог 2"> 
+            <h3>Презентация LIUZHOU OVM MACHINERY-2025</h3>
+             <a href="brsh/OVM 4 Презентация LIUZHOU OVM MACHINERY-2025.pdf"
+              target="_blank" class="btn-dark">Скачать PDF</a> 
+            </div>
+              </div>
+</section>
+
+<footer>
+    <img src="img/logo.png" alt="TARKER">
+    <p>г. Алматы, 12 мкр., дом 22/2, офис 5</p>
+    <p>Email: tarkerkz@mail.ru</p>
+    <p>&copy; 2025 ТОО "TARKER". Все права защищены.</p>
+  </footer>
+</body>
+</html>

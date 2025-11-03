@@ -1,102 +1,200 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Эмульсии- TOO TARKER</title>
-  <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="img/favicon.png" type="image/png">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Собственное оборудование — ТОО ТАРКЕР</title>
+  <link rel="icon" href="img/favicon.png" type="image/png">
   <style>
-      body {                                /* для equipment.html */
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f5f5f5;
-  color: #333;
-}
+    /* === ОБЩИЕ НАСТРОЙКИ === */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", Arial, sans-serif;
+      background: url("img/фон.png") no-repeat center center fixed;
+      background-size: cover;
+      color: #022233;
+    }
 
-header {
-  background-color: #ffffff;
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
-.container {
+    .container {
       width: 90%;
       max-width: 1200px;
       margin: auto;
     }
 
-    /* Шапка */
+    /* === HEADER === */
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
     .header-flex {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
     }
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  padding: 40px;
-  max-width: 1200px;
-  margin: auto;
-}
 
-.product-card {
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+    .logo img {
+      height: 55px;
+    }
 
-.product-card:hover {
-  transform: translateY(-5px);
-}
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
 
-.product-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
+    nav a {
+      text-decoration: none;
+      color: #022233;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
 
-.product-card h3 {
-  font-size: 18px;
-  margin: 15px;
-}
+    nav a:hover {
+      background: #f07c00;
+      color: #fff;
+    }
 
-.product-card p {
-  font-size: 14px;
-  margin: 0 15px 15px;
-}
+    /* === DROPDOWN === */
+    .dropdown {
+      position: relative;
+    }
 
-.btn {
-  display: block;
-  text-align: center;
-  background-color: #0056b3;
-  color: white;
-  text-decoration: none;
-  padding: 10px;
-  margin: 0 15px 20px;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
-}
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: #fff;
+      border-radius: 8px;
+      top: 100%;
+      left: 0;
+      min-width: 200px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      overflow: hidden;
+      z-index: 10;
+    }
 
-.btn:hover {
-  background-color: #003f8c;
-}
+    .dropdown-content a {
+      display: block;
+      padding: 10px 15px;
+      color: #022233;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background 0.3s ease;
+    }
 
+    .dropdown-content a:hover {
+      background: #f07c00;
+      color: #fff;
+    }
 
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* === TITLE === */
+    .section-title {
+      text-align: left;
+      font-weight: 700;
+      font-size: 36px;
+      color: #111;
+      margin: 50px auto 20px;
+      width: 90%;
+      max-width: 1200px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 120px;
+      height: 4px;
+      background: #f07c00;
+      border-radius: 2px;
+    }
+
+    /* === GALLERY === */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      padding: 0 20px 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .gallery-item {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .gallery-text {
+      padding: 18px;
+    }
+
+    .gallery-text h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: #022233;
+    }
+
+    .gallery-text p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    /* === FOOTER === */
+    footer {
+      background: #022233;
+      color: #fff;
+      text-align: center;
+      padding: 25px;
+      font-size: 14px;
+      margin-top: auto;
+    }
+
+    /* === АДАПТИВНОСТЬ === */
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+      .section-title {
+        font-size: 28px;
+        text-align: center;
+      }
+    }
   </style>
-  
 </head>
-<body>
 
+<body>
+  <!-- HEADER -->
   <header>
     <div class="container header-flex">
       <div class="logo">
@@ -123,14 +221,16 @@ header {
         <div class="dropdown">
           <a href="#">Продукция</a>
           <div class="dropdown-content">
-            <a href="product.html">Деформационные швы</a>
-            <a href="contact-form.html">Преднапряжение мостов</a>
-            <a href="equipment.html">Собственное оборудование</a>
-            <a href="dorozhnye.polotna.html">Дорожные полотна</a>
-            <a href="pomewenie.html">Продукты для помещений</a>
-            <a href="prisadka.html">Присадки</a>
-            <a href="emulsions.html">Эмульсии</a>
-            <a href="product.html">Дополнительная продукция</a>
+            <a href="deformacionnye shvy.html">Деформационные швы</a>
+          <a href="prednapryazhenie.html">Преднапряжение монолитных мостов</a>
+          <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
+          <a href="airport.html">Взлетно-посадочные полосы</a>
+          <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
+          <a href="dorozhnye.polotna.html">Дорожные полотна</a>
+          <a href="pomewenie.html">Продукты для помещений</a>
+          <a href="prisadka.html">Присадки</a>
+          <a href="emulsions.html">Эмульсии</a>
+          <a href="product.html">Дополнительная продукция</a>
           </div>
         </div>
         <a href="projects.html">Реализованные проекты</a>
@@ -138,34 +238,47 @@ header {
     </div>
   </header>
 
-  <main class="product-grid">
-    <div class="product-card">
-      <img src="img/product1.jpg" alt="Товар 1" />
-      <h3>Название товара 1</h3>
-      <p>Краткое описание товара 1.</p>
-      <a href="#" class="btn">Подробнее</a>
+  <!-- TITLE -->
+  <h1 class="section-title">Собственное оборудование</h1>
+
+  <!-- GALLERY -->
+  <section class="gallery">
+    <div class="gallery-item">
+      <img src="img/Маслостанция.jpg" alt="Маслостанция" />
+      <div class="gallery-text">
+        <h3>Маслостанция</h3>
+        <p>Используется для контроля натяжения арматуры при строительстве мостов и других конструкций.</p>
+      </div>
     </div>
 
-    <div class="product-card">
-      <img src="img/product2.jpg" alt="Товар 2" />
-      <h3>Название товара 2</h3>
-      <p>Описание товара 2 — краткое и понятное.</p>
-      <a href="#" class="btn">Подробнее</a>
+    <div class="gallery-item">
+      <img src="img/Гофрированный каналообразователь.jpg" alt="Гофрированный каналообразователь" />
+      <div class="gallery-text">
+        <h3>Гофрированный каналообразователь</h3>
+        <p>Обеспечивает создание прочных каналов для натяжных элементов мостовых конструкций.</p>
+      </div>
     </div>
 
-    <div class="product-card">
-      <img src="img/product3.jpg" alt="Товар 3" />
-      <h3>Название товара 3</h3>
-      <p>Описание товара 3, немного подробнее.</p>
-      <a href="#" class="btn">Подробнее</a>
+    <div class="gallery-item">
+      <img src="img/Станок для инъекции.jpg" alt="Станок для инъекции" />
+      <div class="gallery-text">
+        <h3>Станок для инъекции</h3>
+        <p>Предназначен для заполнения каналов цементным раствором после натяжения арматуры.</p>
+      </div>
     </div>
 
-    <!-- Добавляй больше товаров по той же структуре -->
-  </main>
+    <div class="gallery-item">
+      <img src="img/Домкрат.jpg" alt="Домкрат" />
+      <div class="gallery-text">
+        <h3>Домкрат</h3>
+        <p>Применяется для создания преднапряжения в арматуре и контроля усилий натяжения.</p>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  <p>&copy; 2025 ТОО ТАРКЕР. Все права защищены.</p>
-</footer>
-
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 ТОО "TARKER". Все права защищены.
+  </footer>
 </body>
 </html>

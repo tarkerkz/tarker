@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>BIGUMA®- N10 - TOO TARKER</title>
+  <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+     body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+
+  /* картинка вместо цвета */
+  background: url("img/фон.png") no-repeat center center fixed;
+  background-size: cover; /* растягиваем картинку на весь экран */
+}
+
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+.container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Шапка */
+    .header-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .product-image img {
+      width: 85%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .product-info {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .product-info h1 {
+      color: #153293;
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .product-info h3 {
+      font-weight: normal;
+      font-size: 15px;
+      margin-top: 0;
+      color: #000000;
+      border-top: 1px solid #ddd;
+      padding-top: 10px;
+    }
+
+    .product-icons {
+      margin: 20px 0;
+      display: flex;
+      gap: 15px;
+    }
+
+    .icon-button {
+      background-color: #ffffff;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+    }
+
+    .tabs {
+      max-width: 1000px;
+      margin: 20px auto;
+      border-top: 1px solid #ddd;
+    }
+
+    .tab-links {
+      display: flex;
+      gap: 30px;
+      padding: 10px 0;
+      font-weight: bold;
+      color: #153293;
+    }
+
+    .tab-content {
+      padding: 20px;
+      border: 1px solid #eee;
+      border-radius: 5px;
+      background: #fafafa;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        flex-direction: column;
+        align-items: center;
+      }
+      .tab-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    .link-list {
+  list-style-type: disc;         /* точка слева */
+  padding-left: 20px;            /* отступ для маркера */
+  margin: 0;
+}
+
+.link-list li {
+  margin-bottom: 10px;
+}
+
+.link-list a {
+  color: rgb(51, 13, 190);
+  text-decoration: none;
+  font-weight: 200;
+  font-size: 5x;
+}
+
+.link-list a:hover {
+  text-decoration: underline;
+}
+
+.product-gallery {
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+}
+
+.main-image img {
+  width: 60%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnails {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+}
+
+.thumbnails img {
+  width: 100px;
+  height: 110px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.3s;
+}
+
+.thumbnails img:hover {
+  border-color: #153293;
+}
+
+  </style>
+  <script>
+  function changeImage(element) {
+    document.getElementById('mainImg').src = element.src;
+  }
+</script>
+
+</head>
+<body>
+  <div class="wrapper">
+<header>
+    <div class="container header-flex">
+      <div class="logo">
+        <img src="img/logo.png" alt="TARKER" />
+      </div>
+      <nav>
+        <a href="index.html">Главная</a>
+        <a href="about.html">О нас</a>
+        <a href="contact.html">Контакты</a>
+
+        <div class="dropdown">
+          <a href="#">Документы</a>
+          
+<div class="dropdown-content">
+            <a href="quality.html">Контроль качества</a>
+            <a href="brochures.html">Каталоги/брошюры</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <a href="#">Продукция</a>
+          <div class="dropdown-content">
+            <a href="deformacionnye shvy.html">Деформационные швы</a>
+          <a href="prednapryazhenie.html">Преднапряжение монолитных мостов</a>
+          <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
+          <a href="airport.html">Взлетно-посадочные полосы</a>
+          <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
+          <a href="dorozhnye.polotna.html">Дорожные полотна</a>
+          <a href="pomewenie.html">Продукты для помещений</a>
+          <a href="prisadka.html">Присадки</a>
+          <a href="emulsions.html">Эмульсии</a>
+          </div>
+        </div>
+
+        <a href="projects.html">Реализованные проекты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="product-gallery">
+  <div class="main-image">
+    <img id="mainImg" src="img/n10.jpg" alt="BIGUMA®- N10">
+  </div>
+  <div class="thumbnails">
+    <img src="img/n10.jpg" alt="BIGUMA 1" onclick="changeImage(this)">
+    <img src="img/n10_1.jpg" alt="BIGUMA 2" onclick="changeImage(this)">
+    <img src="img/n10_2.jpg" alt="BIGUMA 3" onclick="changeImage(this)">
+    <img src="img/n10_3.jpg" alt="BIGUMA 3" onclick="changeImage(this)">
+      </div>
+</div>
+
+    <div class="product-info">
+      <h1>BIGUMA®- N10</h1>
+      <h3>Битумсодержащая мастика для заливки швов в брусчатке</h3>
+      <p>Вы желаете получить свободное предложение или техническую информацию? Обращайтесь к нам!</p>
+
+      <div class="product-icons">
+  <a href="contact.html" class="icon-button" title="Связаться по телефону">📞</a>
+  <a href="contact-form.html" class="icon-button" title="Скачать документ">📄</a>
+</div>
+
+    </div>
+  </main>
+
+ <section class="tabs">
+  <!-- Радио кнопки -->
+  <input type="radio" name="tab" id="tab1" checked>
+  <input type="radio" name="tab" id="tab2">
+  <input type="radio" name="tab" id="tab3">
+  <input type="radio" name="tab" id="tab4">
+  <input type="radio" name="tab" id="tab5">
+
+  <!-- Кнопки-вкладки -->
+  <div class="tab-links">
+    <label for="tab1">Описание</label>
+    <label for="tab2">Преимущества</label>
+    <label for="tab3">Упаковка</label>
+    <label for="tab4">Системные продукты</label>
+    <label for="tab5">Загрузить</label>
+  </div>
+
+  <!-- Содержимое вкладок -->
+  <div class="tab-content" id="content1">
+    Битумсодержащая мастика BIGUMA®- N10 подходит для заполнения швов для всех видов крепления поверхности с помощью брусчатки и дорожных плит. Она отличается высокой прочностью, а также отменной адгезией.
+<br><br>
+   Допуски: TL Fug-StB
+  </div>
+  <div class="tab-content" id="content2">
+    <p>Преимущества:<br>– высока прочность
+<br>– отличная адгезия к минеральным основам
+<br>– высокая стойкость к старению</p>
+  </div>
+
+  <div class="tab-content" id="content3">
+    <p>Упаковка:<br>– Картонная коробка: 15 кг, 30 кг
+<br>– Жестяная бочка: 14 кг, 40кг
+</div>
+
+  <div class="tab-content" id="content4">
+  <ul class="link-list">
+        <li><a href="bigumasws.html">BIGUMA®– SWS</a></li>
+        <li><a href="haftgrund.html">COLZUMIX®- Haftgrund</a></li>
+  </ul>
+</div>
+
+
+
+
+  <div class="tab-content" id="content5">
+    <a href="docs/n10.pdf" target="_blank" class="btn-dark">&#9679 Техническая памятка</a>
+</section>
+
+</body>
+</html>
+
+<footer>
+    <img src="img/logo.png" alt="TARKER">
+    <p>г. Алматы, 12 мкр., дом 22/2, офис 5</p>
+    <p>Email: tarkerkz@mail.ru</p>
+    <p>&copy; 2025 ТОО "TARKER". Все права защищены.</p>
+  </footer>
+
+</body>
+</html>

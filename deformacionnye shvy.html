@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Деформационные швы — ТОО TARKER</title>
+  <link rel="icon" href="img/favicon.png" type="image/png">
+
+  <style>
+    /* ===== Общие стили ===== */
+     body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+
+  /* картинка вместо цвета */
+  background: url("img/ovmbrsh.png") no-repeat center center fixed;
+  background-size: cover; /* растягиваем картинку на весь экран */
+}
+
+    /* ===== Шапка ===== */
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(6px);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-strip {
+      height: 8px;
+      background: linear-gradient(to right, #022233, #f07c00);
+    }
+
+    .header-flex {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo img {
+      height: 55px;
+      transition: transform 0.3s ease;
+    }
+    .logo img:hover {
+      transform: scale(1.05);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #022233;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #f07c00;
+      background: rgba(240, 124, 0, 0.1);
+    }
+
+    .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  padding: 8px 0;
+  z-index: 10;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  color: #000;
+  text-decoration: none;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f2f2f2;
+}
+
+    /* ===== Контент ===== */
+    h1 {
+      text-align: center;
+      color: #022233;
+      font-size: 32px;
+      margin: 30px 0 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      padding-bottom: 60px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      font-size: 16px;
+      padding: 15px;
+      color: #022233;
+      text-transform: uppercase;
+      min-height: 50px;
+    }
+
+    .card .btn {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 10px 20px;
+      background: #f07c00;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .card .btn:hover {
+      background: #022233;
+    }
+
+   footer {
+      background: #022233;
+      color: #fff;
+      text-align: center;
+      padding: 30px 10px;
+      margin-top: auto;
+    }
+
+    footer p {
+      margin: 5px 0;
+      font-size: 14px;
+      opacity: 0.85;
+    }
+
+    footer img {
+      height: 40px;
+      margin-bottom: 8px;
+    }
+
+    /* === АДАПТИВНОСТЬ === */
+    @media (max-width: 768px) {
+      .card.project {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-flex">
+      <div class="logo">
+        <img src="img/logo.png" alt="TARKER" />
+      </div>
+      <nav>
+        <a href="index.html">Главная</a>
+        <a href="about.html">О нас</a>
+        <a href="contact.html">Контакты</a>
+
+        <div class="dropdown">
+          <a href="#">Документы</a>
+          <div class="dropdown-content">
+            <a href="quality.html">Контроль качества</a>
+            <a href="brochures.html">Каталоги/брошюры</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <a href="#">Продукция</a>
+          <div class="dropdown-content">
+            <a href="deformacionnye shvy.html">Деформационные швы</a>
+          <a href="prednapryazhenie.html">Преднапряжение монолитных мостов</a>
+          <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
+          <a href="airport.html">Взлетно-посадочные полосы</a>
+          <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
+          <a href="dorozhnye.polotna.html">Дорожные полотна</a>
+          <a href="pomewenie.html">Продукты для помещений</a>
+          <a href="prisadka.html">Присадки</a>
+          <a href="emulsions.html">Эмульсии</a>
+                    </div>
+        </div>
+
+        <a href="projects.html">Реализованные проекты</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="header-strip"></div>
+
+  <h1>Деформационные швы</h1>
+
+  <div class="container">
+    <div class="card">
+      <img src="img/shov1.jpg" alt="Шов с резиновым компенсатором">
+      <h3>Деформационные швы с резиновым компенсатором</h3>
+      <a href="shov1.html" class="btn">Подробнее</a>
+    </div>
+
+    <div class="card">
+      <img src="img/shov3.jpg" alt="Модульные швы с опорами">
+      <h3>Модульные деформационные швы с опорами</h3>
+      <a href="shov3.html" class="btn">Подробнее</a>
+    </div>
+
+    <div class="card">
+      <img src="img/shov2.jpg" alt="Гребенчатые швы">
+      <h3>Гребенчатые деформационные швы</h3>
+      <a href="shov2.html" class="btn">Подробнее</a>
+    </div>
+
+    <div class="card">
+      <img src="img/shov4.jpg" alt="Резиново-металлический шов">
+      <h3>Резиново-металлический деформационный шов</h3>
+      <a href="shov4.html" class="btn">Подробнее</a>
+    </div>
+  </div>
+
+  <footer>
+    <img src="img/logo.png" alt="TARKER">
+    <p>г. Алматы, 12 мкр., дом 22/2, офис 5</p>
+    <p>Email: tarkerkz@mail.ru</p>
+    <p>&copy; 2025 ТОО "TARKER". Все права защищены.</p>
+  </footer>
+
+</body>
+</html>

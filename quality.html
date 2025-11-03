@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Реализованные проекты — TOO TARKER</title>
+  <title>Контроль качества — TOO TARKER</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="img/favicon.png" type="image/png">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f7f7f7;
-      color: #333;
-    }
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+
+  /* картинка вместо цвета */
+  background: url("img/фон.png") no-repeat center center fixed;
+  background-size: cover; /* растягиваем картинку на весь экран */
+}
     
     header {
   background: #ffffff;
@@ -77,7 +79,7 @@
 
     .quality-card h3 {
       margin-bottom: 10px;
-      color: #e67e22;
+      color: #3f3e3c;
     }
 
     .docs h2 {
@@ -113,6 +115,90 @@
       color: #fff;
     }
 
+     .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background: #fff; /* Белый фон */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+  color: #000; /* Черный текст */
+  background: #fff; /* Белый фон */
+  font-size: 13px; /* Можно регулировать размер */
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background: #f2f2f2;
+  color: #f07c00; /* Меняется цвет при наведении */
+}
+
+.docs {
+  text-align: center;
+  margin: 60px auto;
+}
+
+.docs h2 {
+  margin-bottom: 30px;
+  font-size: 26px;
+  color: #022233;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.certificates {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 18px;
+  flex-wrap: nowrap; /* всё в одну строку */
+  overflow-x: auto; /* появляется прокрутка, если не помещается */
+  padding: 10px 0;
+}
+
+.cert-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  width: 180px; /* меньше размер карточки */
+  flex: 0 0 auto;
+  transition: all 0.3s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.cert-card img {
+  width: 100%;
+  height: 250px; /* уменьшенная высота */
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  pointer-events: none; /* нельзя кликнуть или скачать */
+  user-select: none;
+}
+
+.cert-card p {
+  margin: 10px 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+section.intro {
+  font-family: 'Poppins', sans-serif; /* современный шрифт */
+  font-weight: 800; /* толщина текста — очень жирный */
+  color: #000c30c9; /* светлый текст */
+  text-align: center; /* выравнивание по центру, если нужно */
+}
+
     footer {
       background: #022233;
       color: #bbb;
@@ -125,45 +211,43 @@
 <body>
      <!-- Шапка -->
 <header>
-  <div class="container header-flex">
-    <div class="logo">
-      <img src="img/logo.png" alt="TARKER" />
+    <div class="container header-flex">
+      <div class="logo">
+        <img src="img/logo.png" alt="TARKER" />
       </div>
-    <nav>
-      <a href="index.html">Главная</a>
-      <a href="about.html">О нас</a>
-      <div class="dropdown">
-        <a href="#" class="nav-link">Контакты</a>
-        <div class="dropdown-content">
-          <a href="contact.html">Контактные данные</a>
-          <a href="contact-form.html">Форма обратной связи</a>
+      <nav>
+        <a href="index.html">Главная</a>
+        <a href="about.html">О нас</a>
+        <a href="contact.html">Контакты</a>
+
+        <div class="dropdown">
+          <a href="#">Документы</a>
+          
+<div class="dropdown-content">
+            <a href="quality.html">Контроль качества</a>
+            <a href="brochures.html">Каталоги/брошюры</a>
+          </div>
         </div>
-      </div>
-      <div class="dropdown">
-        <a href="#" class="nav-link">Документы</a>
-        <div class="dropdown-content">
-          <a href="quality.html">Контроль качества</a>
-          <a href="brochures.html">Каталоги/брошюры</a>
-          <a href="certificates.html">Сертификаты</a>
-        </div>
-      </div>
-      <div class="dropdown">
-        <a href="#" class="nav-link">Продукция</a>
-        <div class="dropdown-content">
-          <a href="product.html">Деформационные швы</a>
-          <a href="contact-form.html">Преднапряжение мостов</a>
-          <a href="equipment.html">Собственное оборудование</a>
+
+        <div class="dropdown">
+          <a href="#">Продукция</a>
+          <div class="dropdown-content">
+            <a href="deformacionnye shvy.html">Деформационные швы</a>
+          <a href="prednapryazhenie.html">Преднапряжение монолитных мостов</a>
+          <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
+          <a href="airport.html">Взлетно-посадочные полосы</a>
+          <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
           <a href="dorozhnye.polotna.html">Дорожные полотна</a>
           <a href="pomewenie.html">Продукты для помещений</a>
           <a href="prisadka.html">Присадки</a>
           <a href="emulsions.html">Эмульсии</a>
-          <a href="product.html">Дополнительная продукция</a>
+          </div>
         </div>
-      </div>
-      <a href="projects.html">Реализованные проекты</a>
-    </nav>
-  </div>
-</header>
+
+        <a href="projects.html">Реализованные проекты</a>
+      </nav>
+    </div>
+  </header>
 
 <div class="header-strip"></div>
 
@@ -197,16 +281,38 @@
     </section>
 
     <section class="docs">
-      <h2>Документы и сертификаты</h2>
-      <ul>
-        <li><a href="docs/sertifikat-iso.pdf" target="_blank">Сертификат ISO</a></li>
-        <li><a href="docs/protokol-ispytaniy.pdf" target="_blank">Протокол испытаний</a></li>
-      </ul>
-    </section>
+  <h2>Документы и сертификаты</h2>
+  <div class="certificates">
+    <div class="cert-card">
+      <img src="img/Сертификат соответствия стандарту ISO 50001 2018 (Система энергетического менеджмента).jpg" alt="Сертификат ISO">
+      <p>ISO 50001:2018</p>
+    </div>
+    <div class="cert-card">
+      <img src="img/Сертификат соответствия ISO 9001 2015.jpg" alt="ISO 9001">
+      <p>ISO 9001:2015</p>
+    </div>
+    <div class="cert-card">
+      <img src="img/Сертификат соответствия стандарту ISO 14001 2015 (Система экологического менеджмента).jpg" alt="ISO 14001">
+      <p>ISO 14001:2015</p>
+    </div>
+    <div class="cert-card">
+      <img src="img/Сертификат «Профессиональное предприятие по утилизации» завода TEWE Bauchemie.jpg" alt="TEWE Bauchemie">
+      <p>TEWE Bauchemie</p>
+    </div>
+    <div class="cert-card">
+      <img src="img/Перерабатываемость нашей картонной упаковки.jpg" alt="Экоупаковка">
+      <p>Экологичная упаковка</p>
+    </div>
+  </div>
+</section>
+    
   </main>
 
   <footer>
-    <p>&copy; 2025 ТОО «Таркер». Все права защищены.</p>
+    <img src="img/logo.png" alt="TARKER">
+    <p>г. Алматы, 12 мкр., дом 22/2, офис 5</p>
+    <p>Email: tarkerkz@mail.ru</p>
+    <p>&copy; 2025 ТОО "TARKER". Все права защищены.</p>
   </footer>
 </body>
 </html>

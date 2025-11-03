@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>NILA®- Plast PRO 125 / II (Typ I)- TOO TARKER</title>
+  <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+     body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+
+  /* картинка вместо цвета */
+  background: url("img/фон.png") no-repeat center center fixed;
+  background-size: cover; /* растягиваем картинку на весь экран */
+}
+
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+.container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Шапка */
+    .header-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .product-image img {
+      width: 85%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .product-info {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .product-info h1 {
+      color: #153293;
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .product-info h3 {
+      font-weight: normal;
+      font-size: 15px;
+      margin-top: 0;
+      color: #000000;
+      border-top: 1px solid #ddd;
+      padding-top: 10px;
+    }
+
+    .product-icons {
+      margin: 20px 0;
+      display: flex;
+      gap: 15px;
+    }
+
+    .icon-button {
+      background-color: #ffffff;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+    }
+
+    .tabs {
+      max-width: 1000px;
+      margin: 20px auto;
+      border-top: 1px solid #ddd;
+    }
+
+    .tab-links {
+      display: flex;
+      gap: 30px;
+      padding: 10px 0;
+      font-weight: bold;
+      color: #153293;
+    }
+
+    .tab-content {
+      padding: 20px;
+      border: 1px solid #eee;
+      border-radius: 5px;
+      background: #fafafa;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        flex-direction: column;
+        align-items: center;
+      }
+      .tab-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    .link-list {
+  list-style-type: disc;         /* точка слева */
+  padding-left: 20px;            /* отступ для маркера */
+  margin: 0;
+}
+
+.link-list li {
+  margin-bottom: 10px;
+}
+
+.link-list a {
+  color: rgb(51, 13, 190);
+  text-decoration: none;
+  font-weight: 200;
+  font-size: 5x;
+}
+
+.link-list a:hover {
+  text-decoration: underline;
+}
+
+.product-gallery {
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+}
+
+.main-image img {
+  width: 60%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnails {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+}
+
+.thumbnails img {
+  width: 100px;
+  height: 110px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.3s;
+}
+
+.thumbnails img:hover {
+  border-color: #153293;
+}
+
+  </style>
+  <script>
+  function changeImage(element) {
+    document.getElementById('mainImg').src = element.src;
+  }
+</script>
+
+</head>
+<body>
+  <div class="wrapper">
+<header>
+    <div class="container header-flex">
+      <div class="logo">
+        <img src="img/logo.png" alt="TARKER" />
+      </div>
+      <nav>
+        <a href="index.html">Главная</a>
+        <a href="about.html">О нас</a>
+        <a href="contact.html">Контакты</a>
+
+        <div class="dropdown">
+          <a href="#">Документы</a>
+          
+<div class="dropdown-content">
+            <a href="quality.html">Контроль качества</a>
+            <a href="brochures.html">Каталоги/брошюры</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <a href="#">Продукция</a>
+          <div class="dropdown-content">
+            <a href="deformacionnye shvy.html">Деформационные швы</a>
+          <a href="prednapryazhenie.html">Преднапряжение монолитных мостов</a>
+          <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
+          <a href="airport.html">Взлетно-посадочные полосы</a>
+          <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
+          <a href="dorozhnye.polotna.html">Дорожные полотна</a>
+          <a href="pomewenie.html">Продукты для помещений</a>
+          <a href="prisadka.html">Присадки</a>
+          <a href="emulsions.html">Эмульсии</a>
+          </div>
+        </div>
+
+        <a href="projects.html">Реализованные проекты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="product-gallery">
+  <div class="main-image">
+    <img id="mainImg" src="img/mark5.jpg" alt="NILA®- Plast PRO 125 / II RMD 2.0-R (P6)">
+  </div>
+  <div class="thumbnails">
+    <img src="img/mark5.jpg" alt="BIGUMA 1" onclick="changeImage(this)">
+    <img src="img/mark1-1.jpg" alt="BIGUMA 2" onclick="changeImage(this)">
+      </div>
+</div>
+
+    <div class="product-info">
+      <h1>NILA®- Plast PRO 125 / II RMD 2.0-R (P6)</h1>
+      <h3>Горячий пластик для типа маркировки І, категории дороги Р7</h3>
+      <p>Вы желаете получить свободное предложение или техническую информацию? Обращайтесь к нам!</p>
+
+      <div class="product-icons">
+  <a href="contact.html" class="icon-button" title="Связаться по телефону">📞</a>
+  <a href="contact-form.html" class="icon-button" title="Скачать документ">📄</a>
+</div>
+
+    </div>
+  </main>
+
+ <section class="tabs">
+  <!-- Радио кнопки -->
+  <input type="radio" name="tab" id="tab1" checked>
+  <input type="radio" name="tab" id="tab2">
+  <input type="radio" name="tab" id="tab3">
+  <input type="radio" name="tab" id="tab4">
+  <input type="radio" name="tab" id="tab5">
+
+  <!-- Кнопки-вкладки -->
+  <div class="tab-links">
+    <label for="tab1">Описание</label>
+    <label for="tab2">Преимущества</label>
+    <label for="tab3">Упаковка</label>
+    <label for="tab4">Загрузить</label>
+  </div>
+
+  <!-- Содержимое вкладок -->
+  <div class="tab-content" id="content1">
+   NNILA®- Plast PRO 125 / II – это отражающий маркировочный материал для создания маркировок типа І для дорожных покрытий категории дорог Р7. Данный маркировочный материал подходи для транспортных покрытий всех видов с асфальтобетона как например, дороги, автобаны, спортивные площадки, на которых выставляют высокие требования к маркировке.
+NILA®- Plast PRO 125 / II наносится на дорожное покрытие при температуре от 180 до 210 градусов за Цельсием толщиной слоя 3мм с помощью укладочной машины со специальным маркером на верхних слоях
+ 
+<div class="tab-content" id="content2">
+    <p>Преимущества:<br>– горячий пластик для типа маркировки І
+<br>– подходит для маркировок на покрытиях с интенсивным движением
+<br>– высококачественный маркировочный материал с отборного порошка, песка и бисера
+<br>– высокая точка размягчения, большая стойкость к деформациям, небольшой износ
+<br>– отличная шероховатость при отменной адгезии и нанесении</p>
+  </div>
+
+  <div class="tab-content" id="content3">
+    <p>Упаковка:<br>– Плоская картонная коробка (продукты в блоках): 25 кг
+<br>– Полиэтиленовый мешок (товар в порошке): 25 кг</p>
+  </div>
+
+  
+  <div class="tab-content" id="content4">
+    <a href="docs/mark5.pdf" target="_blank" class="btn-dark">&#9679 Техническая памятка</a>
+</section>
+
+</body>
+</html>
+
+<footer>
+    <img src="img/logo.png" alt="TARKER">
+    <p>г. Алматы, 12 мкр., дом 22/2, офис 5</p>
+    <p>Email: tarkerkz@mail.ru</p>
+    <p>&copy; 2025 ТОО "TARKER". Все права защищены.</p>
+  </footer>
+
+</body>
+</html>

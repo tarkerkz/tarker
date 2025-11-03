@@ -4,103 +4,175 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Реализованные проекты — TOO TARKER</title>
-  <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="img/favicon.png" type="image/png">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-    header {
-  border-bottom: 1px solid #ccc; /* тонкая серая линия */
-  padding-bottom: 10px;          /* небольшой отступ снизу */
-}
-   
-   .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-     .header-flex {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    
-    /* ===== PROJECTS ===== */
+    /* === ОСНОВНОЙ СТИЛЬ === */
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #ffffff;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url("img/фон.png") no-repeat center center fixed;
+      background-size: cover;
       color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
-    .wrap {
+    a { text-decoration: none; }
+
+    .container {
       width: 90%;
       max-width: 1200px;
       margin: 0 auto;
     }
 
+    /* === Шапка === */
+    .header-strip {
+      height: 5px;
+      background-color: #022233;
+    }
+
+   header {
+      background: rgba(255,255,255,0.9);
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
+      backdrop-filter: blur(5px);
+      position: relative;
+      z-index: 2;
+    }
+
+    .header-container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo img {
+      height: 50px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #022233;
+      font-weight: bold;
+      padding: 8px 12px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #f07c00;
+    }
+
+    /* Dropdown */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 200px;
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      z-index: 999;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px 15px;
+      color: #000;
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background: #f2f2f2;
+      color: #f07c00;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+
+    /* === HERO / ЗАГОЛОВОК === */
+    .hero {
+      background: rgba(2,34,51,0.85);
+      color: rgb(255, 249, 249);
+      text-align: center;
+      padding: 50px 10px;
+      background-image: linear-gradient(to bottom right, rgba(2, 89, 171, 0.9), rgba(255, 255, 255, 0.85));
+    }
+
+    .hero h1 {
+      font-size: 25px;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    /* === PROJECTS === */
     #projects {
       padding: 60px 0;
     }
 
-    #projects .sec-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .sec-head {
+      text-align: center;
       margin-bottom: 40px;
     }
 
-    #projects .h2 {
+    .sec-head .h2 {
       font-size: 2rem;
+      color: #f07c00;
       font-weight: 600;
-      color: #222;
-    }
-
-    .pill {
-      padding: 10px 20px;
-      background: orange;
-      color: #ffffff;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: background 0.3s ease;
-    }
-
-    .pill:hover {
-      background: #e67e00;
     }
 
     .card.project {
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 20px;
-  background: #fff;
-  border: 3px solid #9d9c9c; /* ← черные бортики потолще */
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 20px;
+      background: rgba(255,255,255,0.95);
+      border-left: 6px solid #f07c00;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 0.8s ease forwards;
+      opacity: 0;
+    }
 
+    .card.project:nth-child(2n) { border-left-color: #022233; }
 
     .card.project:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.15);
     }
 
-    .card.project .hero-img img {
+    .hero-img img {
       width: 100%;
       height: 200px;
       object-fit: cover;
-      border-radius: 10px;
+      border-radius: 8px;
     }
 
     .card.project h3 {
+      font-size: 1.3rem;
+      color: #022233;
       margin-bottom: 12px;
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: #111;
     }
 
     .card.project ul {
@@ -115,166 +187,285 @@
       line-height: 1.4;
     }
 
-    /* Кнопка "Назад" */
+    /* === КНОПКА НАЗАД === */
     .back-btn {
       display: inline-block;
-      margin-top: 30px;
+      margin-top: 40px;
       padding: 12px 25px;
-      background: #000;
+      background: #022233;
       color: #fff;
-      text-decoration: none;
       border-radius: 8px;
       font-weight: 500;
-      transition: background 0.3s ease;
+      transition: 0.3s;
     }
 
     .back-btn:hover {
-      background: #333;
+      background: #f07c00;
     }
 
-    /* адаптивность */
+    /* === АНИМАЦИЯ === */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+
+/* === CERTIFICATES === */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+#certs .card img {
+  height: 260px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+#certs h3 {
+  font-size: 1.1em;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+#certs p {
+  color: #030303;
+  font-size: 0.95em;
+}
+    /* === FOOTER === */
+    footer {
+      background: #022233;
+      color: #fff;
+      text-align: center;
+      padding: 30px 10px;
+      margin-top: auto;
+    }
+
+    footer p {
+      margin: 5px 0;
+      font-size: 14px;
+      opacity: 0.85;
+    }
+
+    footer img {
+      height: 40px;
+      margin-bottom: 8px;
+    }
+
+    /* === АДАПТИВНОСТЬ === */
     @media (max-width: 768px) {
       .card.project {
         grid-template-columns: 1fr;
       }
-      .card.project .hero-img img {
-        height: 180px;
-      }
+      .hero h1 { font-size: 28px; }
     }
   </style>
 </head>
 <body>
 
-    <!-- Шапка -->
+  <!-- Шапка -->
+  <!-- === ШАПКА === -->
 <header>
-  <div class="container header-flex">
+  <div class="header-container">
     <div class="logo">
-      <img src="img/logo.png" alt="TARKER" />
-      </div>
+      <a href="index.html"><img src="img/logo.png" alt="TARKER"></a>
+    </div>
+
     <nav>
       <a href="index.html">Главная</a>
       <a href="about.html">О нас</a>
+      <a href="contact.html">Контакты</a>
+
       <div class="dropdown">
-        <a href="#" class="nav-link">Контакты</a>
-        <div class="dropdown-content">
-          <a href="contact.html">Контактные данные</a>
-          <a href="contact-form.html">Форма обратной связи</a>
-        </div>
-      </div>
-      <div class="dropdown">
-        <a href="#" class="nav-link">Документы</a>
+        <a href="#">Документы</a>
         <div class="dropdown-content">
           <a href="quality.html">Контроль качества</a>
           <a href="brochures.html">Каталоги/брошюры</a>
-          <a href="certificates.html">Сертификаты</a>
         </div>
       </div>
+
       <div class="dropdown">
-        <a href="#" class="nav-link">Продукция</a>
+        <a href="#">Продукция</a>
         <div class="dropdown-content">
-          <a href="product.html">Деформационные швы</a>
-          <a href="contact-form.html">Преднапряжение мостов</a>
-          <a href="equipment.html">Собственное оборудование</a>
+          <a href="deformacionnye shvy.html">Деформационные швы</a>
+          <a href="prednapryazhenie.html">Преднапряжение монолитных мостов</a>
+          <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
+          <a href="airport.html">Взлетно-посадочные полосы</a>
+          <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
           <a href="dorozhnye.polotna.html">Дорожные полотна</a>
           <a href="pomewenie.html">Продукты для помещений</a>
           <a href="prisadka.html">Присадки</a>
           <a href="emulsions.html">Эмульсии</a>
-          <a href="product.html">Дополнительная продукция</a>
         </div>
       </div>
-      <a href="projects.html">Реализованные проекты</a>
+
+      <a href="projects.html" class="active">Реализованные проекты</a>
     </nav>
   </div>
 </header>
 
-  <!-- PROJECTS -->
+
+  <!-- Заголовок -->
+  <section class="hero">
+    <h1>Реализованные проекты TARKER</h1>
+  </section>
+
+  <!-- Контент -->
   <section id="projects">
-    <div class="wrap">
+    <div class="container">
       <div class="sec-head">
-        <h2 class="h2">Реализованные объекты</h2>
-           </div>
+        
+      </div>
 
       <article class="card project">
         <div class="hero-img"><img src="img/Подъем пролета.JPG" alt="Подъем пролета"></div>
         <div>
-          <h3>Подъемка пролетных строений и замена опорных частей</h3>
+          <h3>Объект: «ЗАПАДНАЯ ЕВРОПА-ЗАПАДНЫЙ КИТАЙ, УЧАСТОК АЛМАТЫ-ХОРГОС»</h3>
           <ul>
-            <li>Объект: "Западная Европа- Западный Китай, участок Алматы-Хоргос"</li>
-            <li>Заказчик: Филиал СП АО "Догуш Гульсан"</li>
+            <li>Подъемка пролетных строений и замена опорных частей</li>
+            <li>Компания TARKERвыполнила: подъем пролетных строений, замена опорных частей, замену деформационных швов на изделия собственного производства, выпускаемые в Республике Казахстан, что позволило обеспечить надежную компенсацию температурных деформаций и повысить долговечность дорожного покрытия.</li>
           </ul>
         </div>
       </article>
 
       <article class="card project">
-        <div class="hero-img"><img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1600&auto=format&fit=crop" alt="Деформационные швы"></div>
+        <div class="hero-img"><img src="img/Западная Европа-Западный Китай.jpg" alt="Деформационные швы"></div>
         <div>
-          <h3>Изготовление и установка деформационных швов DJ-100</h3>
+          <h3>Объект: «ЗАПАДНАЯ ЕВРОПА-ЗАПАДНЫЙ КИТАЙ, УЧАСТОК АЛМАТЫ-ХОРГОС»</h3>
           <ul>
-            <li>Объект: "Западная Европа- Западный Китай, участок Алматы-Хоргос"</li>
-            <li>Заказчик: Филиал СП АО "Догуш Гульсан"</li>
+            <li>На участке трассы «Алматы–Хоргос»была зафиксирована проблема расхождения деформационных швов в цементобетонном покрытии.</li>
+            <li>Изготовление и установка деформационных швов DJ-100</li>
           </ul>
         </div>
       </article>
 
       <article class="card project">
-        <div class="hero-img"><img src="img/Подъем пролета.JPG" alt="Путепровод"></div>
+        <div class="hero-img"><img src="img/Ленинский.jpg" alt="Путепровод"></div>
         <div>
-          <h3>Монолитное преднапряженное пролётное</h3>
+          <h3>СТРОИТЕЛЬСТВО АВТОДОРОЖНОГО ПУТЕПРОВОДА НАД ЖЕЛЕЗНОДОРОЖНЫМИ ПУТЯМИ АВТОМОБИЛЬНОЙ ДОРОГИ РЕСПУБЛИКАНСКОГО ЗНАЧЕНИЯ «ЛЕНИНСКИЙ-АКСУ-КУРЧАТОВ»</h3>
           <ul>
-            <li>Объект: "Путепровод над ж/д путями автодороги респ. значения 'Ленинский-Аксу-Курчатов'"</li>
-          </ul>
-        </div>
-      </article>
-
-         <article class="card project">
-        <div class="hero-img"><img src="img/Подъем пролета.JPG" alt="Путепровод"></div>
-        <div>
-          <h3>Монолитное преднапряженное пролётное строение</h3>
-          <ul>
-            <li>Объект: "Мостовой переход через р. Сырдарья по схеме 33+33+33х33+45+33"</li>
+            <li>Цель—обеспечить бесперебойное движение автотранспорта и органов сообщения, снизить задержки и повысить безопасность пересечения автомобильной и железнодорожной инфраструктур.</li>
           </ul>
         </div>
       </article>
 
       <article class="card project">
-        <div class="hero-img"><img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1600&auto=format&fit=crop" alt="Деформационные швы"></div>
+        <div class="hero-img"><img src="img/Алтын Орда.png" alt="Алтын Орда"></div>
         <div>
-          <h3>Изготовление преднапряженных пролётных строений ВТК-42</h3>
+          <h3>Строительство мостового сооружения в г.Алматы, объект Алтын-Орда</h3>
           <ul>
-            <li>Объект: "Мостовой переход через р.Иртыш, г.Павлодар"</li>
+            <li>Выполнены работы по пред и пос напряжению.</li>
+            <li>Протяжённость участка транспортной развязки возле рынка «Алтын Орда» в г. Алматы составляет около 4 км.
+
+Основная эстакада на этом участке длиной 700 метров.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card project">
+        <div class="hero-img"><img src="img/Павлодар.jpg" alt="Иртыш"></div>
+        <div>
+          <h3>Строительство мостового сооружения в г.Павлодар, «Мостовой переход через р.Иртыш»</h3>
+          <ul>
+            <li>Наша компания выполняет СМР по преднапряжению, а также устройству вантовых систем</li>
             <li>Заказчик: ТОО "Казахдорстрой"</li>
           </ul>
         </div>
       </article>
 
       <article class="card project">
-        <div class="hero-img"><img src="img/Подъем пролета.JPG" alt="Путепровод"></div>
+        <div class="hero-img"><img src="img/Астана_Темиртау.jpg" alt="Усиление"></div>
         <div>
-          <h3>Усиление опор моста композитными материалами</h3>
+          <h3>АВТОМОБИЛЬНАЯ ДОРОГА РЕСПУБЛИКАНСКОГО ЗНАЧЕНИЯ М-3 «АСТАНА-ТЕМИРТАУ»</h3>
           <ul>
-            <li>Объект: "Мостовой переход через р. Сырдарья по схеме 33+33+33х33+45+33"</li>
+            <li>Нашей компанией были выполнены работы по демонтажу и установке деформационных швов собственного производства по типу MAURER</li>
           </ul>
         </div>
       </article>
 
       <article class="card project">
-        <div class="hero-img"><img src="img/Подъем пролета.JPG" alt="Путепровод"></div>
+        <div class="hero-img"><img src="img/Есентай.jpg" alt="Испытания"></div>
         <div>
-          <h3>Монтаж и установка испытательного оборудования</h3>
+          <h3>«Реконструкция моста через реку Есентайпо пр.Аль-Фараби»-СМР по предварительному преднапряжению</h3>
           <ul>
-            <li>Объект: "Мост через р. Урал в Махамбетском районе Атырауской области"</li>
+            <li>Мост через реку Есентайна проспекте Аль-Фараби подлежит масштабной реконструкции: выявлен аварийный статус, требуется усиление конструкций.</li>
           </ul>
         </div>
       </article>
+
+      <article class="card project">
+        <div class="hero-img"><img src="img/Тауелсиздик.jpg" alt="Испытания"></div>
+        <div>
+          <h3>АВТОМОБИЛЬНЫЙ МОСТ ПО ПРОСПЕКТУ ТӘУЕЛСІЗДІК ЧЕРЕЗ РЕКУ ЕСИЛЬ В СТОЛИЦЕ КАЗАХСТАНА —ГОРОДЕ АСТАНА.</h3>
+          <ul>
+            <li>Выполнены работы по пред и пос напряжению.</li>
+          </li>Длина моста –910 м.
+Служит связующим звеном между правым и левымберегами города.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card project">
+        <div class="hero-img"><img src="img/Альсеит.png" alt="Путепровод"></div>
+        <div>
+          <h3>Строительство мостового перехода через р. Сырдарья на участке Альсеит</h3>
+          <ul>
+            <li>Выполнены работы по пред и пос напряжению.</li>
+          </ul>
+        </div>
+      </article>
+
+      <div style="text-align:center;">
+        <a href="index.html" class="back-btn">← Назад на главную</a>
+      </div>
     </div>
   </section>
 
-  <!-- Подвал -->
-<footer>
-  <div class="container footer-flex">
-    <p>&copy; 2025 ТОО ТАРКЕР. Все права защищены.</p>
-  </div>
-</footer>
 
+<!-- CERTIFICATES -->
+<section id="certs">
+  <div class="container">
+    <div class="sec-head">
+      <h2 class="h2">Письма от партнеров</h2>
+      <p class="muted">Выбор TARKER—это выбор надежности, инноваций и профессионализма.</p>
+    </div>
+    <div class="cert-grid">
+      <div class="card"><img src="img/Письмо1.jpg" alt="Сертификат 1"></div>
+      <div class="card"><img src="img/Письмо2.jpg" alt="Сертификат 2"></div>
+      <div class="card"><img src="img/Письмо3.jpg" alt="Сертификат 3"></div>
+      <div class="card"><img src="img/Письмо 4.jpg" alt="Сертификат 4"></div>
+      
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Подвал -->
+  <footer>
+    <img src="img/logo.png" alt="TARKER">
+    <p>г. Алматы, 12 мкр., дом 22/2, офис 5</p>
+    <p>Email: tarkerkz@mail.ru</p>
+    <p>&copy; 2025 ТОО "TARKER". Все права защищены.</p>
+  </footer>
+
+  <script>
+    // плавное появление карточек
+    const cards = document.querySelectorAll('.card.project');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => observer.observe(card));
+  </script>
 </body>
 </html>
