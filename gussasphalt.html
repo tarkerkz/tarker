@@ -3,33 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Для ограждающих бордюров- TOO TARKER</title>
+   <title>Литой асфальт- TOO TARKER</title>
   <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="img/favicon.png" type="image/png">
   <link rel="stylesheet" href="style.css">
-  <style>
-    body {
+<style>
+      body {
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
       background: url("img/фон.png") no-repeat center center fixed;
       background-size: cover;
     }
-   main {
+    main {
   display: flex;
-  justify-content: flex-start;
-  gap: 100px;
-  padding: 10px 20px;
-  max-width: 400px;
-  margin-left: 0;
-  flex-wrap: wrap;
-  flex: 1;
+  flex-wrap: wrap;         /* ✅ разрешает перенос на новую строку */
+  justify-content: flex-start; /* или center */
+  gap: 20px;               /* расстояние между карточками */
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0;
 }
 
+.container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-
+    /* Шапка */
+    .header-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 .product-block {
-  width: 100%;
+  width: calc(33.333% - 14px);
   text-align: center;      /* центрируем содержимое */
   text-decoration: none;
   color: inherit;
@@ -37,7 +46,7 @@
 }
 
 .product-block img {
-  width: 80%;              /* размер картинки */
+  width: 90%;              /* размер картинки */
   height: 300px;
   object-fit: cover;
   display: block;
@@ -73,18 +82,10 @@
   flex-direction: column;
 }
 
-.container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-    }
+main {
+  flex: 1;
+}
 
- /* Шапка */
-    .header-flex {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
 .section-title {
   text-align: left;
   font-weight: bold;
@@ -140,19 +141,23 @@
 
 <hr style="margin: 0; border: none; border-top: 1px solid #ccc;" />
 
-
-<p class="section-title">Для ограждающих бордюров</p>
+<p class="section-title">Литой асфальт / ремонтные смеси</p>
 
 <main>
-    <a href="BIGUMA®- 1401.html" class="product-block">
-    <img src="img/BIGUMA®- 1401.jpg" alt="BIGUMA®- 1401">
-    <p>Полимерно-модифицированная, битум содержащая и эластичная мастика для герметизации швов</p>
-    <h3>BIGUMA®- 1401</h3>
+<a href="GRANDOMA.html" class="product-block">
+    <img src="img/grandoma.jpg" alt="BIGUMA®- GRANO MA">
+    <p>Асфальтобетон литой гранулированный</p>
+    <h3>BIGUMA®- GRANO MA</h3>
   </a>
-</main>
- 
 
-  
+  <a href="guss.html" class="product-block">
+    <img src="img/guss.jpg" alt="BIGUMA®- Gussasphalt Reparaturmassen">
+    <p>Ремонтные массы «Литой асфальт» для дорожного и гражданского строительства</p>
+    <h3>BIGUMA®- Gussasphalt Reparaturmassen</h3>
+  </a>
+
+  </main>
+
 
 <footer>
     <img src="img/logo.png" alt="TARKER">
