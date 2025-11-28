@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог GRÜN GmbH - ТОО TARKER</title>
+
+  <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url("img/grun_fon.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(234, 231, 231, 0.6);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 20px 150px;
+}
+
+.header-strip {
+  height: 12px;
+  background-color: #022233;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Заголовок страницы */
+.section-title {
+  text-align: left;
+  font-weight: bold;
+  font-size: 35px;
+  color: #000;
+  margin: 30px 20px 20px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #989a9d;
+}
+
+/* Сетка каталога */
+.brochure-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: start;
+  margin: 40px 0;
+}
+
+.brochure-card {
+  background: #fff;
+  width: 250px;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  transition: 0.3s;
+  text-align: center;
+}
+
+.brochure-card:hover {
+  transform: translateY(-5px);
+}
+
+.brochure-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.btn-dark {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 14px;
+  background:#022233;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+/* Блок GRUN */
+.certificates{
+  display:flex;
+  flex-wrap:wrap;
+  gap:25px;
+  margin-top:40px;
+}
+
+.cert-card{
+  background:rgba(255,255,255,0.85);
+  border-radius:10px;
+  width:calc(25% - 20px);  /* 4 карточки в ряд */
+  box-shadow:0 3px 8px rgba(0,0,0,0.15);
+  transition:0.3s;
+}
+
+.cert-card:hover{
+  transform:translateY(-5px);
+}
+
+.cert-card img{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  border-radius:10px 10px 0 0;
+}
+
+.cert-card p{
+  padding:10px;
+  font-size:14px;
+  font-weight:600;
+  text-align:center;
+}
+
+/* FOOTER */
+footer {
+  margin-top: 60px;
+  padding: 25px;
+  text-align: center;
+  background: #022233;
+  color: #fff;
+}
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-flex">
+    <div class="logo"><img src="img/favicon.png" alt="TARKER"/></div>
+
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="about.html">О нас</a>
+      <a href="contact.html">Контакты</a>
+
+      <div class="dropdown">
+        <a href="#">Документы</a>
+        <div class="dropdown-content">
+          <a href="quality.html">Контроль качества</a>
+          <a href="brochures.html">Каталоги/брошюры</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#">Продукция</a>
+        <div class="dropdown-content">
+          <a href="deformacionnye shvy.html">Деформационные швы</a>
+          <a href="gussasphalt.html">Литой асфальтобетон</a>
+          <a href="prednapryazhenie.html">Преднапряжение монолитных мостов</a>
+          <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
+          <a href="airport.html">Взлетно-посадочные полосы</a>
+          <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
+          <a href="dorozhnye.polotna.html">Дорожные полотна</a>
+          <a href="pomewenie.html">Продукты для помещений</a>
+          <a href="prisadka.html">Присадки</a>
+          <a href="emulsions.html">Эмульсии</a>
+          <a href="product.html">Дополнительная продукция</a>
+        </div>
+      </div>
+
+      <a href="projects.html">Реализованные проекты</a>
+    </nav>
+  </div>
+</header>
+
+
+<div class="header-strip"></div>
+
+
+<p class="section-title">Каталог GRÜN GmbH</p>
+
+<section class="container">
+  <div class="brochure-grid">
+
+    <div class="brochure-card">
+      <img src="img/grun_img.png" alt="BIGUMA® Fertigschlämme">
+      <h3>Машины для дорожного строительства и содержания дорог</h3>
+      <a href="brsh/Grun_katalog.pdf" target="_blank" class="btn-dark">Скачать PDF</a>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="container">
+  <h2>Машины Grun</h2>
+  <div class="certificates">
+
+    <div class="cert-card"><img src="img/gruncar_1.png"><p>Горизонтальные котлы для литого асфальта</p></div>
+    <div class="cert-card"><img src="img/gruncar_2.png"><p>Котлы для транспортировки и плавления литого асфальта</p></div>
+    <div class="cert-card"><img src="img/gruncar_3.jpg"><p>Уплотнительный орган К110 с опциями</p></div>
+    <div class="cert-card"><img src="img/gruncar_4.png"><p>Транспортер-самосвал D 0,6 HD</p></div>
+    <div class="cert-card"><img src="img/gruncar_5.png"><p>Транспортировка и распыление битума</p></div>
+    <div class="cert-card"><img src="img/gruncar_6.png"><p>Машина для заливки швов</p></div>
+    <div class="cert-card"><img src="img/gruncar_7.png"><p>Фрезерование и резка швов</p></div>
+    <div class="cert-card"><img src="img/gruncar_8.png"><p>Ручные и моторизованные котлы с мешалкой</p></div>
+
+  </div>
+</section>
+
+
+<footer>
+  <img src="img/logo.png" alt="TARKER"><br>
+  г. Алматы, 12 мкр., дом 22/2, офис 5<br>
+  Email: tarkerkz@mail.ru<br>
+  © 2025 ТОО "TARKER"
+</footer>
+
+</body>
+</html>
