@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Новости и события - ТОО TARKER</title>
+  <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+           margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+
+  /* картинка вместо цвета */
+  background: url("img/фон.png") no-repeat center center fixed;
+  background-size: cover; /* растягиваем картинку на весь экран */
+}
+.logo {
+  padding-left: 50px;   /* отступ от левого края header */
+}
+
+        header {
+            background: #ffffff;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #ccc;
+        }
+
+        .container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+
+        .news-image-wrapper {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.news-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.news-image.active {
+    opacity: 1;
+}
+
+/* стрелки */
+.news-image-wrapper .nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    border: none;
+    font-size: 28px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.news-image-wrapper:hover .nav {
+    opacity: 1;
+}
+
+.news-image-wrapper .prev {
+    left: 10px;
+}
+
+.news-image-wrapper .next {
+    right: 10px;
+}
+
+/* улучшение качества */
+.news-image {
+    image-rendering: auto;
+}
+
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .news-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-content {
+            padding: 20px;
+        }
+
+        .news-date {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 8px;
+        }
+
+        .news-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .news-text {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .news-tag {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 5px 10px;
+            font-size: 12px;
+            background: #ff8c00;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+
+        .fullscreen {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.fullscreen img {
+    max-width: 95vw;
+    max-height: 95vh;
+    object-fit: contain;
+}
+
+.fs-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.fs-prev, .fs-next {
+    position: absolute;
+    top: 50%;
+    font-size: 50px;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+}
+
+.fs-prev { left: 30px; }
+.fs-next { right: 30px; }
+
+        footer {
+  position: relative;          /* поставить поверх других ограничений */
+  left: 50%;
+  transform: translateX(-50%); /* центрируем 100vw блок посередине */
+  width: 100vw;                /* принудительно тянем по ширине окна */
+  max-width: 100vw;
+  box-sizing: border-box;
+  background: #022233;
+  color: #fff;
+  text-align: center;
+  padding: 30px 10px;
+  margin: 0;
+  z-index: 1;
+}
+    </style>
+
+    
+</head>
+<body>
+  <div class="wrapper">
+<header>
+    <div class="container header-flex">
+      <div class="logo">
+        <img src="img/logo.png" alt="TARKER" />
+      </div>
+      <nav>
+       <a href="index.html">Главная</a>
+        <a href="about.html">О нас</a>
+        <a href="contact.html">Контакты</a>
+        <a href="news.html">Новости</a>
+
+        <div class="dropdown">
+          <a href="#">Документы</a>
+          
+<div class="dropdown-content">
+            <a href="quality.html">Контроль качества</a>
+            <a href="brochures.html">Каталоги/брошюры</a>
+          </div>
+        </div>
+
+       <div class="dropdown">
+          <a href="#">Продукция</a>
+          <div class="dropdown-content">
+          <a href="deformacionnye shvy.html">Деформационные швы</a>
+          <a href="gussasphalt.html">Литой асфальтобетон</a>
+          <a href="prednapryazhenie.html">Преднапряжение монолитных мостов</a>
+          <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
+          <a href="airport.html">Взлетно-посадочные полосы</a>
+          <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
+          <a href="dorozhnye.polotna.html">Дорожные полотна</a>
+          <a href="pomewenie.html">Продукты для помещений</a>
+          <a href="prisadka.html">Присадки</a>
+          <a href="emulsions.html">Эмульсии</a>
+          </div>
+        </div>
+
+        <a href="projects.html">Реализованные проекты</a>
+      </nav>
+    </div>
+  </header>
+
+    <h1>Новости и события</h1>
+    <p>Актуальные события, выставки и собрания нашей компании</p>
+</header>
+
+<div class="container">
+    <div class="news-grid">
+
+        <!-- Новость 1 -->
+        <div class="news-card">
+    <div class="news-image-wrapper">
+        <img src="img/kaztraffik_2.jpeg" class="news-image active">
+        <img src="img/kaztraffik_3.jpeg" class="news-image">
+        <img src="img/kaztraffik.jpeg" class="news-image">
+
+        <button class="nav prev">‹</button>
+        <button class="nav next">›</button>
+    </div>
+
+    <div class="news-content">
+        <div class="news-date">19 ноября 2025</div>
+        <div class="news-title">Участие в международной выставке Kaztraffic-2025</div>
+        <div class="news-text">
+            Наша компания приняла участие в специализированной выставке,
+            где были представлены современные технологии асфальтирования
+            и инновационные материалы.
+        </div>
+        <span class="news-tag">Выставка</span>
+    </div>
+</div>
+
+
+        <!-- Новость 2 -->
+        <div class="news-card">
+        <div class="news-image-wrapper">
+        <img src="img/Promtransproekt.jpg" class="news-image active">
+        <img src="img/promtransproekt_2.jpg" class="news-image">
+        
+        <button class="nav prev">‹</button>
+        <button class="nav next">›</button>
+    </div>
+            <div class="news-content">
+                <div class="news-date">14 августа 2025</div>
+                <div class="news-title">Рабочее собрание с "Казахский ПромТрансПроект"</div>
+                <div class="news-text">
+                    Проведено совещание немецких партнеров  с проектным институтом,
+                    посвященное внедрению новых технологий в дорожные проекты 
+                </div>
+                <span class="news-tag">Собрание</span>
+            </div>
+        </div>
+
+        <!-- Новость 3 -->
+        <div class="news-card">
+             <div class="news-image-wrapper">
+        <img src="img/vant.jpeg" class="news-image active">
+        <img src="img/vant1.jpeg" class="news-image">
+        <img src="img/vant2.jpeg" class="news-image active">
+        <img src="img/vant3.jpeg" class="news-image active">
+        
+        <button class="nav prev">‹</button>
+        <button class="nav next">›</button>
+    </div>
+            <div class="news-content">
+                <div class="news-date">10 января 2025</div>
+                <div class="news-title">Установка первых вантов в Казахстане</div>
+                <div class="news-text">
+                    ТОО "TARKER" совместно с партнерами "OVM" начали установку вантовой системы на мосту в г. Павлодар. Первый вантовый мост В Казахстане 
+                </div>
+                <span class="news-tag">Событие</span>
+            </div>
+        </div>
+
+          </div>
+</div>
+
+<footer>
+    <img src="img/logo.png" alt="TARKER">
+    <p>г. Алматы, 12 мкр., дом 22/2, офис 5</p>
+    <p>Email: tarkerkz@mail.ru</p>
+    <p>&copy; 2025 ТОО "TARKER". Все права защищены.</p>
+  </footer>
+
+
+<script>
+/* ---------- ЛИСТАНИЕ В КАРТОЧКЕ ---------- */
+document.querySelectorAll('.news-image-wrapper').forEach(wrapper => {
+    const images = wrapper.querySelectorAll('.news-image');
+    const next = wrapper.querySelector('.next');
+    const prev = wrapper.querySelector('.prev');
+    let index = 0;
+
+    next.addEventListener('click', e => {
+        e.stopPropagation();
+        images[index].classList.remove('active');
+        index = (index + 1) % images.length;
+        images[index].classList.add('active');
+    });
+
+    prev.addEventListener('click', e => {
+        e.stopPropagation();
+        images[index].classList.remove('active');
+        index = (index - 1 + images.length) % images.length;
+        images[index].classList.add('active');
+    });
+
+    /* ---------- FULLSCREEN ---------- */
+    images.forEach((img, i) => {
+        img.addEventListener('click', () => {
+            openFullscreen(images, i);
+        });
+    });
+});
+
+/* ---------- FULLSCREEN VIEW ---------- */
+const fullscreen = document.createElement('div');
+fullscreen.innerHTML = `
+<div class="fullscreen">
+    <span class="fs-close">&times;</span>
+    <img>
+    <span class="fs-prev">&#10094;</span>
+    <span class="fs-next">&#10095;</span>
+</div>`;
+document.body.appendChild(fullscreen);
+
+const fsBox = document.querySelector('.fullscreen');
+const fsImg = fsBox.querySelector('img');
+const fsPrev = fsBox.querySelector('.fs-prev');
+const fsNext = fsBox.querySelector('.fs-next');
+const fsClose = fsBox.querySelector('.fs-close');
+
+let fsImages = [];
+let fsIndex = 0;
+
+function openFullscreen(images, index) {
+    fsImages = images;
+    fsIndex = index;
+    fsImg.src = fsImages[fsIndex].src;
+    fsBox.style.display = 'flex';
+}
+
+fsNext.onclick = () => {
+    fsIndex = (fsIndex + 1) % fsImages.length;
+    fsImg.src = fsImages[fsIndex].src;
+};
+
+fsPrev.onclick = () => {
+    fsIndex = (fsIndex - 1 + fsImages.length) % fsImages.length;
+    fsImg.src = fsImages[fsIndex].src;
+};
+
+fsClose.onclick = () => fsBox.style.display = 'none';
+
+fsBox.addEventListener('click', e => {
+    if (e.target === fsBox) fsBox.style.display = 'none';
+});
+
+document.addEventListener('keydown', e => {
+    if (fsBox.style.display === 'flex') {
+        if (e.key === 'Escape') fsBox.style.display = 'none';
+        if (e.key === 'ArrowRight') fsNext.click();
+        if (e.key === 'ArrowLeft') fsPrev.click();
+    }
+});
+</script>
+</body>
+</html>
