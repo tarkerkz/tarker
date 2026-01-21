@@ -18,33 +18,46 @@
   background: url("img/фон.png") no-repeat center center fixed;
   background-size: cover; /* растягиваем картинку на весь экран */
 }
+/* ===== HEADER ===== */
+header {
+  background: #ffffff;
+  padding: 0;               /* убираем лишние отступы */
+}
+
+/* контейнер шапки */
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 90px;             /* фиксированная высота */
+}
+
+/* логотип */
 .logo {
-  padding-left: 50px;   /* отступ от левого края header */
+  padding-left: 30px;       /* отступ от левого края */
 }
 
-        header {
-            background: #ffffff;
-            color: #fff;
-            padding: 30px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 32px;
-        }
-
-        header p {
-            margin-top: 10px;
-            font-size: 16px;
-            color: #ccc;
-        }
-
-        .container {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
+.logo img {
+  height: 55px;
+  display: block;
 }
+
+/* меню */
+nav {
+  display: flex;
+  align-items: center;
+  margin-left: 150px;        /* РАССТОЯНИЕ МЕЖДУ ЛОГО И МЕНЮ */
+  gap: 5px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
 
 
         .news-image-wrapper {
@@ -313,7 +326,7 @@
         <button class="nav next">›</button>
     </div>
             <div class="news-content">
-                <div class="news-date">10 января 2025</div>
+                <div class="news-date">10 декабря 2025</div>
                 <div class="news-title">Установка первых вантов в Казахстане</div>
                 <div class="news-text">
                     ТОО "TARKER" совместно с партнерами "OVM" начали установку вантовой системы на мосту в г. Павлодар. Первый вантовый мост В Казахстане 

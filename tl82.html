@@ -162,6 +162,26 @@
 .thumbnails img:hover {
   border-color: #153293;
 }
+/* ===== HEADER НА ВСЮ ШИРИНУ ===== */
+header {
+  width: 100%;
+  background: #ffffff;
+  padding: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* Внутренний контейнер */
+.header-container {
+  width: 100%;
+  max-width: 1400px;     /* ⬅ было узко — расширяем */
+  margin: 0 auto;
+  padding: 0 200px;      /* ⬅ отступы от краёв экрана */
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
   </style>
   <script>

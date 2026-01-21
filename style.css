@@ -1467,4 +1467,41 @@ footer {
     }
 
 
-    
+    header {
+  background: #ffffff;
+  padding: 0;               /* убираем лишние отступы */
+}
+
+/* контейнер шапки */
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 90px;             /* фиксированная высота */
+}
+
+/* логотип */
+.logo {
+  padding-left: 30px;       /* отступ от левого края */
+}
+
+.logo img {
+  height: 55px;
+  display: block;
+}
+
+/* меню */
+nav {
+  display: flex;
+  align-items: center;
+  margin-left: 150px;        /* РАССТОЯНИЕ МЕЖДУ ЛОГО И МЕНЮ */
+  gap: 5px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+}
