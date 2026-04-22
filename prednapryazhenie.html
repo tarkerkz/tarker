@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Преднапряжение монолитных мостов – TARKER</title>
   <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
   <style>
     body {
       margin: 0;
@@ -22,103 +23,7 @@
       flex-direction: column;
     }
 
-    /* === Шапка === */
-    .header-strip {
-      height: 5px;
-      background-color: #022233;
-    }
-
-     /* === Шапка === */
-    .header-strip {
-      height: 5px;
-      background-color: #022233;
-    }
-
-    header {
-      background: rgba(255,255,255,0.9);
-      padding: 15px 0;
-      border-bottom: 1px solid #eee;
-      backdrop-filter: blur(5px);
-      position: relative;
-      z-index: 2;
-    }
-
-    .header-container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo img {
-      height: 50px;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #022233;
-      font-weight: 400;
-      padding: 8px 12px;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #f07c00;
-    }
-
-    /* Dropdown */
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      min-width: 200px;
-      background: #fff;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      z-index: 999;
-    }
-
-    .dropdown-content a {
-      display: block;
-      padding: 10px 15px;
-      color: #000;
-      font-size: 13px;
-      text-decoration: none;
-    }
-
-    .dropdown-content a:hover {
-      background: #f2f2f2;
-      color: #f07c00;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-    /* Заголовок */
-    .hero {
-      text-align: center;
-      padding: 120px 20px 60px;
-    }
-    .hero h1 {
-      font-size: 56px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #fff;
-      text-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-    }
-
-
+   
      /* Заголовок */
     .hero {
       text-align: center;
@@ -343,13 +248,7 @@
       margin-bottom: 15px;
     }
 
-    footer {
-      text-align: center;
-      background: rgba(2,34,51,0.95);
-      padding: 20px 0;
-      color: #ccc;
-      margin-top: auto;
-    }
+   
 
     @media (max-width: 768px) {
       .hero h1 {
@@ -430,48 +329,74 @@
 }
 
   </style>
+  <meta name="keywords" content="мастика, мастика для швов, бигума, гусасфальт, литой асфальт, деформационный шов, преднапряжение, вантовый мост, аэропорт мастика, ямочный ремонт">
+  <meta name="description" content="Мастика, литой асфальт, деформационные швы, гусасфальт, преднапряжение мостов — поставка и строительство TARKER">
 </head>
 <body>
   <div class="overlay">
-   <header>
-    <div class="header-container">
-      <div class="logo">
-        <img src="img/logo.png" alt="TARKER" />
-      </div>
-      <nav>
-       <a href="index.html">Главная</a>
-        <a href="about.html">О нас</a>
-        <a href="contact.html">Контакты</a>
-        <a href="news.html">Новости</a>
-                     
-        <div class="dropdown">
-          <a href="#">Документы</a>
-          
-<div class="dropdown-content">
-            <a href="quality.html">Контроль качества</a>
-            <a href="brochures.html">Каталоги/брошюры</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <a href="#">Продукция</a>
-          <div class="dropdown-content">
-          <a href="deformacionnye shvy.html">Деформационные швы</a>
-          <a href="gussasphalt.html">Литой асфальтобетон</a>
-          <a href="prednapryazhenie.html">Преднапряжение монолитных мостов</a>
-          <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
-          <a href="airport.html">Взлетно-посадочные полосы</a>
-          <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
-          <a href="dorozhnye.polotna.html">Дорожные полотна</a>
-          <a href="pomewenie.html">Продукты для помещений</a>
-          <a href="prisadka.html">Присадки</a>
-          <a href="emulsions.html">Эмульсии</a>
-          
-          </div>
-        </div>
-        <a href="projects.html">Реализованные проекты</a>
-      </nav>
+   <header class="header">
+  <div class="header-inner">
+
+    <!-- LOGO -->
+    <div class="logo">
+      <span class="logo-main">TARKER</span>
+      <span class="logo-sub">Строим будущее</span>
     </div>
-  </header>
+
+    <!-- NAV -->
+    <nav class="nav">
+
+      <a href="index.html">Главная</a>
+      <a href="about.html">О нас</a>
+      <a href="contact.html">Контакты</a>
+      <a href="news.html">Новости</a>
+
+      <div class="dropdown">
+        <a>Документы</a>
+        <div class="dropdown-content">
+          <a href="quality.html">Контроль качества</a>
+          <a href="brochures.html">Каталоги</a>
+        </div>
+      </div>
+
+       <div class="dropdown">
+      <a class="hover:text-orange-500 transition cursor-pointer">Продукция</a>
+      <div class="dropdown-content">
+        <a href="deformacionnye shvy.html">Деформационные швы</a>
+        <a href="gussasphalt.html">Литой асфальтобетон</a>
+        <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
+        <a href="airport.html">Взлетно-посадочные полосы</a>
+        <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
+        <a href="dorozhnye.polotna.html">Дорожные полотна</a>
+        <a href="pomewenie.html">Продукты для помещений</a>
+        <a href="prisadka.html">Присадки</a>
+        <a href="emulsions.html">Эмульсии</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a class="hover:text-orange-500 transition cursor-pointer">Мосты</a>
+      <div class="dropdown-content">
+    <a href="prednapryazhenie.html">Преднапряжение</a>
+    <a href="vantovye-mosty.html">Вантовые мосты</a>
+     </div>
+    </div>
+
+      <a class="hover:text-orange-500 transition" href="projects.html">Проекты</a>      
+
+    </nav>
+
+    <!-- CONTACT -->
+    <div class="contact">
+  <span>+7 (700) 556-48-28</span>
+
+  <a href="https://wa.me/77005564828" target="_blank" class="whatsapp-btn">
+    <img src="img/whatsapp.png" alt="WhatsApp">
+  </a>
+</div>
+
+  </div>
+</header>
 
     <section class="hero">
       <h1>Преднапряжение монолитных мостов</h1>
@@ -670,8 +595,13 @@
     </section>
 
     <footer>
-      <p>&copy; 2026 ТОО "TARKER". Все права защищены.</p>
-    </footer>
+    <img src="img/logo.png" alt="TARKER">
+    <p>г. Алматы, Наурызбайский район, мкр-н Мамыр,улица Афцинао 37</p>
+    <p>Email: tarkerkz@mail.ru</p>
+    <p>&copy; 2026 ТОО "TARKER". Все права защищены.</p>
+  </footer>
+
   </div>
+ 
 </body>
 </html>

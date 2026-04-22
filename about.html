@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
   <title>О компании - ТОО TARKER</title>
   <style>
    /* Сброс и базовая структура */
@@ -46,103 +47,157 @@
 
    
 
-     /* === Шапка === */
-    .header-strip {
-      height: 5px;
-      background-color: #022233;
-    }
+   
 
-    header {
-      background: rgba(255,255,255,0.9);
-      padding: 15px 0;
-      border-bottom: 1px solid #eee;
-      backdrop-filter: blur(5px);
-      position: relative;
-      z-index: 2;
-    }
-
-    .header-container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo img {
-      height: 50px;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    nav a {
-  text-decoration: none;
-  color: #022233;
-  font-weight: 450;      /* ТОНКИЙ ШРИФТ */
-  font-size: 14px;
-  letter-spacing: 0.9px; /* лёгкая «воздушность» */
-  padding: 8px 12px;
-  transition: 0.3s;
-}
-
-
-    nav a:hover {
-      color: #f07c00;
-    }
-
-    /* Dropdown */
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      min-width: 200px;
-      background: #fff;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      z-index: 999;
-    }
-
-    .dropdown-content a {
-      display: block;
-      padding: 10px 15px;
-      color: #000;
-      font-size: 13px;
-      text-decoration: none;
-    }
-
-    .dropdown-content a:hover {
-      background: #f2f2f2;
-      color: #f07c00;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    /* === Контент === */
     .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 40px auto;
-      background: transparent;
-      backdrop-filter: none;   /* убран эффект размытия */
-  border-radius: 0;        /* убраны закругления */
-  padding: 20px;
+  font-size: 16px;
 }
 
-    h1 {
-      color: #6ab0d6;
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
+     .header{
+  position: sticky;
+  top:0;
+  z-index:1000;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.header-inner{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns: 180px 1fr 220px;
+  align-items:center;
+  padding:10px 20px;
+  gap:10px;
+}
+
+/* LOGO */
+.logo{
+  display:flex;
+  flex-direction:column;
+  line-height:1.1;
+}
+
+.logo-main{
+  font-size:18px;
+  font-weight:700;
+  color:#f97316; /* ОРАНЖЕВЫЙ */
+  letter-spacing:1px;
+}
+
+.logo-sub{
+  font-size:9px;
+  color:#aaa; /* СЕРОВАТЫЙ */
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+/* NAV */
+.nav{
+  display:flex;
+  justify-content:center;
+  gap:14px; /* ← меньше расстояние */
+  font-size:11px; /* ← уменьшили */
+  text-transform:uppercase;
+}
+
+.nav a{
+  color:#ddd;
+  text-decoration:none;
+  transition:0.2s;
+  white-space:nowrap;
+}
+
+.nav a:hover{
+  color:#f97316;
+}
+
+.dropdown{
+  position:relative;
+  cursor:pointer;
+  padding-bottom:8px;
+}
+
+/* красивый компактный dropdown */
+.dropdown-content{
+  position:absolute;
+  top:100%;
+  left:0;
+
+  min-width:180px;
+  padding:6px 0;
+
+  background: rgba(10,10,10,0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+
+  opacity:0;
+  visibility:hidden;
+  transform: translateY(10px);
+  transition:0.2s ease;
+
+  pointer-events:none;
+
+  z-index:9999;
+}
+
+/* 🔥 ВАЖНЫЙ ФИКС — удержание hover */
+.dropdown:hover .dropdown-content,
+.dropdown-content:hover{
+  opacity:1;
+  visibility:visible;
+  transform: translateY(0);
+  pointer-events:auto;
+}
+
+/* пункты меню — компактные */
+.dropdown-content a{
+  display:block;
+  padding:6px 12px;
+  font-size:11px;
+  color:#ddd;
+  text-decoration:none;
+  transition:0.2s;
+  white-space:nowrap;
+}
+
+.dropdown-content a:hover{
+  background: rgba(255,255,255,0.06);
+  color:#f97316;
+}
+
+
+/* CONTACT */
+.contact{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  gap:10px;
+  font-size:11px;
+  color:#ddd;
+}
+
+.contact button{
+  background:#f97316;
+  border:none;
+  padding:6px 10px;
+  font-size:10px;
+  font-weight:700;
+  cursor:pointer;
+  text-transform:uppercase;
+}
+
+
+h1 { font-family: "Montserrat", sans-serif; }
+.about-content h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+}
 
     .about-section {
       display: flex;
@@ -165,12 +220,12 @@
 
     .about-content p {
       font-size: 20px;
-      line-height: 1.6;
+      line-height: 1.7;
       margin-bottom: 15px;
       text-align: justify;
     
-    font-family: 'Poppins', sans-serif; /* пример современного шрифта */
-  font-weight: 800; /* толщина текста: 400 — норм, 500 — средний, 600/700 — жирный */
+    
+  font-weight: 600; /* толщина текста: 400 — норм, 500 — средний, 600/700 — жирный */
   color: #f5f5f5; /* при необходимости можно задать цвет */
 }
 
@@ -272,33 +327,17 @@
     animation: fadeIn 1s ease;
 }
 
-   /* Надёжный полноширинный футер */
-footer {
-  position: relative;          /* поставить поверх других ограничений */
-  left: 50%;
-  transform: translateX(-50%); /* центрируем 100vw блок посередине */
-  width: 100vw;                /* принудительно тянем по ширине окна */
-  max-width: 100vw;
-  box-sizing: border-box;
-  background: #022233;
-  color: #fff;
-  text-align: center;
-  padding: 30px 10px;
-  margin: 0;
-  z-index: 1;
+ body {
+  font-size: 16px;
 }
 
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 16px;
+}
 
-    footer p {
-      margin: 5px 0;
-      font-size: 14px;
-      opacity: 0.85;
-    }
-
-    footer img {
-      height: 40px;
-      margin-bottom: 8px;
-    }
 
     /* === АДАПТИВНОСТЬ === */
     @media (max-width: 768px) {
@@ -307,51 +346,74 @@ footer {
       }
       .hero h1 { font-size: 28px; }
     }
+   
   </style>
 </head>
 <body>
+  <div class="overlay">
+   <header class="header">
+  <div class="header-inner">
 
-  <!-- Фон-графика -->
-  <div class="bg-gif"></div>
-
-  <header>
-    <div class="header-container">
-      <div class="logo">
-        <img src="img/logo.png" alt="TARKER" />
-      </div>
-      <nav>
-        <a href="index.html">Главная</a>
-        <a href="about.html">О нас</a>
-        <a href="contact.html">Контакты</a>
-        <a href="news.html">Новости</a>
-                     
-        <div class="dropdown">
-          <a href="#">Документы</a>
-          
-<div class="dropdown-content">
-            <a href="quality.html">Контроль качества</a>
-            <a href="brochures.html">Каталоги/брошюры</a>
-          </div>
-        </div>
-       <div class="dropdown">
-          <a href="#">Продукция</a>
-          <div class="dropdown-content">
-          <a href="deformacionnye shvy.html">Деформационные швы</a>
-          <a href="gussasphalt.html">Литой асфальтобетон</a>
-          <a href="prednapryazhenie.html">Преднапряжение монолитных мостов</a>
-          <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
-          <a href="airport.html">Взлетно-посадочные полосы</a>
-          <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
-          <a href="dorozhnye.polotna.html">Дорожные полотна</a>
-          <a href="pomewenie.html">Продукты для помещений</a>
-          <a href="prisadka.html">Присадки</a>
-          <a href="emulsions.html">Эмульсии</a>
-          </div>
-        </div>
-        <a href="projects.html">Реализованные проекты</a>
-      </nav>
+    <!-- LOGO -->
+    <div class="logo">
+      <span class="logo-main">TARKER</span>
+      <span class="logo-sub">Строим будущее</span>
     </div>
-  </header>
+
+    <!-- NAV -->
+    <nav class="nav">
+
+      <a href="index.html">Главная</a>
+      <a href="about.html">О нас</a>
+      <a href="contact.html">Контакты</a>
+      <a href="news.html">Новости</a>
+
+      <div class="dropdown">
+        <a>Документы</a>
+        <div class="dropdown-content">
+          <a href="quality.html">Контроль качества</a>
+          <a href="brochures.html">Каталоги</a>
+        </div>
+      </div>
+
+       <div class="dropdown">
+      <a class="hover:text-orange-500 transition cursor-pointer">Продукция</a>
+      <div class="dropdown-content">
+        <a href="deformacionnye shvy.html">Деформационные швы</a>
+        <a href="gussasphalt.html">Литой асфальтобетон</a>
+        <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
+        <a href="airport.html">Взлетно-посадочные полосы</a>
+        <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
+        <a href="dorozhnye.polotna.html">Дорожные полотна</a>
+        <a href="pomewenie.html">Продукты для помещений</a>
+        <a href="prisadka.html">Присадки</a>
+        <a href="emulsions.html">Эмульсии</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a class="hover:text-orange-500 transition cursor-pointer">Мосты</a>
+      <div class="dropdown-content">
+    <a href="prednapryazhenie.html">Преднапряжение</a>
+    <a href="vantovye-mosty.html">Вантовые мосты</a>
+     </div>
+    </div>
+
+      <a class="hover:text-orange-500 transition" href="projects.html">Проекты</a>      
+
+    </nav>
+
+    <!-- CONTACT -->
+    <div class="contact">
+  <span>+7 (700) 556-48-28</span>
+
+  <a href="https://wa.me/77005564828" target="_blank" class="whatsapp-btn">
+    <img src="img/whatsapp.png" alt="WhatsApp">
+  </a>
+</div>
+
+  </div>
+</header>
 
   <div class="header-strip"></div>
 
@@ -416,5 +478,6 @@ footer {
     <p>Email: tarkerkz@mail.ru</p>
     <p>&copy; 2026 ТОО "TARKER". Все права защищены.</p>
   </footer>
+
 </body>
 </html>

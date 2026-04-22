@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Модульные деформационные швы — TARKER</title>
+  <title>Модульные деформационные швы с несколькими опорами- ТОО TARKER</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="img/favicon.png" type="image/png">
   <style>
     body {
       margin: 0;
@@ -16,83 +15,142 @@
       color: #fff;
     }
 
-    .header-strip {
-      height: 12px;
-      background-color: #022233;
-    }
-  
-    header {
-      background: #fff;
-      padding: 15px 0;
-      border-bottom: 1px solid #eee;
-    }
-
-    /* Шапка */
-    .header-flex {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+     .header{
+  position: sticky;
+  top:0;
+  z-index:1000;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
+.header-inner{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns: 180px 1fr 220px;
+  align-items:center;
+  padding:10px 20px;
+  gap:10px;
+}
 
-    .logo img {
-      height: 50px;
-    }
+/* LOGO */
+.logo{
+  display:flex;
+  flex-direction:column;
+  line-height:1.1;
+}
 
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
+.logo-main{
+  font-size:18px;
+  font-weight:700;
+  color:#f97316; /* ОРАНЖЕВЫЙ */
+  letter-spacing:1px;
+}
 
-    nav a {
-      text-decoration: none;
-      color: #022233;
-      font-weight: bold;
-      padding: 8px 12px;
-      transition: 0.3s;
-    }
+.logo-sub{
+  font-size:9px;
+  color:#aaa; /* СЕРОВАТЫЙ */
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
 
-    nav a:hover {
-      color: #f07c00;
-    }
+/* NAV */
+.nav{
+  display:flex;
+  justify-content:center;
+  gap:14px; /* ← меньше расстояние */
+  font-size:11px; /* ← уменьшили */
+  text-transform:uppercase;
+}
 
-    /* Dropdown */
-    .dropdown {
-      position: relative;
-    }
+.nav a{
+  color:#ddd;
+  text-decoration:none;
+  transition:0.2s;
+  white-space:nowrap;
+}
 
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      min-width: 200px;
-      background: #fff; /* Белый фон */
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      z-index: 999;
-    }
+.nav a:hover{
+  color:#f97316;
+}
 
-    .dropdown-content a {
-      display: block;
-      padding: 10px 15px;
-      color: #000; /* Черный текст */
-      background: #fff; /* Белый фон */
-      font-size: 13px; /* Можно регулировать размер */
-      text-decoration: none;
-    }
+.dropdown{
+  position:relative;
+  cursor:pointer;
+  padding-bottom:8px;
+}
 
-    .dropdown-content a:hover {
-      background: #f2f2f2;
-      color: #f07c00; /* Меняется цвет при наведении */
-    }
+/* красивый компактный dropdown */
+.dropdown-content{
+  position:absolute;
+  top:100%;
+  left:0;
 
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
+  min-width:180px;
+  padding:6px 0;
+
+  background: rgba(10,10,10,0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+
+  opacity:0;
+  visibility:hidden;
+  transform: translateY(10px);
+  transition:0.2s ease;
+
+  pointer-events:none;
+
+  z-index:9999;
+}
+
+/* 🔥 ВАЖНЫЙ ФИКС — удержание hover */
+.dropdown:hover .dropdown-content,
+.dropdown-content:hover{
+  opacity:1;
+  visibility:visible;
+  transform: translateY(0);
+  pointer-events:auto;
+}
+
+/* пункты меню — компактные */
+.dropdown-content a{
+  display:block;
+  padding:6px 12px;
+  font-size:11px;
+  color:#ddd;
+  text-decoration:none;
+  transition:0.2s;
+  white-space:nowrap;
+}
+
+.dropdown-content a:hover{
+  background: rgba(255,255,255,0.06);
+  color:#f97316;
+}
+
+/* CONTACT */
+.contact{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  gap:10px;
+  font-size:11px;
+  color:#ddd;
+}
+
+.contact button{
+  background:#f97316;
+  border:none;
+  padding:6px 10px;
+  font-size:10px;
+  font-weight:700;
+  cursor:pointer;
+  text-transform:uppercase;
+}
 
     /* Заголовки и контент */
     h1 {
@@ -158,13 +216,7 @@
       background: #fff;
     }
 
-    footer {
-      background: rgba(2, 34, 51, 0.8);
-      color: #bbb;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
+
 
     @media (max-width: 768px) {
       .image-block img {
@@ -173,48 +225,72 @@
     }
   </style>
 </head>
+<link rel="icon" type="image/png" href="img/logo.png">
 <body>
-  <div class="wrapper">
-<header>
-    <div class="container header-flex">
-      <div class="logo">
-        <img src="img/logo.png" alt="TARKER" />
-      </div>
-      <nav>
-       <a href="index.html">Главная</a>
-        <a href="about.html">О нас</a>
-        <a href="contact.html">Контакты</a>
-        <a href="news.html">Новости</a>
+  <div class="overlay">
+   <header class="header">
+  <div class="header-inner">
 
-        <div class="dropdown">
-          <a href="#">Документы</a>
-          
-<div class="dropdown-content">
-            <a href="quality.html">Контроль качества</a>
-            <a href="brochures.html">Каталоги/брошюры</a>
-          </div>
+    <!-- LOGO -->
+    <div class="logo">
+      <span class="logo-main">TARKER</span>
+      <span class="logo-sub">Строим будущее</span>
+    </div>
+
+    <!-- NAV -->
+    <nav class="nav">
+
+      <a href="index.html">Главная</a>
+      <a href="about.html">О нас</a>
+      <a href="contact.html">Контакты</a>
+      <a href="news.html">Новости</a>
+
+      <div class="dropdown">
+        <a>Документы</a>
+        <div class="dropdown-content">
+          <a href="quality.html">Контроль качества</a>
+          <a href="brochures.html">Каталоги</a>
         </div>
+      </div>
 
        <div class="dropdown">
-          <a href="#">Продукция</a>
-          <div class="dropdown-content">
-          <a href="deformacionnye shvy.html">Деформационные швы</a>
-          <a href="gussasphalt.html">Литой асфальтобетон</a>
-          <a href="prednapryazhenie.html">Преднапряжение монолитных мостов</a>
-          <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
-          <a href="airport.html">Взлетно-посадочные полосы</a>
-          <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
-          <a href="dorozhnye.polotna.html">Дорожные полотна</a>
-          <a href="pomewenie.html">Продукты для помещений</a>
-          <a href="prisadka.html">Присадки</a>
-          <a href="emulsions.html">Эмульсии</a>
-          </div>
-        </div>
-
-        <a href="projects.html">Реализованные проекты</a>
-      </nav>
+      <a class="hover:text-orange-500 transition cursor-pointer">Продукция</a>
+      <div class="dropdown-content">
+        <a href="deformacionnye shvy.html">Деформационные швы</a>
+        <a href="gussasphalt.html">Литой асфальтобетон</a>
+        <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
+        <a href="airport.html">Взлетно-посадочные полосы</a>
+        <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
+        <a href="dorozhnye.polotna.html">Дорожные полотна</a>
+        <a href="pomewenie.html">Продукты для помещений</a>
+        <a href="prisadka.html">Присадки</a>
+        <a href="emulsions.html">Эмульсии</a>
+      </div>
     </div>
-  </header>
+
+    <div class="dropdown">
+      <a class="hover:text-orange-500 transition cursor-pointer">Мосты</a>
+      <div class="dropdown-content">
+    <a href="prednapryazhenie.html">Преднапряжение</a>
+    <a href="vantovye-mosty.html">Вантовые мосты</a>
+     </div>
+    </div>
+
+      <a class="hover:text-orange-500 transition" href="projects.html">Проекты</a>      
+
+    </nav>
+
+    <!-- CONTACT -->
+    <div class="contact">
+  <span>+7 (700) 556-48-28</span>
+
+  <a href="https://wa.me/77005564828" target="_blank" class="whatsapp-btn">
+    <img src="img/whatsapp.png" alt="WhatsApp">
+  </a>
+</div>
+
+  </div>
+</header>
 
   <!-- Hero -->
   <section class="hero">

@@ -21,25 +21,20 @@
   align-items: flex-start; /* ✅ выравнивание по левому краю */
   justify-content: flex-start;
   padding-left: 40px; /* немного отступа от края */
-  margin-top: 10px; /* чтобы не наезжал на header */
+  margin-top: 80px; /* чтобы не наезжал на header */
+  main {
+  margin-bottom: 80px; /* расстояние до footer */
+}
   text-align: left; /* выравнивание текста */
 }
 
 
-.container {
-      width: 70%;
-      max-width: 1200px;
-      margin: auto;
-    }
 
-    /* Шапка */
-    .header-flex {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+
+ 
+
 .product-block {
-  width: calc(40% - 10px);
+  width: 500x;
   box-sizing: border-box;
   text-align: center;
   text-decoration: none;
@@ -53,12 +48,20 @@
 
 
 
-.product-block img {
-  width: 50%;
-  height: 250px;
-  object-fit: cover;
+.product-block {
+  width: 500px;
 }
 
+.product-block img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  background: #fff; /* чтобы не было пустоты некрасивой */
+}
+
+main {
+  margin-bottom: 80px;
+}
 .product-block h3 {
   font-size: 12px;             /* увеличить шрифт */
   font-weight: bold;           /* сделать жирным */
@@ -70,12 +73,7 @@
   background-color: #0202ac;   /* светлый фон для контраста (по желанию) */
 }
 
-    .footer-flex {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
+    
     html, body {
   height: 100%;
   margin: 0;
@@ -88,9 +86,7 @@
   flex-direction: column;
 }
 
-main {
-  flex: 1;
-}
+
 
 .section-title {
   text-align: left;
@@ -104,47 +100,70 @@ main {
   </style>
 </head>
 <body>
-  <div class="wrapper">
-<header>
-    <div class="container header-flex">
-      <div class="logo">
-        <img src="img/logo.png" alt="TARKER" />
-      </div>
-      <nav>
-       <a href="index.html">Главная</a>
-        <a href="about.html">О нас</a>
-        <a href="contact.html">Контакты</a>
-        <a href="news.html">Новости</a>
+  <div class="overlay">
+   <header class="header">
+  <div class="header-inner">
 
-        <div class="dropdown">
-          <a href="#">Документы</a>
-          
-<div class="dropdown-content">
-            <a href="quality.html">Контроль качества</a>
-            <a href="brochures.html">Каталоги/брошюры</a>
-          </div>
+    <!-- LOGO -->
+    <div class="logo">
+      <span class="logo-main">TARKER</span>
+      <span class="logo-sub">Строим будущее</span>
+    </div>
+
+    <!-- NAV -->
+    <nav class="nav">
+
+      <a href="index.html">Главная</a>
+      <a href="about.html">О нас</a>
+      <a href="contact.html">Контакты</a>
+      <a href="news.html">Новости</a>
+
+      <div class="dropdown">
+        <a>Документы</a>
+        <div class="dropdown-content">
+          <a href="quality.html">Контроль качества</a>
+          <a href="brochures.html">Каталоги</a>
         </div>
+      </div>
 
        <div class="dropdown">
-          <a href="#">Продукция</a>
-          <div class="dropdown-content">
-          <a href="deformacionnye shvy.html">Деформационные швы</a>
-          <a href="gussasphalt.html">Литой асфальтобетон</a>
-          <a href="prednapryazhenie.html">Преднапряжение монолитных мостов</a>
-          <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
-          <a href="airport.html">Взлетно-посадочные полосы</a>
-          <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
-          <a href="dorozhnye.polotna.html">Дорожные полотна</a>
-          <a href="pomewenie.html">Продукты для помещений</a>
-          <a href="prisadka.html">Присадки</a>
-          <a href="emulsions.html">Эмульсии</a>
-          </div>
-        </div>
-
-        <a href="projects.html">Реализованные проекты</a>
-      </nav>
+      <a class="hover:text-orange-500 transition cursor-pointer">Продукция</a>
+      <div class="dropdown-content">
+        <a href="deformacionnye shvy.html">Деформационные швы</a>
+        <a href="gussasphalt.html">Литой асфальтобетон</a>
+        <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
+        <a href="airport.html">Взлетно-посадочные полосы</a>
+        <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
+        <a href="dorozhnye.polotna.html">Дорожные полотна</a>
+        <a href="pomewenie.html">Продукты для помещений</a>
+        <a href="prisadka.html">Присадки</a>
+        <a href="emulsions.html">Эмульсии</a>
+      </div>
     </div>
-  </header>
+
+    <div class="dropdown">
+      <a class="hover:text-orange-500 transition cursor-pointer">Мосты</a>
+      <div class="dropdown-content">
+    <a href="prednapryazhenie.html">Преднапряжение</a>
+    <a href="vantovye-mosty.html">Вантовые мосты</a>
+     </div>
+    </div>
+
+      <a class="hover:text-orange-500 transition" href="projects.html">Проекты</a>      
+
+    </nav>
+
+    <!-- CONTACT -->
+    <div class="contact">
+  <span>+7 (700) 556-48-28</span>
+
+  <a href="https://wa.me/77005564828" target="_blank" class="whatsapp-btn">
+    <img src="img/whatsapp.png" alt="WhatsApp">
+  </a>
+</div>
+
+  </div>
+</header>
 
 <hr style="margin: 0; border: none; border-top: 1px solid #ccc;" />
 

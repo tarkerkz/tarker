@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TARKER - Вантовые мосты | Проектирование и Строительство</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="style.css" />
+     <link rel="icon" href="img/favicon.png" type="image/png">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; background-color: #000; color: #fff; scroll-behavior: smooth; }
+        .orange-text { color: #f97316; }
+        .orange-bg { background-color: #f97316; }
+        .border-orange { border-color: #f97316; }
+        /* Градиент для затемнения фона под текстом */
+        .gradient-overlay-hero { background: linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0) 100%); }
+        .gradient-overlay-card { background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 100%); }
+
+        /* Header */
+
+
+section {
+  padding-top: 60px !important;
+  padding-bottom: 60px !important;
+}
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* единый фон страницы */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background: url("img/Вантовый мост.jpg") no-repeat center center;
+  background-size: cover;
+
+  z-index: -2;
+}
+
+/* единое затемнение ВСЕЙ страницы */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  z-index: -1;
+}
+
+/* универсальный стеклянный фон для ВСЕХ секций */
+.section-glass {
+  background: rgba(10, 10, 10, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+}
+
+.orange {
+  color: #222222;
+}
+footer img {
+  height: 28px;
+  margin-bottom: 5px;
+  opacity: 0.9;
+
+  display: block;
+  margin: 0 auto 5px auto;
+}
+    </style>
+      <meta name="keywords" content="мастика, мастика для швов, бигума, гусасфальт, литой асфальт, деформационный шов, преднапряжение, вантовый мост, аэропорт мастика, ямочный ремонт">
+  <meta name="description" content="Мастика, литой асфальт, деформационные швы, гусасфальт, преднапряжение мостов — поставка и строительство TARKER">
+</head>
+<body>
+  <div class="overlay">
+   <header class="header">
+  <div class="header-inner">
+
+    <!-- LOGO -->
+    <div class="logo">
+      <span class="logo-main">TARKER</span>
+      <span class="logo-sub">Строим будущее</span>
+    </div>
+
+    <!-- NAV -->
+    <nav class="nav">
+
+      <a href="index.html">Главная</a>
+      <a href="about.html">О нас</a>
+      <a href="contact.html">Контакты</a>
+      <a href="news.html">Новости</a>
+
+      <div class="dropdown">
+        <a>Документы</a>
+        <div class="dropdown-content">
+          <a href="quality.html">Контроль качества</a>
+          <a href="brochures.html">Каталоги</a>
+        </div>
+      </div>
+
+       <div class="dropdown">
+      <a class="hover:text-orange-500 transition cursor-pointer">Продукция</a>
+      <div class="dropdown-content">
+        <a href="deformacionnye shvy.html">Деформационные швы</a>
+        <a href="gussasphalt.html">Литой асфальтобетон</a>
+        <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
+        <a href="airport.html">Взлетно-посадочные полосы</a>
+        <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
+        <a href="dorozhnye.polotna.html">Дорожные полотна</a>
+        <a href="pomewenie.html">Продукты для помещений</a>
+        <a href="prisadka.html">Присадки</a>
+        <a href="emulsions.html">Эмульсии</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a class="hover:text-orange-500 transition cursor-pointer">Мосты</a>
+      <div class="dropdown-content">
+    <a href="prednapryazhenie.html">Преднапряжение</a>
+    <a href="vantovye-mosty.html">Вантовые мосты</a>
+     </div>
+    </div>
+
+      <a class="hover:text-orange-500 transition" href="projects.html">Проекты</a>      
+
+    </nav>
+
+    <!-- CONTACT -->
+    <div class="contact">
+  <span>+7 (700) 556-48-28</span>
+
+  <a href="https://wa.me/77005564828" target="_blank" class="whatsapp-btn">
+    <img src="img/whatsapp.png" alt="WhatsApp">
+  </a>
+</div>
+
+  </div>
+</header>
+
+    <section class="w-full py-20 text-white">
+  
+
+    <div class="absolute inset-0 bg-gradient-to-r from-black via-black/10 to-transparent"></div>
+  </div>
+
+  <div class="relative z-10 max-w-3xl">
+    <h1 class="text-6xl font-extrabold uppercase mb-4">Вантовые мосты</h1>
+
+    <p class="text-orange-500 font-bold uppercase tracking-[3px] text-sm mb-6">
+      Инженерия лёгкости. Прочность на десятилетия.
+    </p>
+
+    <p class="text-gray-300 text-sm leading-relaxed mb-8">
+      Вантовые мосты — это высокоэффективные инженерные конструкции,
+      в которых нагрузка передаётся через систему стальных вант.
+    </p>
+
+    <div class="flex gap-10 bg-black/50 p-5 border border-gray-800">
+      <div>
+        <div class="text-orange-500 text-xl font-bold">до 1100 м</div>
+        <div class="text-xs text-gray-400 uppercase">Большие пролёты</div>
+      </div>
+
+      <div class="border-l border-gray-700 pl-6">
+        <div class="text-xs uppercase text-white">Высокая несущая<br>способность</div>
+      </div>
+
+      <div class="border-l border-gray-700 pl-6">
+        <div class="text-xs uppercase text-white">Современные технологии</div>
+      </div>
+    </div>
+  </div>
+</section>
+   
+
+        
+<section class="w-full py-20 text-white">
+  <div class="max-w-[1600px] mx-auto px-10 bg-black/10 backdrop-blur-md rounded-xl py-10">
+    <div class="grid grid-cols-12 gap-12">
+      
+      <div class="col-span-12 lg:col-span-5">
+        <h2 class="text-2xl font-black uppercase mb-2 border-l-4 border-orange-500 pl-4 tracking-tighter">
+          Общее понятие
+        </h2>
+        
+
+        <div class="relative bg-[#0b0b0b] border border-gray-800 rounded-2xl p-6 overflow-hidden">
+          <img src="img/структура моста.png" class="w-full h-auto object-contain z-10 relative" alt="Структура моста">
+          
+          <div class="grid grid-cols-2 gap-4 mt-6">
+            <div class="border-l border-orange-500/30 pl-3">
+              <h4 class="text-orange-500 text-[10px] font-bold uppercase mb-1">Пилон</h4>
+              <p class="text-[9px] text-gray-500 leading-tight">Вертикальная опора, воспринимающая сжимающие усилия и передающая их на фундамент.</p>
+            </div>
+            <div class="border-l border-orange-500/30 pl-3">
+              <h4 class="text-orange-500 text-[10px] font-bold uppercase mb-1">Ванты</h4>
+              <p class="text-[9px] text-gray-500 leading-tight">Стальные канаты, передающие нагрузку от пролетного строения на пилон.</p>
+            </div>
+            <div class="border-l border-orange-500/30 pl-3">
+              <h4 class="text-orange-500 text-[10px] font-bold uppercase mb-1">Пролетное строение</h4>
+              <p class="text-[9px] text-gray-500 leading-tight">Дорожная часть, распределяющая нагрузку между вантами.</p>
+            </div>
+            <div class="border-l border-orange-500/30 pl-3">
+              <h4 class="text-orange-500 text-[10px] font-bold uppercase mb-1">Анкерные узлы</h4>
+              <p class="text-[9px] text-gray-500 leading-tight">Элементы крепления, обеспечивающие надежность передачи усилий.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-span-12 lg:col-span-7">
+        <h2 class="text-2xl font-black uppercase mb-2 border-l-4 border-orange-500 pl-4 tracking-tighter">
+          Схемы вантовых мостов
+        </h2>
+        <p class="text-gray-400 text-xs mb-8 pl-5 leading-relaxed">
+          Выбор схемы зависит от длины пролёта, архитектурного решения и характера нагрузок.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div class="bg-[#0b0b0b] border border-gray-800 rounded-xl p-5 flex flex-col hover:border-orange-500/50 transition duration-300">
+            <h3 class="text-center text-xs font-bold mb-4 uppercase tracking-widest">Веерная схема</h3>
+            <div class="h-32 flex items-center justify-center mb-4 bg-black/40 rounded-lg p-2">
+              <img src="img/веерная схема.png" class="max-h-full object-contain" alt="Схема">
+            </div>
+            <div class="rounded-lg overflow-hidden mb-4 border border-gray-900">
+              <img src="img/веерная схема фото.png" class="w-full h-32 object-cover" alt="Фото">
+            </div>
+            <p class="text-[10px] text-gray-400 leading-relaxed italic">
+              Ванты сходятся в верхней части пилона. Обеспечивает максимальную жесткость системы.
+            </p>
+          </div>
+
+          <div class="bg-[#0b0b0b] border border-gray-800 rounded-xl p-5 flex flex-col hover:border-orange-500/50 transition duration-300">
+            <h3 class="text-center text-xs font-bold mb-4 uppercase tracking-widest">Арфовая схема</h3>
+            <div class="h-32 flex items-center justify-center mb-4 bg-black/40 rounded-lg p-2">
+              <img src="img/арфовая схема.jpeg" class="max-h-full object-contain" alt="Схема">
+            </div>
+            <div class="rounded-lg overflow-hidden mb-4 border border-gray-900">
+              <img src="img/арфовая схема фото.png" class="w-full h-32 object-cover" alt="Фото">
+            </div>
+            <p class="text-[10px] text-gray-400 leading-relaxed italic">
+              Параллельное расположение вант. Отличается эстетичностью и простотой монтажа узлов.
+            </p>
+          </div>
+
+          <div class="bg-[#0b0b0b] border border-gray-800 rounded-xl p-5 flex flex-col hover:border-orange-500/50 transition duration-300">
+            <h3 class="text-center text-xs font-bold mb-4 uppercase tracking-widest">Смешанная схема</h3>
+            <div class="h-32 flex items-center justify-center mb-4 bg-black/40 rounded-lg p-2">
+              <img src="img/смешанная схема.jpeg" class="max-h-full object-contain" alt="Схема">
+            </div>
+            <div class="rounded-lg overflow-hidden mb-4 border border-gray-900">
+              <img src="img/смешанная схема фото.png" class="w-full h-32 object-cover" alt="Фото">
+            </div>
+            <p class="text-[10px] text-gray-400 leading-relaxed italic">
+              Оптимизирует распределение напряжений, комбинируя преимущества обеих схем.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+           
+
+     <section class="relative h-[600px] flex items-center px-20 overflow-hidden">
+  <div class="absolute inset-0">
+  <h2 class="text-4xl font-extrabold uppercase text-center mb-5 tracking-tighter">
+    Методика строительства
+  </h2>
+
+  <p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto font-medium text-sm">
+    Мы применяем современную поэтапную технологию, обеспечивающую точность монтажа и контроль качества сооружения.
+  </p>
+
+  <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-6">
+
+    <!-- 1 -->
+    <div class="flex flex-col border border-gray-800 bg-[#0b0b0b] rounded-md overflow-hidden">
+
+      <div class="p-3 flex items-center gap-2 border-b border-gray-800">
+        <span class="w-7 h-7 rounded-full orange-bg flex items-center justify-center text-black font-black text-xs">1</span>
+        <p class="text-[11px] uppercase font-bold text-white">Подготовка основания и фундаментов</p>
+      </div>
+
+      <div class="h-40 overflow-hidden">
+        <img src="img/Подготовка основания.png" 
+        class="w-full h-full object-cover">
+      </div>
+
+      <div class="p-3 border-t border-gray-800">
+        <p class="text-[10px] text-gray-400">
+         Инженерные изыскания, очистка и подготовка строительной площадки, укрепление и подготовка грунта, устройство фундаментных опор,возведение ростверков
+        </p>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="flex flex-col border border-gray-800 bg-[#0b0b0b] rounded-md overflow-hidden">
+
+      <div class="p-3 flex items-center gap-2 border-b border-gray-800">
+        <span class="w-7 h-7 rounded-full orange-bg flex items-center justify-center text-black font-black text-xs">2</span>
+        <p class="text-[11px] uppercase font-bold text-white">Возведение пилонов</p>
+      </div>
+
+      <div class="h-40 overflow-hidden">
+        <img src="img/Возведение пилонов.png" 
+        class="w-full h-full object-cover">
+      </div>
+
+      <div class="p-3 border-t border-gray-800">
+        <p class="text-[10px] text-gray-400">
+          Синхронное возведение стоек, использование монолитного бетона, применение скользящей или переставной опалубки, установка закладных деталей и т.д.
+        </p>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="flex flex-col border border-gray-800 bg-[#0b0b0b] rounded-md overflow-hidden">
+
+      <div class="p-3 flex items-center gap-2 border-b border-gray-800">
+        <span class="w-7 h-7 rounded-full orange-bg flex items-center justify-center text-black font-black text-xs">3</span>
+        <p class="text-[11px] uppercase font-bold text-white">Монтаж пролетного строения</p>
+      </div>
+
+      <div class="h-40 overflow-hidden">
+        <img src="img/монтаж пролета.png" 
+        class="w-full h-full object-cover">
+      </div>
+
+      <div class="p-3 border-t border-gray-800">
+        <p class="text-[10px] text-gray-400">
+          Балки проезжей части монтируются последовательно, начиная от пилонов в обе стороны. Секции доставляются и поднимаются кранами или специальными кранами-дерриками
+        </p>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="flex flex-col border border-gray-800 bg-[#0b0b0b] rounded-md overflow-hidden">
+
+      <div class="p-3 flex items-center gap-2 border-b border-gray-800">
+        <span class="w-7 h-7 rounded-full orange-bg flex items-center justify-center text-black font-black text-xs">4</span>
+        <p class="text-[11px] uppercase font-bold text-white">Натяжение и фиксация стальных вант.</p>
+      </div>
+
+      <div class="h-40 overflow-hidden">
+        <img src="img/натяжение вант.png" 
+        class="w-full h-full object-cover">
+      </div>
+
+      <div class="p-3 border-t border-gray-800">
+        <p class="text-[10px] text-gray-400">
+          По мере монтажа секций пролета к ним крепят стальные ванты (тросы), которые анкеруются на пилоне. Проводится точное натяжение вант для придания конструкции проектной формы и жесткости.
+        </p>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="flex flex-col border border-gray-800 bg-[#0b0b0b] rounded-md overflow-hidden">
+
+      <div class="p-3 flex items-center gap-2 border-b border-gray-800">
+        <span class="w-7 h-7 rounded-full orange-bg flex items-center justify-center text-black font-black text-xs">5</span>
+        <p class="text-[11px] uppercase font-bold text-white">Балансировка конструкции</p>
+      </div>
+
+      <div class="h-40 overflow-hidden">
+        <img src="img/балансировка вантового моста.png" 
+        class="w-full h-full object-cover">
+      </div>
+
+      <div class="p-3 border-t border-gray-800">
+        <p class="text-[10px] text-gray-400">
+          Консольный монтаж, регулирование натяжения вант, расчетная последовательность, мониторинг
+        </p>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="flex flex-col border border-gray-800 bg-[#0b0b0b] rounded-md overflow-hidden">
+
+      <div class="p-3 flex items-center gap-2 border-b border-gray-800">
+        <span class="w-7 h-7 rounded-full orange-bg flex items-center justify-center text-black font-black text-xs">6</span>
+        <p class="text-[11px] uppercase font-bold text-white">Заключительные работы</p>
+      </div>
+
+      <div class="h-40 overflow-hidden">
+        <img src="img/завершающие работы.png" 
+        class="w-full h-full object-cover">
+      </div>
+
+      <div class="p-3 border-t border-gray-800">
+        <p class="text-[10px] text-gray-400">
+          Устройство дорожного полотна, монтаж освещения, ограждений и финальное тестирование нагрузкой.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <section class="relative h-[600px] flex items-center px-20 overflow-hidden">
+  <div class="absolute inset-0">
+        <img src="img/Вантовый мост.jpg" class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-105 transition duration-1000" alt="Строительная площадка">
+        <div class="relative z-10 bg-black/60 p-16 flex flex-col xl:flex-row justify-between items-center gap-10 backdrop-blur-sm">
+            <div class="max-w-2xl text-orange-500">
+                <h2 class="text-5xl font-black uppercase mb-3 tracking-tighter leading-none">Рассчитаем ваш проект</h2>
+                <p class="text-base font-semibold leading-relaxed">Наши инженеры выполнят технико-экономическое обоснование, точные расчёты нагрузок и создадут детализированную 3D-модель будущего моста.</p>
+                <ul class="mt-8 space-y-3 text-white font-bold uppercase italic tracking-wider text-orange-950">
+                    <li class="flex items-center gap-2"><span>—</span> Предварительный расчет нагрузок</li>
+                    <li class="flex items-center gap-2"><span>—</span> Оптимальная конструктивная схема</li>
+                    <li class="flex items-center gap-2"><span>—</span> Коммерческое предложение</li>
+                </ul>
+            </div>
+            <a href="https://wa.me/77005564828?text=Здравствуйте!%20Хочу%20оставить%20заявку%20на%20проект%20моста"
+   target="_blank"
+   class="bg-black text-white px-12 py-6 text-sm font-black uppercase rounded-sm hover:bg-zinc-900 transition flex items-center gap-4 shadow-xl whitespace-nowrap group-hover:scale-105 transition-transform">
+
+    Оставить заявку
+
+    <span class="bg-orange-500 w-7 h-7 flex items-center justify-center rounded-full text-[10px] text-black font-bold">
+      →
+    </span>
+</a>
+        </div>
+    </section>
+
+   <footer>
+    <img src="img/logo.png" alt="TARKER">
+    <p>г. Алматы, Наурызбайский район, мкр-н Мамыр,улица Афцинао 37</p>
+    <p>Email: tarkerkz@mail.ru</p>
+    <p>&copy; 2026 ТОО "TARKER". Все права защищены.</p>
+  </footer>
+
+</body>
+</html>

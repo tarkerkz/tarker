@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Контактная информация — ТОО TARKER</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="img/favicon.png" type="image/png">
+  <title>Контактная информация - ТОО TARKER</title>
   <style>
     body {
   margin: 0;
@@ -17,27 +16,13 @@
   background-size: cover; /* растягиваем картинку на весь экран */
 }
 
-.header-flex {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo img {
-      height: 50px;
-    }
-
-    .header-strip {
-      height: 12px;
-      background-color: #022233;
-    }
 
     .container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
+  font-size: 16px;
 }
 
+    
+ 
 
     .section-title {
       text-transform: uppercase;
@@ -115,68 +100,92 @@
     form button:hover {
       background-color: #fbc02d;
     }
+ 
+    iframe {
+  margin-bottom: 60px; /* регулируй расстояние */
+}
 
-    footer {
-      background-color: #022233;
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-      margin-top: 60px;
-    }
-
-    footer p {
-      margin: 0;
-      font-size: 14px;
-    }
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
   </style>
 </head>
 <body>
+  <div class="overlay">
+   <header class="header">
+  <div class="header-inner">
 
-  <header>
-    <div class="container header-flex">
-      <div class="logo">
-        <img src="img/logo.png" alt="TARKER" />
-      </div>
-      <nav>
-       <a href="index.html">Главная</a>
-        <a href="about.html">О нас</a>
-        <a href="contact.html">Контакты</a>
-        <a href="news.html">Новости</a>
+    <!-- LOGO -->
+    <div class="logo">
+      <span class="logo-main">TARKER</span>
+      <span class="logo-sub">Строим будущее</span>
+    </div>
 
-        <div class="dropdown">
-          <a href="#">Документы</a>
-          
-<div class="dropdown-content">
-            <a href="quality.html">Контроль качества</a>
-            <a href="brochures.html">Каталоги/брошюры</a>
-          </div>
+    <!-- NAV -->
+    <nav class="nav">
+
+      <a href="index.html">Главная</a>
+      <a href="about.html">О нас</a>
+      <a href="contact.html">Контакты</a>
+      <a href="news.html">Новости</a>
+
+      <div class="dropdown">
+        <a>Документы</a>
+        <div class="dropdown-content">
+          <a href="quality.html">Контроль качества</a>
+          <a href="brochures.html">Каталоги</a>
         </div>
+      </div>
 
        <div class="dropdown">
-          <a href="#">Продукция</a>
-          <div class="dropdown-content">
-          <a href="deformacionnye shvy.html">Деформационные швы</a>
-          <a href="gussasphalt.html">Литой асфальтобетон</a>
-          <a href="prednapryazhenie.html">Преднапряжение монолитных мостов</a>
-          <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
-          <a href="airport.html">Взлетно-посадочные полосы</a>
-          <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
-          <a href="dorozhnye.polotna.html">Дорожные полотна</a>
-          <a href="pomewenie.html">Продукты для помещений</a>
-          <a href="prisadka.html">Присадки</a>
-          <a href="emulsions.html">Эмульсии</a>
-          </div>
-        </div>
-
-        <a href="projects.html">Реализованные проекты</a>
-      </nav>
+      <a class="hover:text-orange-500 transition cursor-pointer">Продукция</a>
+      <div class="dropdown-content">
+        <a href="deformacionnye shvy.html">Деформационные швы</a>
+        <a href="gussasphalt.html">Литой асфальтобетон</a>
+        <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
+        <a href="airport.html">Взлетно-посадочные полосы</a>
+        <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
+        <a href="dorozhnye.polotna.html">Дорожные полотна</a>
+        <a href="pomewenie.html">Продукты для помещений</a>
+        <a href="prisadka.html">Присадки</a>
+        <a href="emulsions.html">Эмульсии</a>
+      </div>
     </div>
-  </header>
+
+    <div class="dropdown">
+      <a class="hover:text-orange-500 transition cursor-pointer">Мосты</a>
+      <div class="dropdown-content">
+    <a href="prednapryazhenie.html">Преднапряжение</a>
+    <a href="vantovye-mosty.html">Вантовые мосты</a>
+     </div>
+    </div>
+
+      <a class="hover:text-orange-500 transition" href="projects.html">Проекты</a>      
+
+    </nav>
+
+    <!-- CONTACT -->
+    <div class="contact">
+  <span>+7 (700) 556-48-28</span>
+
+  <a href="https://wa.me/77005564828" target="_blank" class="whatsapp-btn">
+    <img src="img/whatsapp.png" alt="WhatsApp">
+  </a>
+</div>
+
+  </div>
+</header>
+
 
   <div class="header-strip"></div>
+  
 
   <div class="container">
-    <h1 class="section-title">Контактная информация</h1>
+    <h1 class="text-3xl md:text-4xl font-extrabold text-center mb-4 tracking-wide uppercase">
+  Контактная информация
+</h1>
 
     <div class="contact-cards">
       <div class="contact-card">
@@ -187,7 +196,7 @@
       <div class="contact-card">
         <img src="img/icon-phone.png" alt="Контактная информация" />
         <h3>Контактная информация</h3>
-        <p>Телефон: <a href="+77057203044">+7 705 720 30 44</a><br>e-mail: <a href="tarkerkz@mail.ru">tarkerkz@mail.ru</a></p>
+        <p>Телефон: <a href="+77057203044">+7 700 556 48 28<a><br>e-mail: <a href="tarkerkz@mail.ru">tarkerkz@mail.ru</a></p>
       </div>
       <div class="contact-card">
         <img src="img/icon-clok.png" alt="Время работы" />
@@ -196,9 +205,11 @@
       </div>
     </div>
 
-    <section class="container">
-  <h1>Как добраться</h1>
-  <p>Наш офис находится в удобном месте в Алматы. Ниже вы можете увидеть карту с точным расположением:</p>
+    <section>
+  <h1 class="text-3xl md:text-4xl font-extrabold text-center mb-4 tracking-wide uppercase">
+  <span class="text-gray-500">Как</span> 
+  <span class="text-blue-500">добраться</span>
+</h1>
 
 <iframe 
   src="//www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.129098898171!2d76.83078447910901!3d43.207216668094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3883682413667b63%3A0x3a14a4e4a8670a0b!2z0KjQsNC70Y_Qv9C40L3QsCAzNywg0JDQu9C80LDRgtGL!5e0!3m2!1sru!2skz!4v1770612982351!5m2!1sru!2skz"
