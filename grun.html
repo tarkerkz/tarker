@@ -17,21 +17,6 @@ body {
   background-size: cover;
 }
 
-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(234, 231, 231, 0.6);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  padding: 20px 150px;
-}
-
-.header-strip {
-  height: 12px;
-  background-color: #022233;
-}
 
 .container {
   width: 90%;
@@ -53,41 +38,54 @@ header {
 /* Сетка каталога */
 .brochure-grid {
   display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
-  justify-content: start;
-  margin: 40px 0;
+  justify-content: center;   /* по центру */
+  align-items: center;
+  margin: 50px 0;
 }
 
-.brochure-card {
-  background: #fff;
-  width: 250px;
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-  transition: 0.3s;
-  text-align: center;
+/* Сетка каталога */
+.brochure-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px 0;
 }
 
-.brochure-card:hover {
-  transform: translateY(-5px);
-}
-
+/* Брошюра без рамки */
 .brochure-card img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 10px;
+  width: 70%;
+  height: 420px;          /* было 275px — делаем выше */
+  object-fit: contain;
+  background: transparent;
+
+  /* более мягкие, округлые углы */
+  border-radius: 26px;
+
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.35),
+    0 6px 18px rgba(0,0,0,0.22);
+
+  transition: all 0.4s ease;
+  cursor: pointer;
 }
 
+/* hover как будто брошюра поднимается */
+.brochure-card:hover img {
+  transform: translateY(-10px) rotate(-1deg) scale(1.03);
+}
+
+/* название */
+.brochure-card h3 {
+  font-size: 20px;
+  color: white;
+  margin-top: 20px;
+  font-weight: bold;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+/* убираем кнопку */
 .btn-dark {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 14px;
-  background:#022233;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
+  display: none;
 }
 
 /* Блок GRUN */
@@ -124,73 +122,146 @@ header {
   text-align:center;
 }
 
-/* FOOTER */
-footer {
-  margin-top: 60px;
-  padding: 25px;
+
+.catalog-header {
   text-align: center;
-  background: #022233;
-  color: #fff;
+  margin: 40px auto 50px;
+  padding: 30px 20px;
+  max-width: 900px;
+  
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.catalog-header h1 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 700;
+  color: #111;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.catalog-header p {
+  margin-top: 12px;
+  font-size: 18px;
+  color: #ff7a00;
+  font-weight: 600;
+}
+/* Заголовок блока машин */
+.section-subtitle {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgb(0, 0, 0);
+  margin: 70px 0 40px;
+
+  position: relative;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.5);
+}
+
+/* оранжевая линия снизу */
+.section-subtitle::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff7a00, #ffb347);
+  margin: 15px auto 0;
+  border-radius: 10px;
 }
 
   </style>
 </head>
 <body>
+  <div class="overlay">
+   <header class="header">
+  <div class="header-inner">
 
-<header>
-  <div class="container header-flex">
-    <div class="logo"><img src="img/favicon.png" alt="TARKER"/></div>
+    <!-- LOGO -->
+    <div class="logo">
+      <span class="logo-main">TARKER</span>
+      <span class="logo-sub">Строим будущее</span>
+    </div>
 
-    <nav>
+    <!-- NAV -->
+    <nav class="nav">
+
       <a href="index.html">Главная</a>
       <a href="about.html">О нас</a>
       <a href="contact.html">Контакты</a>
       <a href="news.html">Новости</a>
 
       <div class="dropdown">
-        <a href="#">Документы</a>
+        <a>Документы</a>
         <div class="dropdown-content">
           <a href="quality.html">Контроль качества</a>
-          <a href="brochures.html">Каталоги/брошюры</a>
+          <a href="brochures.html">Каталоги</a>
         </div>
       </div>
 
-      <div class="dropdown">
-        <a href="#">Продукция</a>
-        <div class="dropdown-content">
-          <a href="deformacionnye shvy.html">Деформационные швы</a>
-          <a href="gussasphalt.html">Литой асфальтобетон</a>
-          <a href="prednapryazhenie.html">Преднапряжение монолитных мостов</a>
-          <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
-          <a href="airport.html">Взлетно-посадочные полосы</a>
-          <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
-          <a href="dorozhnye.polotna.html">Дорожные полотна</a>
-          <a href="pomewenie.html">Продукты для помещений</a>
-          <a href="prisadka.html">Присадки</a>
-          <a href="emulsions.html">Эмульсии</a>
-          <a href="product.html">Дополнительная продукция</a>
-        </div>
+       <div class="dropdown">
+      <a class="hover:text-orange-500 transition cursor-pointer">Продукция</a>
+      <div class="dropdown-content">
+        <a href="deformacionnye shvy.html">Деформационные швы</a>
+        <a href="gussasphalt.html">Литой асфальтобетон</a>
+        <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
+        <a href="airport.html">Взлетно-посадочные полосы</a>
+        <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
+        <a href="dorozhnye.polotna.html">Дорожные полотна</a>
+        <a href="pomewenie.html">Продукты для помещений</a>
+        <a href="prisadka.html">Присадки</a>
+        <a href="emulsions.html">Эмульсии</a>
       </div>
-      
-      <a href="vantovye-mosty.html">Вантовые мосты</a>
-      <a href="projects.html">Реализованные проекты</a>
+    </div>
+
+    <div class="dropdown">
+      <a class="hover:text-orange-500 transition cursor-pointer">Мосты</a>
+      <div class="dropdown-content">
+    <a href="prednapryazhenie.html">Преднапряжение</a>
+    <a href="vantovye-mosty.html">Вантовые мосты</a>
+     </div>
+    </div>
+
+      <a class="hover:text-orange-500 transition" href="projects.html">Проекты</a>      
+
     </nav>
+
+    <!-- CONTACT -->
+    <div class="contact">
+  <span>+7 (700) 556-48-28</span>
+
+  <a href="https://wa.me/77005564828" target="_blank" class="whatsapp-btn">
+    <img src="img/whatsapp.png" alt="WhatsApp">
+  </a>
+</div>
+
   </div>
 </header>
 
 
 <div class="header-strip"></div>
 
+<section class="catalog-header">
+  <h1>GRÜN GmbH</h1>
+  <p>Официальные каталоги продукции и технические материалы</p>
+</section>
 
-<p class="section-title">Каталог GRÜN GmbH</p>
 
 <section class="container">
   <div class="brochure-grid">
 
     <div class="brochure-card">
-      <img src="img/grun_img.png" alt="BIGUMA® Fertigschlämme">
+      <a href="brsh/Grun_katalog.pdf" target="_blank">
+        <img src="img/grun_img.png" alt="Каталог GRUN">
+      </a>
+
       <h3>Машины для дорожного строительства и содержания дорог</h3>
-      <a href="brsh/Grun_katalog.pdf" target="_blank" class="btn-dark">Скачать PDF</a>
     </div>
 
   </div>
@@ -198,7 +269,8 @@ footer {
 
 
 <section class="container">
-  <h2>Машины Grun</h2>
+  <h2 class="section-subtitle">Машины GRÜN</h2>
+
   <div class="certificates">
 
     <div class="cert-card"><img src="img/gruncar_1.png"><p>Горизонтальные котлы для литого асфальта</p></div>
