@@ -158,6 +158,22 @@
   color: #f97316;
 }
 
+.overlay{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+  flex: 1;   /* главное свойство */
+}
+footer {
+  margin-top: auto;
+}
+
 footer {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
