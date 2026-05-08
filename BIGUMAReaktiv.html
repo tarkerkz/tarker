@@ -8,14 +8,19 @@
     <link rel="icon" href="img/favicon.png" type="image/png">
   <link rel="stylesheet" href="style.css">
   <style>
-     body {
+   html, body {
+  height: 100%;
   margin: 0;
-  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: Arial, sans-serif;
 
-  /* картинка вместо цвета */
   background: url("img/фон.png") no-repeat center center fixed;
-  background-size: cover; /* растягиваем картинку на весь экран */
+  background-size: cover;
 }
 
     main {
