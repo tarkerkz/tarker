@@ -235,61 +235,34 @@ body {
   text-align: center;
 }
 
-.partner-card h3{
-  color:#14002d;
-  font-size:13px;
-  margin-top:8px;
-}
-
-.partner-card img{
-  transition:0.3s;
-}
-
-.partner-card a:hover img{
-  transform:scale(1.03);
-}
-     
-
-    .partner-links {
-  margin-top: 40px; /* отступ от заголовка */
+.partner-links {
+  margin-top: 40px;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 80px; /* ← расстояние между карточками */
+  align-items: flex-start;
+  flex-wrap: nowrap;   /* все в одну строку */
+  gap: 40px;
 }
 
 .partner-card {
   text-align: center;
-  width: 200px;
-}
-
-.partner-card a {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  transition: transform 0.3s;
-}
-
-.partner-card a:hover {
-  transform: scale(1.05);
-}
-
-.partner-card {
-  text-align: center;
-  width: 300px;   /* увеличил с 200px до 300px */
+  width: 250px;
+  flex-shrink: 0;   /* чтобы не сжимались */
 }
 
 .partner-card img {
   width: 100%;
-  height: auto;   /* сохраняем пропорции */
+  height: auto;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  margin-bottom: 10px;
 }
 
-
-
- 
+.partner-card h3{
+  color:#000000;
+  font-size:13px;
+  margin-top:8px;
+  font-weight: bold;
+}
   </style>
 </head>
 
@@ -376,11 +349,11 @@ body {
   <a href="brsh/Каталог_TARKER.pdf" target="_blank" class="btn-dark">Скачать PDF</a>
 </div> 
 
-<div class="container">
-  <div class="brochure-header">
+<div class="brochure-header">
   <h1>Каталоги наших партнеров</h1>
+</div>
 
-  <div class="partner-links">
+<div class="partner-links">
   <div class="partner-card">
     <a href="dga.html">
       <img src="img/dgabrsh.png" alt="Каталоги DGA">
