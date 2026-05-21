@@ -170,15 +170,20 @@ body {
       letter-spacing: 1px;
     }
 
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      padding-bottom: 60px;
-    }
+  .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 280px);
+
+  justify-content: center;
+  align-items: start;
+
+  gap: 25px;
+  padding-bottom: 60px;
+}
 
     .card {
       background: rgba(255, 255, 255, 0.95);
@@ -187,6 +192,8 @@ body {
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       text-align: center;
       transition: transform 0.3s, box-shadow 0.3s;
+      width: 280px;
+      height: auto;
     }
 
     .card:hover {
