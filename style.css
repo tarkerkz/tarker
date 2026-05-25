@@ -189,6 +189,7 @@ footer {
 font-size: 13px;
 
   border-top: 1px solid rgba(1, 23, 54, 0.2);
+    margin-top: 80px;
 }
 footer img {
   height: 28px; /* было 45px */

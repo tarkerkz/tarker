@@ -9,14 +9,21 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-body {
+
+ html, body {
+  height: 100%;
   margin: 0;
-  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: Arial, sans-serif;
+
   background: url("img/grun_fon.png") no-repeat center center fixed;
   background-size: cover;
 }
-
 
 .container {
   width: 90%;
@@ -29,7 +36,7 @@ body {
   text-align: left;
   font-weight: bold;
   font-size: 35px;
-  color: #000;
+  color: #280101;
   margin: 30px 20px 20px;
   padding-bottom: 8px;
   border-bottom: 2px solid #989a9d;
@@ -174,11 +181,86 @@ body {
   background: linear-gradient(90deg, #ff7a00, #ffb347);
   margin: 15px auto 0;
   border-radius: 10px;
+   margin-top: 80px; /* расстояние между контейнером и футером */
+
 }
 
+.brochure-card {
+  max-width: 420px;
+  margin: 40px auto;
+  text-align: center;
+  color: #000000;
+
+  border: 1px solid rgba(255,255,255,0.08); /* тонкая рамка */
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.brochure-card img {
+  width: 70%;
+  height: 330px;
+  object-fit: cover;
+
+  border-radius: 6px;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+  transition: 0.3s;
+}
+
+.brochure-card img:hover {
+  transform: scale(1.03);
+}
+.brochure-card h3 {
+  font-size: 16px;
+  margin: 12px 0 5px;
+}
+
+.brochure-card p {
+  font-size: 13px;
+  color: #000000;
+}
+.highlighted {
+  color: #f97316;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.brochure-header h1 {
+  font-size: 32px;
+  color: #f97316; /* фирменный оранжевый */
+  margin-bottom: 10px;
+}
+
+.brochure-header p {
+  color: #ca0101;
+  font-size: 15px;
+  font-weight: 700;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+.btn-dark{
+  display:inline-block;
+  margin-top:10px;
+  padding:8px 14px;
+  background:#f97316;
+  color:white;
+  font-size:11px;
+  text-decoration:none;
+  border-radius:6px;
+  transition:0.2s;
+}
+
+.btn-dark:hover{
+  background:#ff8c2a;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 60px auto;   /* ← центр + отступ сверху/снизу */
+  padding: 0 20px;
+  text-align: center;
+}
   </style>
 </head>
-<link rel="icon" href="img/favicon.png" type="image/png">
 <body>
   <div class="overlay">
    <header class="header">
@@ -248,26 +330,23 @@ body {
 
 <div class="header-strip"></div>
 
-<section class="catalog-header">
-  <h1>GRÜN GmbH</h1>
-  <p>Официальные каталоги продукции и технические материалы</p>
-</section>
 
-
-<section class="container">
-  <div class="brochure-grid">
-
-    <div class="brochure-card">
-      <a href="brsh/Grun_katalog.pdf" target="_blank">
-        <img src="img/grun_img.png" alt="Каталог GRUN">
-      </a>
-
-      <h3>Машины для дорожного строительства и содержания дорог</h3>
-    </div>
 
   </div>
 </section>
+<section class="container">
+  <div class="brochure-header">
+  <h1>GRÜN GmbH</h1>
+  <p>Официальные каталоги продукции и технические материалы</p>
+</div>
 
+
+   <div class="brochure-card special-tarker">
+  <img src="img/grun_img.png" alt="Каталог Grun">
+  <h3>Каталог GRÜN GmbH</h3>
+  <p class="highlighted">Машины для дорожного строительства и содержания дорог</p>
+  <a href="brsh/Grun_katalog.pdf" target="_blank" class="btn-dark">Скачать PDF</a>
+</div> 
 
 <section class="container">
   <h2 class="section-subtitle">Машины GRÜN</h2>
@@ -288,11 +367,11 @@ body {
 
 
 <footer>
-  <img src="img/logo.png" alt="TARKER"><br>
-  г. Алматы, 12 мкр., дом 22/2, офис 5<br>
-  Email: tarkerkz@mail.ru<br>
-  © 2026 ТОО "TARKER"
-</footer>
+    <img src="img/logo.png" alt="TARKER">
+    <p>г. Алматы, Наурызбайский район, мкр-н Мамыр,улица Афцинао 37</p>
+    <p>Email: tarkerkz@mail.ru</p>
+    <p>&copy; 2026 ТОО "TARKER". Все права защищены.</p>
+  </footer>
 
 </body>
 </html>
