@@ -91,27 +91,88 @@ body {
       height: 45px;
     }
 
-    .tabs {
-      max-width: 1000px;
-      margin: 20px auto;
-      border-top: 1px solid #ddd;
-    }
+    /* =========================
+   ВКЛАДКИ
+   ========================= */
 
-    .tab-links {
-      display: flex;
-      gap: 30px;
-      padding: 10px 0;
-      font-weight: bold;
-      color: #153293;
-    }
+.tabs {
+  max-width: 1000px;
+  width: calc(100% - 40px);
+  margin: 20px auto 40px;
+  border-top: 1px solid #ddd;
+}
 
-    .tab-content {
-      padding: 20px;
-      border: 1px solid #eee;
-      border-radius: 5px;
-      background: #fafafa;
-    }
+/* Скрываем radio */
+.tabs > input[type="radio"] {
+  display: none;
+}
 
+/* Кнопки вкладок */
+.tab-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 15px 0;
+  font-weight: bold;
+  color: #153293;
+  border-bottom: 1px solid #ddd;
+}
+
+.tab-links label {
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.25s ease;
+}
+
+.tab-links label:hover {
+  color: #ff6600;
+}
+
+/* Активная вкладка */
+#tab1:checked ~ .tab-links label[for="tab1"],
+#tab2:checked ~ .tab-links label[for="tab2"],
+#tab3:checked ~ .tab-links label[for="tab3"],
+#tab4:checked ~ .tab-links label[for="tab4"],
+#tab5:checked ~ .tab-links label[for="tab5"] {
+  color: #ff6600;
+}
+
+/* Общая область контента */
+.tab-content-wrapper {
+  position: relative;
+  width: 100%;
+  height: 230px;
+}
+
+/* Все вкладки находятся в одном месте */
+.tab-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 230px;
+
+  padding: 20px;
+
+  border: 1px solid #eee;
+  border-radius: 5px;
+  background: #fafafa;
+
+  overflow-y: auto;
+
+  display: none;
+}
+
+/* Показываем нужную вкладку */
+#tab1:checked ~ .tab-content-wrapper #content1,
+#tab2:checked ~ .tab-content-wrapper #content2,
+#tab3:checked ~ .tab-content-wrapper #content3,
+#tab4:checked ~ .tab-content-wrapper #content4,
+#tab5:checked ~ .tab-content-wrapper #content5 {
+  display: block;
+}
     @media (max-width: 768px) {
       main {
         flex-direction: column;
@@ -219,7 +280,7 @@ body {
       <a class="hover:text-orange-500 transition cursor-pointer">Продукция</a>
       <div class="dropdown-content">
         <a href="deformacionnye shvy.html">Деформационные швы</a>
-        <a href="gussasphalt.html">Асфальт</a>
+        <a href="gussasphalt.html">Литой асфальтобетон</a>
         <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
         <a href="airport.html">Взлетно-посадочные полосы</a>
         <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
@@ -282,14 +343,13 @@ body {
   </main>
 
  <section class="tabs">
-  <!-- Радио кнопки -->
+
   <input type="radio" name="tab" id="tab1" checked>
   <input type="radio" name="tab" id="tab2">
   <input type="radio" name="tab" id="tab3">
   <input type="radio" name="tab" id="tab4">
   <input type="radio" name="tab" id="tab5">
 
-  <!-- Кнопки-вкладки -->
   <div class="tab-links">
     <label for="tab1">Описание</label>
     <label for="tab2">Преимущества</label>
@@ -298,54 +358,99 @@ body {
     <label for="tab5">Загрузить</label>
   </div>
 
-  <!-- Содержимое вкладок -->
-  <div class="tab-content" id="content1">
-  PROXAN®- KV 2 G-S – это быстро реагирующая двухкомпонентная мастика для швов с растяжением до 35 % ширина шва. Она особенно хорошо подходит для дорожных покрытий сиз бетона, к примеру автобаны и аэродромные площадки с высокими требованиями к растяжению под движением. Данная мастика для швов отличается высокой химической стойкостью и предотвращает проникновение веществ, загрязняющих воду в грунт.
-PROXAN®- KV 2 G-S имеет текучую форму и само нивелируется, поэтому легко наносится.
-<br><br>
-    Допуски: TL Fug-StB, испытание производительности Федерального института по испытанию материалов (BAM) (Отчет об испытании BAM 7,1/16014734)
-</div>
-  <div class="tab-content" id="content2">
-    <p>Преимущества:<br>– высока химическая прочность
-<br>– высокая допустимая общая деформация 35 %, разрыв под растяжением 500 %
-<br>– быстро реагирующая
-<br>– высокая возможность включения к имеющимся материалам благодаря высоким химическим соединением
-<br>– не содержит изоцианат и растворителей
-<br>– вариативные возможности применения
-<br>– общепринятое, ручное применение
-<br>– возможно нанесение с помощью 2К смесительно-дозирующей установки</p>
-  </div>
+  <div class="tab-content-wrapper">
 
-  <div class="tab-content" id="content3">
-     <p>Компоненты А и В упакованы отдельно:
-    <br>– Ведро: 10 л
-    <br>– Жестяная тара: 25 л
-    <br>– Бочка: 200 л</p>
-  </div>
+     <div class="tab-content-wrapper">
+
+    <div class="tab-content" id="content1">
+      PROXAN®- KV 2 G-S – это быстро реагирующая двухкомпонентная мастика
+      для швов с растяжением до 35 % ширины шва. Она особенно хорошо подходит
+      для дорожных покрытий из бетона, к примеру автобаны и аэродромные
+      площадки с высокими требованиями к растяжению под движением.
+
+      <br><br>
+
+      Допуски: TL Fug-StB, испытание производительности Федерального института
+      по испытанию материалов (BAM) (Отчет об испытании BAM 7,1/16014734)
+    </div>
 
 
-  <div class="tab-content" id="content4">
-  <ul class="link-list">
+    <div class="tab-content" id="content2">
+      <p>
+        Преимущества:<br>
+        – высокая химическая прочность<br>
+        – высокая допустимая общая деформация 35 %, разрыв под растяжением 500 %<br>
+        – быстро реагирующая<br>
+        – высокая возможность включения к имеющимся материалам благодаря высоким химическим соединениям<br>
+        – не содержит изоцианат и растворителей<br>
+        – вариативные возможности применения<br>
+        – общепринятое, ручное применение<br>
+        – возможно нанесение с помощью 2К смесительно-дозирующей установки
+      </p>
+    </div>
+
+
+    <div class="tab-content" id="content3">
+      <p>
+        Компоненты А и В упакованы отдельно:<br>
+        – Ведро: 10 л<br>
+        – Жестяная тара: 25 л<br>
+        – Бочка: 200 л
+      </p>
+    </div>
+
+
+    <div class="tab-content" id="content4">
+      <ul class="link-list">
+
         <p>Праймер</p>
-        <li><a href="CP-SR.html">PROXAN®- CP-SR</a></li>
-      
-      <p>Устройство</p>
-         <li><a href="flexomat.html">PROXAN®- FLEXOMAT</a></li>
+        <li>
+          <a href="CP-SR.html">PROXAN®- CP-SR</a>
+        </li>
 
-      <p>PROXAN®- шприц-пистолет</p>
-      <li><a href="Напорные и всасывающие пистолеты SVV-70560.html">Напорные и всасывающие пистолеты SVV-70/560 (Druckluft- und Ansaugpistole SVV-70/560)</a></li>
-      <li><a href="Пистолет для заливки WUBO 600 механический.html">Пистолет для заливки GN-70/560 механический (Fließpistole GN-70/560 mechanisch)</a></li>
-      <li><a href="Пистолет для заливки WUBO 600 механический.html">Пистолет для заливки WUBO 600 механический (Fließpistole WUBO 600 mechanisch)</a></li>
+        <p>Устройство</p>
+        <li>
+          <a href="flexomat.html">PROXAN®- FLEXOMAT</a>
+        </li>
 
-</div>
+        <p>PROXAN®- шприц-пистолет</p>
+
+        <li>
+          <a href="Напорные и всасывающие пистолеты SVV-70560.html">
+            Напорные и всасывающие пистолеты SVV-70/560
+            (Druckluft- und Ansaugpistole SVV-70/560)
+          </a>
+        </li>
+
+        <li>
+          <a href="Пистолет для заливки WUBO 600 механический.html">
+            Пистолет для заливки GN-70/560 механический
+            (Fließpistole GN-70/560 mechanisch)
+          </a>
+        </li>
+
+        <li>
+          <a href="Пистолет для заливки WUBO 600 механический.html">
+            Пистолет для заливки WUBO 600 механический
+            (Fließpistole WUBO 600 mechanisch)
+          </a>
+        </li>
+
+      </ul>
+    </div>
 
 
+    <div class="tab-content" id="content5">
+      <a href="docs/KV2.pdf"
+         target="_blank"
+         class="btn-dark">
+        &#9679; Техническая памятка
+      </a>
+    </div>
 
+  </div>
 
-  <div class="tab-content" id="content5">
-    <a href="docs/KV2.pdf" target="_blank" class="btn-dark">&#9679 Техническая памятка</a>
 </section>
-
 
 </body>
 </html>

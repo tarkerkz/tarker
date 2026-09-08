@@ -135,6 +135,89 @@
   text-transform:uppercase;
 }
 
+/* =========================
+   ВКЛАДКИ
+   ========================= */
+
+.tabs {
+  max-width: 1000px;
+  width: calc(100% - 40px);
+  margin: 20px auto 40px;
+  border-top: 1px solid #ddd;
+}
+
+/* Скрываем radio */
+.tabs > input[type="radio"] {
+  display: none;
+}
+
+/* Кнопки вкладок */
+.tab-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 15px 0;
+  font-weight: bold;
+  color: #153293;
+  border-bottom: 1px solid #ddd;
+}
+
+.tab-links label {
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.25s ease;
+}
+
+.tab-links label:hover {
+  color: #ff6600;
+}
+
+/* Активная вкладка */
+#tab1:checked ~ .tab-links label[for="tab1"],
+#tab2:checked ~ .tab-links label[for="tab2"],
+#tab3:checked ~ .tab-links label[for="tab3"],
+#tab4:checked ~ .tab-links label[for="tab4"],
+#tab5:checked ~ .tab-links label[for="tab5"] {
+  color: #ff6600;
+}
+
+/* Общая область контента */
+.tab-content-wrapper {
+  position: relative;
+  width: 100%;
+  height: 230px;
+}
+
+/* Все вкладки находятся в одном месте */
+.tab-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 230px;
+
+  padding: 20px;
+
+  border: 1px solid #eee;
+  border-radius: 5px;
+  background: #fafafa;
+
+  overflow-y: auto;
+
+  display: none;
+}
+
+/* Показываем нужную вкладку */
+#tab1:checked ~ .tab-content-wrapper #content1,
+#tab2:checked ~ .tab-content-wrapper #content2,
+#tab3:checked ~ .tab-content-wrapper #content3,
+#tab4:checked ~ .tab-content-wrapper #content4,
+#tab5:checked ~ .tab-content-wrapper #content5 {
+  display: block;
+}
+
  .tab-content {
   display: none;
 }

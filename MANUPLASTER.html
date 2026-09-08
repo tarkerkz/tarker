@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>MANUPLASTER- TOO TARKER</title>
-  <link rel="stylesheet" href="style.css" />
+ 
     <link rel="icon" href="img/favicon.png" type="image/png">
   <link rel="stylesheet" href="style.css">
   <style>
@@ -31,18 +31,7 @@ body {
       flex-wrap: wrap;
       gap: 40px;
     }
-.container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-    }
 
-    /* Шапка */
-    .header-flex {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
     .product-image img {
       width: 85%;
       max-width: 400px;
@@ -91,37 +80,115 @@ body {
       height: 45px;
     }
 
-    .tabs {
-      max-width: 1000px;
-      margin: 20px auto;
-      border-top: 1px solid #ddd;
-    }
+   .tabs {
+  max-width: 1000px;
+  margin: 20px auto 40px;
+  border-top: 1px solid #ddd;
+  width: 100%;
+}
 
-    .tab-links {
-      display: flex;
-      gap: 30px;
-      padding: 10px 0;
-      font-weight: bold;
-      color: #153293;
-    }
+/* Скрываем radio */
+.tabs > input {
+  display: none;
+}
 
-    .tab-content {
-      padding: 20px;
-      border: 1px solid #eee;
-      border-radius: 5px;
-      background: #fafafa;
-    }
+/* Кнопки вкладок */
+.tab-links {
+  display: flex;
+  gap: 30px;
+  padding: 15px 0;
+  font-weight: bold;
+  color: #153293;
+  border-bottom: 1px solid #ddd;
+}
 
-    @media (max-width: 768px) {
-      main {
-        flex-direction: column;
-        align-items: center;
-      }
-      .tab-links {
-        flex-direction: column;
-        gap: 10px;
-      }
-    }
+.tab-links label {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.tab-links label:hover {
+  color: #ff6600;
+}
+
+/* Общий контейнер */
+.tab-content-wrapper {
+  position: relative;
+  min-height: 180px;
+}
+
+/* Сам блок с рамкой */
+.tab-content {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 180px;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  background: #fafafa;
+
+  display: none;
+}
+
+/* Показываем нужную вкладку */
+#tab1:checked ~ .tab-content-wrapper #content1,
+#tab2:checked ~ .tab-content-wrapper #content2,
+#tab3:checked ~ .tab-content-wrapper #content3,
+#tab4:checked ~ .tab-content-wrapper #content4 {
+  display: block;
+}
+
+/* Активная вкладка */
+#tab1:checked ~ .tab-links label[for="tab1"],
+#tab2:checked ~ .tab-links label[for="tab2"],
+#tab3:checked ~ .tab-links label[for="tab3"],
+#tab4:checked ~ .tab-links label[for="tab4"] {
+  color: #ff6600;
+}
+
+/* BIGUMA®- Plast */
+.plast-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 24px;
+  background: #000029;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.2px;
+  border: 1px solid #153293;
+  box-shadow: 0 4px 12px rgba(21, 50, 147, 0.20);
+  transition: all 0.25s ease;
+}
+
+/* Оранжевая точка */
+.plast-dot {
+  color: #ff6600;
+  font-size: 12px;
+}
+
+
+/* Наведение */
+.plast-button:hover {
+  background: #ff6600;
+  border-color: #ff6600;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(255, 102, 0, 0.30);
+}
+
+/* Движение стрелки */
+.plast-button:hover .plast-arrow {
+  transform: translateX(5px);
+}
+
+/* Нажатие */
+.plast-button:active {
+  transform: translateY(0);
+}
   </style>
 </head>
 <link rel="icon" href="img/favicon.png" type="image/png">
@@ -156,7 +223,7 @@ body {
       <a class="hover:text-orange-500 transition cursor-pointer">Продукция</a>
       <div class="dropdown-content">
         <a href="deformacionnye shvy.html">Деформационные швы</a>
-        <a href="gussasphalt.html">Асфальт</a>
+        <a href="gussasphalt.html">Литой асфальтобетон</a>
         <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
         <a href="airport.html">Взлетно-посадочные полосы</a>
         <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
@@ -192,9 +259,10 @@ body {
 </header>
 
   <main>
-    <div class="product-image">
+     <div class="product-image">
       <img src="img/manuplaster.jpg" alt="MANUPLASTER" />
     </div>
+
     <div class="product-info">
       <h1>MANUPLASTER</h1>
       <h3>Устройство для нанесения BIGUMA®- Plast</h3>
@@ -208,44 +276,72 @@ body {
     </div>
   </main>
 
- <section class="tabs">
-  <!-- Радио кнопки -->
+<section class="tabs">
+
   <input type="radio" name="tab" id="tab1" checked>
   <input type="radio" name="tab" id="tab2">
   <input type="radio" name="tab" id="tab3">
   <input type="radio" name="tab" id="tab4">
-  <input type="radio" name="tab" id="tab5">
 
-  <!-- Кнопки-вкладки -->
   <div class="tab-links">
     <label for="tab1">Описание</label>
     <label for="tab2">Преимущества</label>
+    <label for="tab3">Упаковка</label>
     <label for="tab4">Системные продукты</label>
   </div>
 
-  <!-- Содержимое вкладок -->
-  <div class="tab-content" id="content1">
-    <p>MANUPLASTER – это ручное устройство для машинного применения клея для стыков BIGUMA®- Plast холодного нанесения небольшими объёмами. С помощью данного устройства клей для стыков холодного применения BIGUMA®- Plast быстро и эффективно наносится на средние швы и другие боковые стенки стыков при укладке асфальтобетона. При этом происходит нанесение клея для стыков BIGUMA®- Plast с помощью форсунки или опциональной ручной удочки, и при этом гарантируется простое обслуживание.</p>
-  </div>
+  <div class="tab-content-wrapper">
 
-  <div class="tab-content" id="content2">
-    <p>Преимущества:<br>– благодаря байпасу с редукционным клапаном не возникают скачки давления, а также предотвращается возможные повреждения и загрязнения<br>– применение простых строительных и обычных деталей, поэтому беспроблемное техобслуживание и уход
-<br>– простое обслуживание</p>
-  </div>
+     <div class="tab-content-wrapper">
 
-  <div class="tab-content" id="content3">
-    <p>Упаковка:<br>– Вагон-цистерна<br>– 1000 кг кубовая емкость<br>– 25 кг бочка<br>– другая тара по запросу</p>
-  </div>
+    <div class="tab-content" id="content1">
+      <p>
+        MANUPLASTER – это ручное устройство для машинного применения клея
+        для стыков BIGUMA®- Plast холодного нанесения небольшими объёмами.
+        С помощью данного устройства клей для стыков холодного применения
+        BIGUMA®- Plast быстро и эффективно наносится на средние швы и другие
+        боковые стенки стыков при укладке асфальтобетона. При этом происходит
+        нанесение клея для стыков BIGUMA®- Plast с помощью форсунки или
+        опциональной ручной удочки, и при этом гарантируется простое обслуживание.
+      </p>
+    </div>
 
-  <div class="tab-content" id="content4">
-  <a href="plast.html" class="btn-dark">&#9679; BIGUMA®- Plast</a>
+    <div class="tab-content" id="content2">
+      <p>
+        Преимущества:<br>
+        – благодаря байпасу с редукционным клапаном не возникают скачки давления,
+        а также предотвращается возможные повреждения и загрязнения<br>
+        – применение простых строительных и обычных деталей, поэтому
+        беспроблемное техобслуживание и уход<br>
+        – простое обслуживание
+      </p>
+    </div>
+
+    <div class="tab-content" id="content3">
+      <p>
+        Упаковка:<br>
+        – Вагон-цистерна<br>
+        – 1000 кг кубовая емкость<br>
+        – 25 кг бочка<br>
+        – другая тара по запросу
+      </p>
+    </div>
+
+    <div class="tab-content" id="content4">
+  <a href="plast.html" class="plast-button">
+    <span class="plast-dot">●</span>
+    <span>BIGUMA®- Plast</span>
+    
+  </a>
 </div>
 
+  </div>
 
 </section>
 
 </body>
 </html>
+
 
 <footer>
     <img src="img/logo.png" alt="TARKER">
@@ -256,3 +352,9 @@ body {
 
 </body>
 </html>
+
+
+
+
+
+  

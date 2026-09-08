@@ -80,26 +80,7 @@ body {
       height: 45px;
     }
 
-    .tabs {
-      max-width: 1000px;
-      margin: 20px auto;
-      border-top: 1px solid #ddd;
-    }
-
-    .tab-links {
-      display: flex;
-      gap: 30px;
-      padding: 10px 0;
-      font-weight: bold;
-      color: #153293;
-    }
-
-    .tab-content {
-      padding: 20px;
-      border: 1px solid #eee;
-      border-radius: 5px;
-      background: #fafafa;
-    }
+     
 
     @media (max-width: 768px) {
       main {
@@ -208,7 +189,7 @@ body {
       <a class="hover:text-orange-500 transition cursor-pointer">Продукция</a>
       <div class="dropdown-content">
         <a href="deformacionnye shvy.html">Деформационные швы</a>
-        <a href="gussasphalt.html">Асфальт</a>
+        <a href="gussasphalt.html">Литой асфальтобетон</a>
         <a href="mastiki_dlya_mostov.html">Мастики для мостов</a>
         <a href="airport.html">Взлетно-посадочные полосы</a>
         <a href="shpuntovye_svai.html">Для шпунтовых свай</a>
@@ -264,7 +245,7 @@ body {
   </main>
 
  <section class="tabs">
-  <!-- Радио кнопки -->
+
   <input type="radio" name="tab" id="tab1" checked>
   <input type="radio" name="tab" id="tab2">
   <input type="radio" name="tab" id="tab3">
@@ -281,7 +262,11 @@ body {
   </div>
 
   <!-- Содержимое вкладок -->
-  <div class="tab-content" id="content1">
+  <div class="tab-content-wrapper">
+
+     <div class="tab-content-wrapper">
+
+    <div class="tab-content" id="content1">
     <p>BIGUMA®- AquaBit используется для ликвидации дефектов дорожного полотна, для заделки выбоин и закрытия воронок и создания пандусов. Смесь холодного применения, затвердевает благодаря своей особенной действующей комбинации уже через короткое время и поэтому возможно быстрое возобновление движения.
   <br><br>
   Поставочная фракция: 0/3 мм, 0/5 мм, 0/8 мм (другие фракции по запросу)
@@ -328,3 +313,6 @@ body {
 
 </body>
 </html>
+
+
+
