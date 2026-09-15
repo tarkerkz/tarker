@@ -58,27 +58,74 @@ body {
   background-color: #0202ac;   /* светлый фон для контраста (по желанию) */
 }
 
+
 .section-title {
+  position: relative;
+  width: fit-content;
+  margin: 55px 30px 30px;
+  padding: 0 0 12px 30px;
+
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+
+  color: #ffffff;
   text-align: left;
-  font-weight: bold;
-  font-size: 35px;
-  color: #000000;
-  margin: 30px 20px 20px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid #989a9d;
+
+  /* тонкий стеклянный эффект */
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
+
+/* оранжевая вертикальная линия */
+.section-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 4px;
+  height: calc(100% - 10px);
+
+  background: linear-gradient(
+    to bottom,
+    #ff6600,
+    #f97316
+  );
+
+  border-radius: 3px;
+  box-shadow: 0 0 12px rgba(249, 115, 22, 0.35);
+}
+
+/* нижняя линия */
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 30px;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(249, 115, 22, 0.9),
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+}
+
+
 
 .content-layout {
   width: 100%;
   max-width: 1900px;
   margin: 35px auto 0;
-  padding: 0 20px;
+  padding: 0 10px;
 
   box-sizing: border-box;
 
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 650px;
-  gap: 35px;
+  grid-template-columns: minmax(0, 1fr) 580px;
+  gap: 45px;
 
   align-items: start;
 }
@@ -95,7 +142,7 @@ body {
 
 .products-area .section-title {
   margin: 0 0 20px;
-  padding-left: 0;
+  padding-left: 30px;
 }
 
 .products-area main {
@@ -121,17 +168,24 @@ body {
 .seo-text {
   position: sticky;
   top: 100px;
-  margin-top: 80px;
-  width: 100%;
+
+  margin-top: 81px;
+  margin-left: -250px;
+  width: calc(100% + 90px);
   box-sizing: border-box;
+
   padding: 40px 45px;
+
   background: rgba(255, 255, 255, 0.94);
   border-radius: 16px;
+
   border: 1px solid rgba(249, 115, 22, 0.25);
   border-top: 5px solid #f97316;
+
   box-shadow:
     0 12px 40px rgba(0, 0, 0, 0.18),
     0 0 30px rgba(249, 115, 22, 0.08);
+
   color: #333;
   font-size: 15px;
   line-height: 1.7;

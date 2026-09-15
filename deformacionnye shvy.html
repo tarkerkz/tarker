@@ -22,161 +22,13 @@ body {
   background: url("img/ovmbrsh.png") no-repeat center center fixed;
   background-size: cover;
 }
-    .header{
-  position: sticky;
-  top:0;
-  z-index:1000;
-  background: rgba(0,0,0,0.85);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.header-inner{
-  max-width:1200px;
-  margin:auto;
-  display:grid;
-  grid-template-columns: 180px 1fr 220px;
-  align-items:center;
-  padding:10px 20px;
-  gap:10px;
-}
-
-/* LOGO */
-.logo{
-  display:flex;
-  flex-direction:column;
-  line-height:1.1;
-}
-
-.logo-main{
-  font-size:18px;
-  font-weight:700;
-  color:#f97316; /* ОРАНЖЕВЫЙ */
-  letter-spacing:1px;
-}
-
-.logo-sub{
-  font-size:9px;
-  color:#aaa; /* СЕРОВАТЫЙ */
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-
-/* NAV */
-.nav{
-  display:flex;
-  justify-content:center;
-  gap:14px; /* ← меньше расстояние */
-  font-size:11px; /* ← уменьшили */
-  text-transform:uppercase;
-}
-
-.nav a{
-  color:#ddd;
-  text-decoration:none;
-  transition:0.2s;
-  white-space:nowrap;
-}
-
-.nav a:hover{
-  color:#f97316;
-}
-
-.dropdown{
-  position:relative;
-  cursor:pointer;
-  padding-bottom:8px;
-}
-
-/* красивый компактный dropdown */
-.dropdown-content{
-  position:absolute;
-  top:100%;
-  left:0;
-
-  min-width:180px;
-  padding:6px 0;
-
-  background: rgba(10,10,10,0.95);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 10px;
-
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-
-  opacity:0;
-  visibility:hidden;
-  transform: translateY(10px);
-  transition:0.2s ease;
-
-  pointer-events:none;
-
-  z-index:9999;
-}
-
-/* 🔥 ВАЖНЫЙ ФИКС — удержание hover */
-.dropdown:hover .dropdown-content,
-.dropdown-content:hover{
-  opacity:1;
-  visibility:visible;
-  transform: translateY(0);
-  pointer-events:auto;
-}
-
-/* пункты меню — компактные */
-.dropdown-content a{
-  display:block;
-  padding:6px 12px;
-  font-size:11px;
-  color:#ddd;
-  text-decoration:none;
-  transition:0.2s;
-  white-space:nowrap;
-}
-
-.dropdown-content a:hover{
-  background: rgba(255,255,255,0.06);
-  color:#f97316;
-}
-
-
-/* CONTACT */
-.contact{
-  display:flex;
-  justify-content:flex-end;
-  align-items:center;
-  gap:10px;
-  font-size:11px;
-  color:#ddd;
-}
-
-.contact button{
-  background:#f97316;
-  border:none;
-  padding:6px 10px;
-  font-size:10px;
-  font-weight:700;
-  cursor:pointer;
-  text-transform:uppercase;
-}
-
-    /* ===== Контент ===== */
-    h1 {
-      text-align: center;
-      color: #022233;
-      font-size: 32px;
-      margin: 30px 0 20px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-  .container {
+.container {
   width: 90%;
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, 280px);
+  grid-template-columns: repeat(4, 280px);
 
   justify-content: center;
   align-items: start;
@@ -185,6 +37,62 @@ body {
   padding-bottom: 60px;
 }
 
+h1 {
+  position: relative;
+
+  width: 90%;
+  max-width: 1200px;
+  margin: 38px auto 25px;
+  padding: 0 0 12px 20px;
+  box-sizing: border-box;
+
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+
+  text-align: left;
+  text-transform: uppercase;
+
+  text-shadow: 0 2px 8px rgba(0,0,0,0.45);
+}
+
+/* вертикальный фирменный акцент */
+h1::before {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  top: 1px;
+
+  width: 3px;
+  height: 24px;
+
+  background: #f97316;
+  border-radius: 2px;
+
+  box-shadow: 0 0 8px rgba(249,115,22,0.35);
+}
+
+/* короткая нижняя линия */
+h1::after {
+  content: "";
+
+  position: absolute;
+  left: 20px;
+  bottom: 0;
+
+  width: 180px;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    #f97316,
+    rgba(249,115,22,0.25),
+    transparent
+  );
+}
     .card {
       background: rgba(255, 255, 255, 0.95);
       border-radius: 16px;
@@ -240,6 +148,7 @@ body {
       }
       .hero h1 { font-size: 28px; }
     }
+    
   </style>
 </head>
 <link rel="icon" href="img/favicon.png" type="image/png">
